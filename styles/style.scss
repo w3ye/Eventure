@@ -23,7 +23,7 @@ nav {
 
 p {
   margin: 0px;
-  padding: 0px;
+  padding: 5px;
 }
 
 .eventure {
@@ -94,7 +94,7 @@ main {
 .title {
   background-color: inherit;
   border: 0px;
-  color: #DAD5ED;
+  color: #FFF;
   font-size: 1.25rem;
   font-family: 'Cabin', sans-serif;
   font-weight: bold;
@@ -125,7 +125,7 @@ main {
   margin: 10px;
 }
 
-.submit {
+.button {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -139,7 +139,7 @@ button {
   border: 0px;
   border-radius: 10px;
   box-shadow: 0 50px 400px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
-  padding: 0.5em 0.8em;
+  padding: 10px 20px;
 }
 
 #overlay {
