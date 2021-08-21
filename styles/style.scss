@@ -11,6 +11,11 @@ body {
   font-family: 'Cabin', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 nav {
   height: 100px;
   padding: 1.5em;
@@ -64,7 +69,7 @@ main {
 
 .master-header {
   align-items: center;
-  border-bottom: 1px solid #9B97A8;
+  border-bottom: 1px solid transparent;
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
@@ -124,7 +129,6 @@ main {
   color: #DAD5ED;
   padding: 10px 15px;
   margin: 10px;
-  // display: none;
 }
 
 .details {
