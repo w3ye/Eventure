@@ -20,11 +20,18 @@ p {
   padding: 0px;
 }
 
-.eventure, p.eventure {
+.eventure {
   color: #DAD5ED;
+  opacity: 0.5;
   font-family: 'Staatliches', cursive;
-  font-size: 3em;
+  font-size: 2.5em;
 }
+
+.eventure:hover {
+  opacity: 1;
+transform: 0.2;
+}
+
 
 body {
   height: 100vh;
@@ -38,7 +45,7 @@ main {
   padding: 10px 15px;
   position: fixed;
   transform: translate(-50%, -50%);
-  top: 50%;
+  top: 45%;
   width: 700px;
   z-index: 10;
 }
@@ -53,19 +60,20 @@ main {
 
 .catchphrase-words {
   font-family: 'Caveat', cursive;
-  font-size: 45px;
+  font-size: 3em;
+}
+
+.catchphrase-eventure {
+  color: #DAD5ED;
+  font-family: 'Staatliches', cursive;
+  font-size: 4em;
 }
 
 .master-box {
   background-color: rgba(255,255,255, 0.2);
   border-radius:  10px;
-  // // left: 50%;
-  // max-width: 80%;
   padding: 10px 15px;
-  // position: fixed;
-  // // transform: translate(-50%, -50%);
-  // // top: 50%;
-  // width: 700px;
+  margin-top: 25px;
   z-index: 10;
   box-shadow: 0 50px 200px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
   border-radius: 10px;
