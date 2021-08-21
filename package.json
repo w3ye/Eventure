@@ -23,6 +23,7 @@
     "pg-native": "^3.0.0"
   },
   "devDependencies": {
+    "eslint-plugin-html": "^6.1.2",
     "nodemon": "^1.19.1"
   }
 }
