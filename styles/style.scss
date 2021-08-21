@@ -5,6 +5,12 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(22,28,83,1) 3%, rgba(95,39,90,1) 70%, rgba(135,31,65,1) 98%);
+  font-family: 'Cabin', sans-serif;
+}
+
 nav {
   height: 100px;
   padding: 1.5em;
@@ -21,22 +27,17 @@ p {
 }
 
 .eventure {
-  color: #DAD5ED;
+  color: #000;
   opacity: 0.5;
   font-family: 'Staatliches', cursive;
   font-size: 2.5em;
 }
 
 .eventure:hover {
-  opacity: 1;
-transform: 0.2;
-}
-
-
-body {
-  height: 100vh;
-  background: linear-gradient(180deg, rgba(22,28,83,1) 3%, rgba(95,39,90,1) 70%, rgba(135,31,65,1) 98%);
-  font-family: 'Cabin', sans-serif;
+  color: #DAD5ED;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: 0.3s;
 }
 
 main {
@@ -61,12 +62,15 @@ main {
 .catchphrase-words {
   font-family: 'Caveat', cursive;
   font-size: 3em;
+  text-shadow: 0 30px 20px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+
 }
 
 .catchphrase-eventure {
   color: #DAD5ED;
   font-family: 'Staatliches', cursive;
   font-size: 4em;
+  text-shadow: 0 30px 20px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
 }
 
 .master-box {
