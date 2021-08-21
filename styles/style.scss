@@ -16,6 +16,11 @@ nav {
   z-index: 10;
 }
 
+body {
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(22,28,83,1) 3%, rgba(95,39,90,1) 70%, rgba(135,31,65,1) 98%);
+}
+
 .master-box {
   background-color: white;
   border: 1px solid black;
@@ -73,7 +78,7 @@ nav {
   background-color: rgba(0, 0, 0, .5);
   left: 0;
   right: 0;
-  /* opacity: 0; */
+  opacity: 0;
   position: fixed;
   top: 0;
 }
