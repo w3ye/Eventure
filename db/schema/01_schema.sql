@@ -13,16 +13,16 @@ CREATE TABLE users(
 CREATE TABLE events(
     id SERIAL PRIMARY KEY NOT NULL,
     owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-    start_date TIMESTAMP,
-    end_date TIMESTAMP,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
     close_submission TIMESTAMP,
-    detail TEXT
+    detail TEXT NOT NULL
 );
 
 CREATE TABLE available_days (
     id SERIAL PRIMARY KEY NOT NULL,
     event_id INTEGER REFERENCES events(id) ON DELETE CASCADE,
-    a_day TIMESTAMP,
+    a_day TIMESTAMP NOT NULL,
     start_time TIME,
     end_time TIME
 );
