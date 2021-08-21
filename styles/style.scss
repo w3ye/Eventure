@@ -6,11 +6,8 @@ html {
 }
 
 nav {
-  color: #DAD5ED;
-  font-family: 'Staatliches', cursive;
-  font-size: 2.5em;
   height: 100px;
-  padding: 0.8em;
+  padding: 1.5em;
   position: fixed;
   top: 0;
   left: 0;
@@ -18,11 +15,18 @@ nav {
   z-index: 10;
 }
 
+.eventure, p.eventure {
+  color: #DAD5ED;
+  font-family: 'Staatliches', cursive;
+  font-size: 2.5em;
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
   height: 100vh;
   background: linear-gradient(180deg, rgba(22,28,83,1) 3%, rgba(95,39,90,1) 70%, rgba(135,31,65,1) 98%);
   font-family: 'Cabin', sans-serif;
-
 }
 
 main {
@@ -31,9 +35,17 @@ main {
   padding: 10px 15px;
   position: fixed;
   transform: translate(-50%, -50%);
-  top: 40%;
+  top: 50%;
   width: 700px;
   z-index: 10;
+}
+
+.catchphrase {
+  color: #DAD5ED;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .master-box {
