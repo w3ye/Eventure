@@ -7,9 +7,11 @@ html {
 
 nav {
   color: #DAD5ED;
+  // box-shadow: 0 50px 200px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+
   font-family: 'Staatliches', cursive;
   font-size: 2.5em;
-  height: 65px;
+  height: 100px;
   padding: 0.8em;
   position: fixed;
   top: 0;
@@ -21,11 +23,14 @@ nav {
 body {
   height: 100vh;
   background: linear-gradient(180deg, rgba(22,28,83,1) 3%, rgba(95,39,90,1) 70%, rgba(135,31,65,1) 98%);
+  font-family: 'Cabin', sans-serif;
+
 }
 
 .master-box {
   background-color: rgba(255,255,255, 0.2);
   border-radius:  10px;
+  // font-family: 'Cabin', sans-serif;
   left: 50%;
   max-width: 80%;
   padding: 10px 15px;
@@ -51,10 +56,13 @@ body {
   border: 0px;
   color: #DAD5ED;
   font-size: 1.25rem;
+  font-family: 'Cabin', sans-serif;
   font-weight: bold;
+  width: 100%;
 }
 
 .title::placeholder {
+  font-family: 'Cabin', sans-serif;
   color: #DAD5ED;
 }
 
