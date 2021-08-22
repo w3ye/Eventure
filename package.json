@@ -25,6 +25,10 @@
   },
   "devDependencies": {
     "eslint-plugin-html": "^6.1.2",
+<<<<<<< HEAD
     "nodemon": "^1.19.1"
+=======
+    "nodemon": "^2.0.12"
+>>>>>>> 1571674ff5d1f9f696e2317b6ef5b0ee7b2f70ed
   }
 }
