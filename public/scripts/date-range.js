@@ -17,8 +17,8 @@ $(function() {
     // timePickerIncrement: 5,
     // timePicker12Hour: true,
     // timePickerSeconds: false,
-    minDate: "-1d",
-    startDate: prev_date
+    // minDate: "-1d",
+    startDate: today
   });
   $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
     $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
