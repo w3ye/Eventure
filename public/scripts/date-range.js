@@ -1,7 +1,8 @@
 $(function() {
   $('input[name="datefilter"]').daterangepicker({
     // minDate: Date.now(),
-    minDate: Date.now(),
+    // minDate: Date.now(),
+    "minDate": today,
 
     // autoUpdateInput: false,
     // locale: {
