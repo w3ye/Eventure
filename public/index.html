@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="../styles/style.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Date Range Picker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <script type="text/javascript" src="/scripts/client.js"></script>
+
+	</head>
+	<body>
+		<nav>
+			<div class="eventure">
+				<a href="/" class="eventure-logo">Eventure</a>
+			</div>
+		</nav>
+    <main>
+      <div class="catchphrase">
+        <p class="catchphrase-words">
+          Start your&nbsp;</p>
+          <p class="catchphrase-eventure">
+          Eventure
+        </p>
+      </div>
+      <div class="master-box" id="master-box">
+        <div class="master-header">
+          <div class="title">
+            <form class="" action="index.html" method="post">
+              <input type="text" name="title" class="title" placeholder="Eventure Title" maxlength="30">
+            </form>
+          </div>
+        </div>
+
+        <!-- CREATE EVENT -->
+
+        <div class="master-body">
+          <p>Select Date(s):</p>
+          <input type="text" name="datefilter" value="" />
+            <script type="text/javascript">
+            $(function() {
+              $('input[name="datefilter"]').daterangepicker({
+                autoUpdateInput: false,
+                locale: {
+                  cancelLabel: 'Clear'
+                }
+              });
+              $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+              });
+              $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+                $(this).val('');
+              });
+            });
+            </script>
+          <p class="details">Submission Deadline:</p>
+          <input type="text" name="birthday" value="" />
+          <script>
+          $(function() {
+            $('input[name="birthday"]').daterangepicker({
+              singleDatePicker: true,
+              showDropdowns: true,
+              minYear: 1901,
+              maxYear: parseInt(moment().format('YYYY'),10)
+            }, function(start, end, label) {
+              var years = moment().diff(start, 'years');
+            });
+          });
+          </script>
+          <p class="details">Event Description:</p>
+          <div class="grow-wrap"></div>
+          <textarea name="text" id="event-details" maxlength="250"></textarea>
+          <p class="details">Name:</p>
+          <textarea name="text" id="owner-name" maxlength="30"></textarea>
+          <p class="details">E-mail:</p>
+          <textarea name="text" id="owner-email" maxlength="50"></textarea>
+
+          <!-- ADD TIMESLOTS -->
+
+          <!-- EVENT CREATED -->
+
+          <!-- <div class="master-body">
+            <p>Event title has been made!</p>
+            <p>Secret Link:</p>
+            <p>Share:</p>
+          </div> -->
+
+          <div class="button">
+            <button type="submit" form="nameform" value="Submit" class="submission">Next</button>
+          </div>
+        </div>
+      </div>
+    </main>
+		<div id="overlay"></div>
+		<footer>
+			<div>
+				Github: x, x, x
+			</div>
+			<div>
+				Made by The Eventurers
+			</div>
+		</footer>
+    <div class="star2"></div>
+    <!-- <div class="star3"></div> -->
+    <div class="star4"></div>
+    <div class="star5"></div>
+    <div class="star6"></div>
+    <div class="star7"></div>
+    <div class="star8"></div>
+    <div class="star9"></div>
+    <div class="star10"></div>
+    <div class="star11"></div>
+	</body>
+</html>
