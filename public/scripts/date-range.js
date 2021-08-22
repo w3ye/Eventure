@@ -1,5 +1,5 @@
 $(function() {
-  $('.datefilter').daterangepicker({
+  $('.datefilter').dateRangePicker({
     // autoUpdateInput: false,
     // locale: {
     //   cancelLabel: 'Clear'
@@ -17,12 +17,14 @@ $(function() {
     // minDate: 0,
       autoclose: true,
       todayHighlight: true,
-      format: "dd-mm-yyyy",
+      format: "mm-dd-yyyy",
       minDate: 0,
       clearBtn: true,
       multidate: false,
       multidateSeparator: ",",
-      toggleActive: true
+      toggleActive: true,
+      startDate: '08-10-2021',
+      endDate: '09-10-2021'
   });
   $('.datefilter').on('apply.daterangepicker', function(ev, picker) {
     $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
