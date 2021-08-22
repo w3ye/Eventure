@@ -4,7 +4,7 @@ const escape = function(str) {
   return div.innerHTML;
 };
 
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]');
 
 const renderTimeslots = function () {
   $('#add-timeslots').append(addTimeslots());
@@ -55,4 +55,6 @@ $(document).ready(function() {
     renderTimeslots();
     $('#overlay').css('opacity', '1');
   });
+
+
 });
