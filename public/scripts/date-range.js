@@ -1,6 +1,7 @@
 $(function() {
   $('input[name="datefilter"]').daterangepicker({
-    minDate: '+1d',
+    minDate: 0,
+    maxDate: "+12m",
     autoUpdateInput: false,
     locale: {
       cancelLabel: 'Clear'
