@@ -73,17 +73,24 @@ main {
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
-  // box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3);
+  /* box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3); */
 }
 
-.master-header .close-button {
+.master-header {
   background: none;
   border: none;
   font-size: 1.25rem;
   font-weight: bold;
-  cursor: pointer;
   outline: none;
+}
 
+.close-button {
+  background-color: rgba(95,39,90);
+  color:#DAD5ED;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .catchphrase {
@@ -108,7 +115,7 @@ main {
   text-shadow: 0 30px 20px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
 }
 
-.title {
+.title-create {
   background-color: inherit;
   border: 0px;
   color: #FFF;
@@ -118,12 +125,12 @@ main {
   width: 100%;
 }
 
-.title::placeholder {
+.title-create::placeholder {
   font-family: 'Cabin', sans-serif;
   color: #DAD5ED;
 }
 
-.title:focus {
+.title-create:focus {
   outline: none;
 }
 
@@ -152,12 +159,12 @@ textarea {
 
 #event-details {
   height: 50px;
-  // box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3);
+  /* box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3); */
 }
 
 #owner-name, #owner-email {
   width: 50%;
-  // box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3);
+  /* box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3); */
 
 }
 
@@ -168,6 +175,10 @@ textarea {
   padding-top: 1em;
 }
 
+.button-next {
+  font-size: 0.85em;
+}
+
 button {
   color: rgba(22,28,83,1);
   cursor: pointer;
@@ -176,6 +187,58 @@ button {
   border-radius: 10px;
   box-shadow: 0 50px 400px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
   padding: 10px 20px;
+}
+
+.modal {
+  position: fixed;
+  padding: 20px 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  border: 0px;
+  border-radius: 20px;
+  z-index: 20;
+  background-color: rgba(226, 225, 225);
+  width: 1200px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fix-title {
+  color: rgba(22,28,83);
+  font-size: 1.25rem;
+  font-family: 'Cabin', sans-serif;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 15px;
+  flex-basis: 85%;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+}
+
+.button-submit {
+  color: #DAD5ED;
+  cursor: pointer;
+  background-color: rgba(95,39,90, 1);
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 0 50px 400px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+  padding: 10px 20px;
+  font-size: 1.05em;
 }
 
 #overlay {
@@ -199,6 +262,8 @@ footer {
   width: 100%;
   z-index: 10;
 }
+
+
 
 .star2 {
   background: white;
@@ -352,4 +417,24 @@ footer {
   0%   {opacity: 0;}
   50%  {opacity: 1;}
   100% {opacity: 0;}
+}
+
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
 }
