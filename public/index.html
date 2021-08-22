@@ -46,9 +46,15 @@
         <!-- CREATE EVENT -->
 
         <div class="master-body">
-          <p>Select Date(s):</p>
-          <input type="text" class="datefilter" value="" />
-            <!-- <script type="text/javascript" src="date-range.js"></script> -->
+          <div class="date-range">
+            <p>Select Date(s):</p>
+            <label for="from">From</label>
+            <input type="text" id="from" name="from">
+            <label for="to">to</label>
+            <input type="text" id="to" name="to">
+          </div>
+          <!-- <input type="text" class="datefilter" value="" /> -->
+          <!-- <script type="text/javascript" src="date-range.js"></script> -->
           <p class="details">Submission Deadline:</p>
           <input type="text" name="birthday" value="" />
           <script>

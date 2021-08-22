@@ -6,11 +6,11 @@ const escape = function(str) {
 
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
 
-const renderTimeslots = function () {
+const renderTimeslots = function() {
   $('#add-timeslots').append(addTimeslots());
 }
 
-const addTimeslots = function () {
+const addTimeslots = function() {
   const $timeslot = $('<section>').addClass('add-timeslots');
   const html = `
     <div class="modal" id="modal">
