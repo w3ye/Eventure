@@ -1,5 +1,5 @@
 $(function() {
-  $('input[name="datefilter"]').daterangepicker({
+  $('.datefilter').daterangepicker({
     // autoUpdateInput: false,
     // locale: {
     //   cancelLabel: 'Clear'
