@@ -1,3 +1,6 @@
+let prev_date = new Date();
+prev_date.setDate(prev_date.getDate() - 1);
+
 $(function() {
   $('input[name="datefilter"]').daterangepicker({
     // autoUpdateInput: false,
@@ -7,15 +10,15 @@ $(function() {
     // "minDate": "-1d",
     // minDate: today,
     // minDate: Date.now(),
-    "autoApply": true,
-    "autoUpdateInput": false,
-    "singleDatePicker": true,
-    "minDate": today,
-    "maxDate": maxLimitDate,
-    "opens": "left",
-    "locale": {
-      format: 'DD MMM YYYY'
-    }
+    locale: {
+      format: 'YYYY/MM/DD HH:mm:ss'
+    },
+    timePicker: true,
+    timePickerIncrement: 5,
+    timePicker12Hour: true,
+    timePickerSeconds: false,
+    minDate: "-1d",
+    startDate: prev_date
   });
   $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
     $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
