@@ -165,7 +165,16 @@ textarea {
 #owner-name, #owner-email {
   width: 50%;
   /* box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3); */
+}
 
+.indent {
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+.date {
+  font-size: 0.8em;
+  color: #bab8f5ad;
 }
 
 .button {
