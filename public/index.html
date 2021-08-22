@@ -22,7 +22,7 @@
 	<body>
 		<nav>
 			<div class="eventure">
-				<a href="/">Eventure</a>
+				<a href="/" class="eventure-logo">Eventure</a>
 			</div>
 		</nav>
     <main>
@@ -39,83 +39,64 @@
             <form class="" action="index.html" method="post">
               <input type="text" name="title" class="title" placeholder="Eventure Title" maxlength="30">
             </form>
-            <div class="bar">
-            </div>
           </div>
-          <!-- <button class="close-button">&times;</button> -->
         </div>
+
+        <!-- CREATE EVENT -->
+
         <div class="master-body">
           <p>Select Date(s):</p>
-
           <input type="text" name="datefilter" value="" />
             <script type="text/javascript">
             $(function() {
               $('input[name="datefilter"]').daterangepicker({
-                  autoUpdateInput: false,
-                  locale: {
-                      cancelLabel: 'Clear'
-                  }
+                autoUpdateInput: false,
+                locale: {
+                  cancelLabel: 'Clear'
+                }
               });
               $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-                  $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
               });
               $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-                  $(this).val('');
+                $(this).val('');
               });
             });
             </script>
-          <p class="details">
-            Submission Deadline:
-          </p>
-          <p>
-            <input type="text" name="birthday" value="10/24/1984" />
-
-            <script>
-            $(function() {
-              $('input[name="birthday"]').daterangepicker({
-                singleDatePicker: true,
-                showDropdowns: true,
-                minYear: 1901,
-                maxYear: parseInt(moment().format('YYYY'),10)
-              }, function(start, end, label) {
-                var years = moment().diff(start, 'years');
-                alert("You are " + years + " years old!");
-              });
+          <p class="details">Submission Deadline:</p>
+          <input type="text" name="birthday" value="" />
+          <script>
+          $(function() {
+            $('input[name="birthday"]').daterangepicker({
+              singleDatePicker: true,
+              showDropdowns: true,
+              minYear: 1901,
+              maxYear: parseInt(moment().format('YYYY'),10)
+            }, function(start, end, label) {
+              var years = moment().diff(start, 'years');
             });
-            </script>
-
-
-          </p>
+          });
+          </script>
           <p class="details">Event Description:</p>
-          <p>
-            <textarea name="text" id="event-details"></textarea>
-          </p>
+          <div class="grow-wrap"></div>
+          <textarea name="text" id="event-details" maxlength="250"></textarea>
           <p class="details">Name:</p>
-          <p>
-            <textarea name="text" id="event-details"></textarea>
-          </p>
+          <textarea name="text" id="owner-name" maxlength="30"></textarea>
           <p class="details">E-mail:</p>
-          <p>
-            <textarea name="text" id="event-details"></textarea>
-          </p>
+          <textarea name="text" id="owner-email" maxlength="50"></textarea>
 
+          <!-- ADD TIMESLOTS -->
 
-          <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-          qui officia deserunt mollit anim id est laborum. -->
+          <!-- EVENT CREATED -->
+
+          <!-- <div class="master-body">
+            <p>Event title has been made!</p>
+            <p>Secret Link:</p>
+            <p>Share:</p>
+          </div> -->
 
           <div class="button">
-            <button type="submit" form="nameform" value="Submit">Next</button>
+            <button type="submit" form="nameform" value="Submit" class="submission">Next</button>
           </div>
         </div>
       </div>
