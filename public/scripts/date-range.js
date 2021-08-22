@@ -11,12 +11,12 @@ $(function() {
     // minDate: today,
     // minDate: Date.now(),
     locale: {
-      format: 'YYYY/MM/DD HH:mm:ss'
+      format: 'YYYY/MM/DD'
     },
-    timePicker: true,
-    timePickerIncrement: 5,
-    timePicker12Hour: true,
-    timePickerSeconds: false,
+    // timePicker: true,
+    // timePickerIncrement: 5,
+    // timePicker12Hour: true,
+    // timePickerSeconds: false,
     minDate: "-1d",
     startDate: prev_date
   });
