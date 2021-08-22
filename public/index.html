@@ -48,7 +48,7 @@
         <div class="master-body">
           <p>Select Date(s):</p>
           <input type="text" name="datefilter" value="" />
-            <!-- <script type="text/javascript" src="date-range.js"></script> -->
+            <script type="text/javascript" src="date-range.js"></script>
           <p class="details">Submission Deadline:</p>
           <input type="text" name="birthday" value="" />
           <script>
@@ -59,7 +59,7 @@
               minYear: 1901,
               maxYear: parseInt(moment().format('YYYY'),10)
             }, function(start, end, label) {
-              var years = moment().diff(start, 'years');
+              let years = moment().diff(start, 'years');
             });
           });
           </script>
