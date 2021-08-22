@@ -4,8 +4,8 @@ $(function() {
     locale: {
       cancelLabel: 'Clear'
     },
-    minDate: "-1d",
-    minDate: today,
+    "minDate": "-1d",
+    // minDate: today,
     // minDate: Date.now(),
   });
   $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
