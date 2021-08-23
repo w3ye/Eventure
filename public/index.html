@@ -21,6 +21,9 @@
 
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/date-range.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/modal.js"></script> -->
+    <script defer src="/scripts/modal.js"></script>
+
 
 	</head>
 	<body>
@@ -77,7 +80,7 @@
           </div> -->
 
           <div class="button">
-            <button type="submit" form="nameform" value="Submit" class="button-next">Next</button>
+            <button data-modal-target="#modal" class="next-button">Next</button>
           </div>
         </div>
       </div>
@@ -106,12 +109,12 @@
           qui officia deserunt mollit anim id est laborum.
         </div>
         <div class="submit">
-          <button type="submit" form="nameform" value="Submit" class="button-submit">Submit</button>
+          <button data-close-button class="submit-button">Submit</button>
         </div>
       </div>
 
     </main>
-		<div class="active" id="overlay"></div>
+		<div id="overlay"></div>
 		<footer>
 			<div>
 				Github:
