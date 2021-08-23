@@ -1,13 +1,14 @@
 {
   "name": "node-skeleton",
   "version": "1.0.0",
-  "description": "",
+  "description": "Midterm project",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "local": "./node_modules/.bin/nodemon -L --ignore public/",
-    "db:reset": "node bin/resetdb.js"
+    "db:reset": "node bin/resetdb.js",
+    "sass-watch": "sass sass:public/styles --watch --poll --no-source-map"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "pg-native": "^3.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "eslint-plugin-html": "^6.1.2",
+    "nodemon": "^1.19.1"
   }
 }
