@@ -2,14 +2,18 @@ $(document).ready(function () {
   const dateFormat = "mm/dd/yy",
     from = $("#from")
       .datepicker({
-        defaultDate: "+1w",
         changeMonth: true,
         numberOfMonths: 2,
         minDate: 0,
+        onSelect: function(){
+          to.datepicker('option', 'minDate', from.datepicker("getDate"));
+          deadline.datepicker('option', 'maxDate', from.datepicker("getDate"));
+        }
       })
       .on("change", function() {
         to.datepicker("option", "minDate", getDate(this));
       }),
+
     to = $("#to").datepicker({
       defaultDate: "+1w",
       changeMonth: true,
@@ -17,6 +21,12 @@ $(document).ready(function () {
     })
     .on("change", function() {
       from.datepicker("option", "maxDate", getDate(this));
+    });
+
+    deadline = $("#deadline").datepicker({
+      minDate: 0,
+      maxDate: "+1M +10D",
+      startDate: Date.now(),
     });
 
   const getDate = function(element) {
@@ -29,28 +39,4 @@ $(document).ready(function () {
     console.log(date)
     return date;
   }
-
-
-  $("#deadline")
-    .datepicker({
-      minDate: 0,
-      maxDate: "+1M +10D",
-      startDate: Date.now(),
-    });
 });
-
-// $(function() {
-//   $("#datepicker").datepicker({
-//     minDate: 0,
-//     dateFormat: "yy-mm-dd",
-//     onSelect: function(date, datepicker) {
-//       let dependent= $(this).data('dependent');
-//       let thisDate = $(this).val();
-//       $(dependent).datepicker("option", "minDate", thisDate);
-//       $(dependent).datepicker('refresh');
-//     }
-//   });
-//   $("#datepicker2").datepicker({
-//     dateFormat: "yy-mm-dd"
-//   });
-// });
