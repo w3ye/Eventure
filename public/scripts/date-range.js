@@ -25,8 +25,6 @@ $(document).ready(function () {
 
     deadline = $("#deadline").datepicker({
       minDate: 0,
-      maxDate: "+1M +10D",
-      startDate: Date.now(),
     });
 
   const getDate = function(element) {
