@@ -64,7 +64,7 @@
 
         <!-- CREATE EVENT -->
 
-        <div class="master-body">
+        <form method="POST" action="/create" class="master-body">
           <p>Select Date(s):</p>
           <div class="indent date">
             <label for="from">From</label>
@@ -75,10 +75,10 @@
           <p class="details">Submission Deadline:</p>
           <div class="indent date">
             <label for="deadline"><i>(Optional)</i></label>
-            <input type="text" id="deadline">
+            <input name="deadline" type="text" id="deadline">
           </div>
           <p class="details">Event Description:</p>
-          <textarea name="text" id="event-details" maxlength="250" required></textarea>
+          <textarea name="description" id="event-details" maxlength="250" required></textarea>
           <p class="details">Name:</p>
           <input name="text" id="owner-name" class="owner" maxlength="30" required></textarea>
           <p class="details">E-mail:</p>
@@ -92,10 +92,10 @@
             <p>Share:</p>
           </div> -->
 
-          <div class="button">
+          <div class="next">
             <button data-modal-target="#modal" class="next-button">Next</button>
           </div>
-        </div>
+        </form>
       </div>
       </main>
       <main id="add-timeslots">
