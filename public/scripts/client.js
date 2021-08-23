@@ -4,13 +4,13 @@ const escape = function(str) {
   return div.innerHTML;
 };
 
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]');
 
-const renderTimeslots = function () {
+const renderTimeslots = function() {
   $('#add-timeslots').append(addTimeslots());
 }
 
-const addTimeslots = function () {
+const addTimeslots = function() {
   const $timeslot = $('<section>').addClass('add-timeslots');
   const html = `
     <div class="modal" id="modal">
@@ -41,18 +41,28 @@ const addTimeslots = function () {
   return $timeslot.html(html);
 }
 
-$(document).ready(function() {
-  $('.master-body').hide();
+const enterTitle = function() {
   $('.title-create').on('click', () => {
     $('.master-body').slideDown();
     $('.master-body').show();
-    // $('.master-header').css('border-bottom', '1px solid #9B97A8')
     $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)')
   });
+}
+
+$(document).ready(function() {
+  $('.master-body').hide();
+  enterTitle();
+  // $('.title-create').on('click', () => {
+    // $('.master-body').slideDown();
+    // $('.master-body').show();
+    // $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)')
+  // });
 
   $('.button-next').on('click', () => {
     $('.catchphrase').hide();
     renderTimeslots();
     $('#overlay').css('opacity', '1');
   });
+
+
 });

@@ -85,7 +85,7 @@ main {
 }
 
 .close-button {
-  background-color: rgba(95,39,90);
+  background-color: rgba(95,39,90,1);
   color:#DAD5ED;
   border: none;
   font-size: 1.25rem;
@@ -119,7 +119,7 @@ main {
   background-color: inherit;
   border: 0px;
   color: #FFF;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-family: 'Cabin', sans-serif;
   font-weight: bold;
   width: 100%;
@@ -154,18 +154,29 @@ textarea {
   height: 25px;
   width: 100%;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1em;
 }
 
 #event-details {
   height: 50px;
+  color: #bab8f5ad;
   /* box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3); */
 }
 
 #owner-name, #owner-email {
   width: 50%;
+  color: #bab8f5ad;
   /* box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3); */
+}
 
+.indent {
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+.date {
+  font-size: 1em;
+  color: #bab8f5ad;
 }
 
 .button {
@@ -198,7 +209,7 @@ button {
   border: 0px;
   border-radius: 20px;
   z-index: 20;
-  background-color: rgba(226, 225, 225);
+  background-color: rgba(226, 225, 225, 1);
   width: 1200px;
   height: 700px;
   display: flex;
@@ -214,7 +225,7 @@ button {
 }
 
 .fix-title {
-  color: rgba(22,28,83);
+  color: rgba(22,28,83,1);
   font-size: 1.25rem;
   font-family: 'Cabin', sans-serif;
   font-weight: bold;
