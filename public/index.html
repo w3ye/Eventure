@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link href="../styles/style.css" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,9 +14,24 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <!-- CSS -->
+		<link href="../styles/button.css" rel="stylesheet">
+		<link href="../styles/layout.css" rel="stylesheet">
+		<link href="../styles/master-box.css" rel="stylesheet">
+		<link href="../styles/modal.css" rel="stylesheet">
+		<link href="../styles/nav.css" rel="stylesheet">
+		<link href="../styles/footer.css" rel="stylesheet">
+		<link href="../styles/stars.css" rel="stylesheet">
+
+    <!-- JavaScript -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/date-range.js"></script>
+    <script defer src="/scripts/modal.js"></script>
+
 
 	</head>
 	<body>
@@ -38,7 +52,7 @@
         <div class="master-header">
           <div class="title">
             <form class="" action="index.html" method="post">
-              <input type="text" name="title" class="title-create" placeholder="Eventure Title" maxlength="30">
+              <input type="text" name="title" class="title-create" placeholder="Eventure Title" maxlength="30" autocomplete="off" required>
             </form>
           </div>
         </div>
@@ -47,29 +61,23 @@
 
         <div class="master-body">
           <p>Select Date(s):</p>
-          <input type="text" name="datefilter" value="" />
-            <!-- <script type="text/javascript" src="date-range.js"></script> -->
+          <div class="indent date">
+            <label for="from">From</label>
+            <input type="text" id="from" name="from" required>
+            <label for="to">To</label>
+            <input type="text" id="to" name="to" required>
+          </div>
           <p class="details">Submission Deadline:</p>
-          <input type="text" name="birthday" value="" />
-          <script>
-          $(function() {
-            $('input[name="birthday"]').daterangepicker({
-              singleDatePicker: true,
-              showDropdowns: true,
-              minYear: 1901,
-              maxYear: parseInt(moment().format('YYYY'),10)
-            }, function(start, end, label) {
-              var years = moment().diff(start, 'years');
-            });
-          });
-          </script>
+          <div class="indent date">
+            <label for="deadline"><i>(Optional)</i></label>
+            <input type="text" id="deadline">
+          </div>
           <p class="details">Event Description:</p>
-          <div class="grow-wrap"></div>
-          <textarea name="text" id="event-details" maxlength="250"></textarea>
+          <textarea name="text" id="event-details" maxlength="250" required></textarea>
           <p class="details">Name:</p>
-          <textarea name="text" id="owner-name" maxlength="30"></textarea>
+          <input name="text" id="owner-name" class="owner" maxlength="30" required></textarea>
           <p class="details">E-mail:</p>
-          <textarea name="text" id="owner-email" maxlength="50"></textarea>
+          <input name="email" id="owner-email" class="owner" maxlength="50" required></textarea>
 
           <!-- EVENT CREATED -->
 
@@ -80,7 +88,7 @@
           </div> -->
 
           <div class="button">
-            <button type="submit" form="nameform" value="Submit" class="button-next">Next</button>
+            <button data-modal-target="#modal" class="next-button">Next</button>
           </div>
         </div>
       </div>
@@ -88,17 +96,44 @@
       <main id="add-timeslots">
 
       <!-- ADD TIMESLOTS -->
+      <div class="modal" id="modal">
+        <div class="modal-header">
+          <p class="fix-title">Eventure Title</p>
+          <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+          qui officia deserunt mollit anim id est laborum.
+        </div>
+        <div class="submit">
+          <button data-close-button class="submit-button">Submit</button>
+        </div>
+      </div>
 
     </main>
-		<div id="overlay"></div>
 		<footer>
-			<div>
-				Github: x, x, x
+      <div>
+        Github:
+        <a href="https://github.com/zeeplo">@zeeplo</a>,
+        <a href="https://github.com/rafay-siddiqui/">@rafay-siddiqui</a>,
+        <a href="https://github.com/diannegabriel">@diannegabriel</a>
 			</div>
 			<div>
-				Made by The Eventurers
+        Made by The Eventurers
 			</div>
 		</footer>
+    <div id="overlay"></div>
     <div class="star2"></div>
     <div class="star4"></div>
     <div class="star5"></div>

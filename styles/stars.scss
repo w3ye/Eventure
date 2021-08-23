@@ -1,0 +1,154 @@
+
+.star2 {
+  background: white;
+  width: 100px;
+  height: 13px;
+  position: absolute;
+  top: 6%;
+  left: 80%;
+  opacity: 0.1;
+  border-radius: 10px;
+}
+.star3 {
+  background: white;
+  width: 70px;
+  height: 13px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  opacity: 0.1;
+  border-radius: 10px;
+}
+.star4 {
+  background: white;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 250ms;
+}
+.star5 {
+  background: white;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 750ms;
+}
+.star6 {
+  background: white;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 900ms;
+}
+.star7 {
+  background: white;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 1s;
+}
+.star8 {
+  background: white;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  top: 40%;
+  left: 8%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 2s;
+}
+.star9 {
+  background: white;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  top: 4%;
+  left: 28%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 500ms;
+}
+.star10 {
+  background: white;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  top: 25%;
+  left: 98%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 660ms;
+}
+.star11 {
+  background: white;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 68%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+}
+
+@keyframes glowing-stars {
+  0%   {opacity: 0;}
+  50%  {opacity: 1;}
+  100% {opacity: 0;}
+}
