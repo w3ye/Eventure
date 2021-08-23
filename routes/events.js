@@ -5,13 +5,17 @@ const router = express.Router();
 module.exports = (db) => {
   const event = new EVENT(db);
   router.post("/create", (req, res) => {
-    const { ownerId, startDate, endDate, closeSubmission, detail } = req.body;
-    event.newEvent(ownerId, startDate, endDate, closeSubmission, detail)
+    console.log(req.body);
+    const queryObj = {
+      ownerId: 1,
+      startDate: req.body.from,
+      endDate: req.body.to,
+      closeSubmission: req.body.deadline,
+      detail: req.body.description
+    };
+    event.newEvent(queryObj)
       .then(result => {
-        return result;
-      })
-      .catch(err => {
-        res.status(500).send('Failed to create');
+        return null;
       });
   });
   return router;
