@@ -1,3 +1,12 @@
+// SASS Variables
+$font-color: #FFF;
+$font-emphasis: 'Staatliches', cursive;
+$font-body: 'Cabin', sans-serif;
+$accent-color: #DAD5ED;
+$details-color: #bab8f5ad;
+$top-bg: rgba(22,28,83,1);
+$shadow: 0 50px 200px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+
 html {
   box-sizing: border-box;
 }
@@ -7,13 +16,18 @@ html {
 
 body {
   height: 100vh;
-  background: linear-gradient(180deg, rgba(22,28,83,1) 3%, rgba(95,39,90,1) 70%, rgba(135,31,65,1) 98%);
-  font-family: 'Cabin', sans-serif;
+  background: linear-gradient(180deg, $top-bg 3%, rgba(95,39,90,1) 70%, rgba(135,31,65,1) 98%);
+  font-family: $font-body;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+p {
+  margin: 0px;
+  padding: 2px;
 }
 
 nav {
@@ -26,24 +40,19 @@ nav {
   z-index: 10;
 }
 
-p {
-  margin: 0px;
-  padding: 2px;
-}
-
 .eventure-logo {
   color: #000;
   opacity: 0.5;
-  font-family: 'Staatliches', cursive;
+  font-family: $font-emphasis;
   font-size: 2.5em;
   transition: 0.3s ease-in-out;
-}
 
-.eventure-logo:hover {
-  color: #DAD5ED;
-  cursor: pointer;
-  opacity: 0.9;
-  transition: 0.3s ease-in-out;
+  &:hover {
+    color: $accent-color;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 0.3s ease-in-out;
+  }
 }
 
 main {
@@ -73,10 +82,6 @@ main {
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
-  /* box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3); */
-}
-
-.master-header {
   background: none;
   border: none;
   font-size: 1.25rem;
@@ -84,17 +89,8 @@ main {
   outline: none;
 }
 
-.close-button {
-  background-color: rgba(95,39,90,1);
-  color:#DAD5ED;
-  border: none;
-  font-size: 1.25rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 .catchphrase {
-  color: #DAD5ED;
+  color: $accent-color;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -105,12 +101,11 @@ main {
   font-family: 'Caveat', cursive;
   font-size: 3em;
   text-shadow: 0 30px 20px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
-
 }
 
 .catchphrase-eventure {
-  color: #DAD5ED;
-  font-family: 'Staatliches', cursive;
+  color: $accent-color;
+  font-family: $font-emphasis;
   font-size: 4em;
   text-shadow: 0 30px 20px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
 }
@@ -120,14 +115,14 @@ main {
   border: 0px;
   color: #FFF;
   font-size: 1.5rem;
-  font-family: 'Cabin', sans-serif;
+  font-family: $font-body;
   font-weight: bold;
   width: 100%;
 }
 
 .title-create::placeholder {
-  font-family: 'Cabin', sans-serif;
-  color: #DAD5ED;
+  font-family: $font-body;
+  color: $accent-color;
 }
 
 .title-create:focus {
@@ -135,7 +130,7 @@ main {
 }
 
 .master-body {
-  color: #DAD5ED;
+  color: $accent-color;
   padding: 10px 15px;
   margin: 10px;
   font-size: 18px;
@@ -159,13 +154,13 @@ textarea {
 
 #event-details {
   height: 50px;
-  color: #bab8f5ad;
+  color: $details-color;
   /* box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3); */
 }
 
 #owner-name, #owner-email {
   width: 50%;
-  color: #bab8f5ad;
+  color: $details-color;
   /* box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3); */
 }
 
@@ -176,7 +171,7 @@ textarea {
 
 .date {
   font-size: 1em;
-  color: #bab8f5ad;
+  color: $details-color;
 }
 
 .button {
@@ -191,7 +186,7 @@ textarea {
 }
 
 button {
-  color: rgba(22,28,83,1);
+  color: $top-bg;
   cursor: pointer;
   background-color: rgba(218,213,237, 0.8);
   border: 0px;
@@ -212,11 +207,10 @@ button {
   z-index: 20;
   background-color: rgba(226, 225, 225, 1);
   width: 1200px;
+  max-width: 100%;
   height: 700px;
   display: flex;
   flex-direction: column;
-  // -webkit-animation-name: fadeIn;
-  // -webkit-animation-duration: 1s;
 }
 
 .modal.active {
@@ -230,9 +224,9 @@ button {
 }
 
 .fix-title {
-  color: rgba(22,28,83,1);
+  color: $top-bg;
   font-size: 1.25rem;
-  font-family: 'Cabin', sans-serif;
+  font-family: $font-body;
   font-weight: bold;
 }
 
@@ -241,13 +235,23 @@ button {
   flex-basis: 85%;
 }
 
+.close-button {
+  background-color: rgba(95,39,90,1);
+  color:$accent-color;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .submit {
   display: flex;
   justify-content: center;
 }
 
+
 .submit-button {
-  color: #DAD5ED;
+  color: $accent-color;
   cursor: pointer;
   background-color: rgba(95,39,90, 1);
   border: 0px;
@@ -283,10 +287,7 @@ footer {
   padding: 1em 1.5em;
   position: fixed;
   width: 100%;
-  z-index: 10;
 }
-
-
 
 .star2 {
   background: white;
