@@ -51,6 +51,13 @@ button {
   padding: 10px 20px;
 }
 
+.button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 1em;
+}
+
 .modal {
   position: fixed;
   padding: 20px 25px;
