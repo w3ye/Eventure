@@ -15,7 +15,7 @@ module.exports = (db) => {
     };
     event.newEvent(queryObj)
       .then(result => {
-        return null;
+        return result;
       });
   });
   return router;
