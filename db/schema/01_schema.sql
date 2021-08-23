@@ -15,14 +15,14 @@ CREATE TABLE events(
     owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
-    close_submission TIMESTAMP,
+    close_submission DATE,
     detail TEXT NOT NULL
 );
 
 CREATE TABLE available_days (
     id SERIAL PRIMARY KEY NOT NULL,
     event_id INTEGER REFERENCES events(id) ON DELETE CASCADE,
-    a_day TIMESTAMP NOT NULL,
+    a_day DATE NOT NULL,
     start_time TIME,
     end_time TIME
 );
