@@ -6,8 +6,26 @@ openModalButtons.forEach(button => {
   button.addEventListener('click', () => {
     const modal = document.querySelector(button.dataset.modalTarget)
     openModal(modal)
+    console.log("click!")
   })
 })
+
+$('.next-button').addEventListener('click', () => {
+  const modal = document.querySelector(button.dataset.modalTarget)
+  openModal(modal);
+  console.log("click!")
+})
+
+// $('.close-button').addEventListener('click', () => {
+//   const modal = button.closest('.modal')
+//   closeModal(modal)
+// });
+
+$('.close-button').addEventListener('click', () => {
+  $('#modal').classList.remove('active')
+  $('#modal').hide();
+  closeModal($('#modal'))
+});
 
 closeModalButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -26,4 +44,10 @@ function closeModal(modal) {
   if (modal == null) return
   modal.classList.remove('active')
   overlay.classList.remove('active')
+}
+
+const enterTitle = function() {
+  $('.title-create').on('click', () => {
+    $('.master-body').slideDown();
+  });
 }
