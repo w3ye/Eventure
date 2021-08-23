@@ -2,6 +2,7 @@ $accent-color: #DAD5ED;
 $details-color: #bab8f5ad;
 $font-body: 'Cabin', sans-serif;
 $font-emphasis: 'Staatliches', cursive;
+$top-bg: rgba(22,28,83,1);
 
 
 .master-box {
@@ -51,20 +52,20 @@ $font-emphasis: 'Staatliches', cursive;
 .title-create {
   background-color: inherit;
   border: 0px;
-  color: #FFF;
+  color: $accent-color;
   font-size: 1.5rem;
   font-family: $font-body;
   font-weight: bold;
   width: 100%;
-}
 
-.title-create::placeholder {
-  font-family: $font-body;
-  color: $accent-color;
-}
+  &::placeholder {
+    font-family: $font-body;
+    color: #a8a6bbdc;
+  }
 
-.title-create:focus {
-  outline: none;
+  &:focus {
+    outline: none;
+  }
 }
 
 .master-body {
@@ -92,12 +93,24 @@ textarea {
 
 #event-details {
   height: 50px;
-  color: $details-color;
+  color: $top-bg;
+}
+
+input.owner {
+  background-color: transparent;
+  outline: none;
+  resize: none;
+  border: 0;
+  border-bottom: 1px solid #89878f;
+  height: 25px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1em;
 }
 
 #owner-name, #owner-email {
   width: 50%;
-  color: $details-color;
+  color: $top-bg;
 }
 
 .indent {
@@ -107,9 +120,5 @@ textarea {
 
 .date {
   font-size: 1em;
-  color: $details-color;
-}
-
-.next-button {
-  font-size: 0.85em;
+  color: $top-bg;
 }

@@ -98,30 +98,9 @@ button {
   flex-basis: 85%;
 }
 
-.close-button {
-  background-color: rgba(95,39,90,1);
-  color:$accent-color;
-  border: none;
-  font-size: 1.25rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 .submit {
   display: flex;
   justify-content: center;
-}
-
-
-.submit-button {
-  color: $accent-color;
-  cursor: pointer;
-  background-color: rgba(95,39,90, 1);
-  border: 0px;
-  border-radius: 10px;
-  box-shadow: 0 50px 400px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
-  padding: 10px 20px;
-  font-size: 1.05em;
 }
 
 #overlay {

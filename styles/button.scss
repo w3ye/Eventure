@@ -1,0 +1,49 @@
+$font-color: #FFF;
+$font-emphasis: 'Staatliches', cursive;
+$font-body: 'Cabin', sans-serif;
+$accent-color: #DAD5ED;
+$details-color: #bab8f5ad;
+$top-bg: rgba(22,28,83,1);
+$shadow: 0 50px 200px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+
+button {
+  color: $top-bg;
+  cursor: pointer;
+  background-color: rgba(218,213,237, 0.8);
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 0 50px 400px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+  padding: 10px 20px;
+}
+
+.button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 1em;
+}
+
+.next-button {
+  font-size: 0.85em;
+}
+
+
+.close-button {
+  background-color: rgba(95,39,90,1);
+  color:$accent-color;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-button {
+  color: $accent-color;
+  cursor: pointer;
+  background-color: rgba(95,39,90, 1);
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 0 50px 400px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+  padding: 10px 20px;
+  font-size: 1.05em;
+}
