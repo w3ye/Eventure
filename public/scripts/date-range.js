@@ -15,7 +15,6 @@ $(document).ready(function () {
       }),
 
     to = $("#to").datepicker({
-      defaultDate: "+1w",
       changeMonth: true,
       numberOfMonths: 2,
     })
