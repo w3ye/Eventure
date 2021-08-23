@@ -206,6 +206,7 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -48%) scale(0);
+  transition: 200ms ease-in-out;
   border: 0px;
   border-radius: 20px;
   z-index: 20;
@@ -214,8 +215,12 @@ button {
   height: 700px;
   display: flex;
   flex-direction: column;
-  -webkit-animation-name: fadeIn;
-  -webkit-animation-duration: 1s;
+  // -webkit-animation-name: fadeIn;
+  // -webkit-animation-duration: 1s;
+}
+
+.modal.active {
+  transform: translate(-50%, -48%) scale(1);
 }
 
 .modal-header {
@@ -261,9 +266,10 @@ button {
   pointer-events: none;
   position: fixed;
   top: 0;
+  transition: 200ms ease-in-out;
 }
 
-#overlay-active {
+#overlay.active {
   opacity: 1;
   pointer-events: all;
 }
