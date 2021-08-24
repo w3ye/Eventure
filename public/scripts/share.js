@@ -1,3 +1,12 @@
+const generateRandomString = () => {
+  const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let $result = "";
+  for (let i = 15; i > 0; i--) {
+    result += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return $result;
+}
+
 const eventConfirmation = function () {
   const $shareContainer = $('#share-event');
   const $confirm=`
@@ -14,6 +23,8 @@ const eventConfirmation = function () {
       <div class="share-body">
         <p class="secret-link">Secret Link: <input type="text" id="link" name="link" class="link" value="eventure.com/aj1poid1238lkjasdh123" readonly></p>
         <p>Share:</p>
+        <a href="mailto:"><i class="icon-email fas fa-at"></i></a>
+
       </div>
     </div>
   `;
