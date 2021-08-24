@@ -32,12 +32,14 @@
 		<link href="../styles/stars.css" rel="stylesheet">
 
     <!-- JavaScript -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/create-event.js"></script>
     <script type="text/javascript" src="/scripts/date-range.js"></script>
+    <script type="text/javascript" src="/scripts/escape.js"></script>
     <script type="text/javascript" src="/scripts/footer.js"></script>
     <script type="text/javascript" src="/scripts/stars.js"></script>
     <script type="text/javascript" src="/scripts/timepicker.js"></script>
     <script defer src="/scripts/modal.js"></script>
+    <!-- <script defer src="/scripts/create-event.js"></script> -->
 
 	</head>
 	<body>
@@ -46,68 +48,19 @@
 				<a href="/" class="eventure-logo">Eventure</a>
 			</div>
 		</nav>
-    <main>
-      <div class="catchphrase">
-        <p class="catchphrase-words">Start your&nbsp;</p>
-          <p class="catchphrase-eventure">
-          Eventure
-        </p>
-      </div>
 
-      <!-- CREATE EVENT -->
+    <main id="create-event">
+    </main>
 
-      <div class="master-box" id="master-box">
-        <div class="master-header">
-          <form class="title" id="new-event">
-          <!-- <div class="title"> -->
-            <!-- <form class="" action="" method="post"> -->
-            <label for="title">
-              <input type="text" name="title" class="title-create" placeholder="Eventure Title" maxlength="30" autocomplete="off" required>
-            </label>
-            <!-- </form> -->
-          <!-- </div> -->
-        </div>
-        <!-- <form method="POST" action="/create" class="master-body" id="new-event"> -->
-        <div class="master-body">
-          <p>Select Date(s):</p>
-          <div class="indent date">
-            <label for="from">From</label>
-            <input type="text" id="from" name="from" required>
-            <label for="to">To</label>
-            <input type="text" id="to" name="to" required>
-          </div>
-          <p class="details">Submission Deadline:</p>
-          <div class="indent date">
-            <label for="deadline"><i>(Optional)</i></label>
-            <input name="deadline" type="text" id="deadline">
-          </div>
-          <p class="details">Event Description:</p>
-          <textarea name="description" id="event-details" maxlength="250" required></textarea>
-          <p class="details">Name:</p>
-          <input name="name" id="owner-name" class="owner" maxlength="30" required></textarea>
-          <p class="details">E-mail:</p>
-          <input name="email" id="owner-email" class="owner" maxlength="50" required></textarea>
+     <!-- EVENT CREATED -->
 
-          <!-- EVENT CREATED -->
+      <!-- <div class="master-body">
+        <p>Event title has been made!</p>
+        <p>Secret Link:</p>
+        <p>Share:</p>
+      </div> -->
 
-          <!-- <div class="master-body">
-            <p>Event title has been made!</p>
-            <p>Secret Link:</p>
-            <p>Share:</p>
-          </div> -->
-
-          <div class="next">
-            <button type="submit" data-modal-target="#modal" id="next-button">Next</button>
-          </div>
-        <!-- </div> -->
-        </form>
-          <!-- <div class="button">
-            <button type="submit" data-modal-target="#modal" id="next-button">Next</button>
-          </div>
-        </from> -->
-      </div>
-      </main>
-      <main id="add-timeslots">
+    <main id="add-timeslots">
 
       <!-- ADD TIMESLOTS -->
       <div class="modal" id="modal">
