@@ -15,8 +15,6 @@ const eventCreation = function () {
   </p>
   </div>
 
-  <!-- CREATE EVENT -->
-
   <div class="master-box" id="master-box">
     <div class="master-header">
       <form class="title" id="new-event">
@@ -48,12 +46,7 @@ const eventCreation = function () {
       <div class="next">
         <button type="submit" id="next-button" onclick="openForm()">Next</button>
       </div>
-    <!-- </div> -->
     </form>
-      <!-- <div class="button">
-        <button type="submit" id="next-button">Next</button>
-      </div>
-    </from> -->
   </div>
   `;
 
