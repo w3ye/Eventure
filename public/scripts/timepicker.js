@@ -16,7 +16,7 @@ $(document).ready(function() {
     const endMinTime = startHour.toString().concat(startMinutes + 0.15);
 
     $(".end").timepicker("option", "minTime", endMinTime);
-    $(".end").timepicker("setTime", endMinTime);
+    // $(".end").timepicker("setTime", endMinTime);
   });
 
   $(".end").timepicker({

@@ -1,22 +1,3 @@
-const addMeetingTime = function () {
-  // const $timeslotContainer = $('#generate-timeslot');
-  const $timeslotContainer = $('#generate-timeslot');
-
-  const $newMeetingTime = `
-  <div class="new-meeting-time">
-    <div class="start-row">
-      <label for="start">Start Time:</label>
-      <input type="text" class="start" name="start" />
-    </div>
-    <div class="end-row">
-      <label for="end">End Time:</label>
-      <input type="text" class="end" name="end" />
-    </div>
-  </div>
-  `
-  return $timeslotContainer.append($newMeetingTime);
-}
-
 const rerunTimepicker = function () {
   $(".start").timepicker({
     timeFormat: "hh:mm a",
@@ -49,10 +30,40 @@ const rerunTimepicker = function () {
   });
 }
 
+const addMeetingTime = function () {
+  const $timeslotContainer = $('#generate-timeslot');
+
+  const $newMeetingTime = `
+  <div class="new-meeting-time">
+    <div class="start-row">
+      <label for="start">Start Time:</label>
+      <input type="text" class="start" name="start" />
+    </div>
+    <div class="end-row">
+      <label for="end">End Time:</label>
+      <input type="text" class="end" name="end" />
+    </div>
+  </div>
+  `
+  return $timeslotContainer.append($newMeetingTime);
+}
+
+const removeMeetingTime = function() {
+  const $timeContainers = $('.new-meeting-time');
+  for (const container of $timeContainers){
+    return container.remove();
+  }
+}
+
 $(document).ready(function () {
-  $('.time-button').on('click', (event) => {
+  $('.add-time').on('click', (event) => {
     event.preventDefault();
     addMeetingTime();
     rerunTimepicker();
   });
+
+  $('.remove-time').on('click', (event) => {
+    event.preventDefault();
+    removeMeetingTime();
+  })
 });
