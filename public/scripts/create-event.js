@@ -87,14 +87,6 @@ const nextButton = function () {
   });
 };
 
-const nextButton = function () {
-  $("#next-button").click((event) => {
-    event.preventDefault();
-    const serialize = $("#new-event").serialize();
-    console.log(serialize);
-  });
-};
-
 $(document).ready(function () {
   eventCreation();
   $(".master-body").hide();
