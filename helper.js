@@ -16,14 +16,6 @@ const splitName = (name) => {
   return arr;
 };
 
-console.log(splitName('William Ye'));
-console.log(splitName('William'));
-console.log(splitName('William '));
-console.log(splitName(' William'));
-console.log(splitName(' William '));
-console.log(splitName(' William Ye Ye Ye'));
-
-
 module.exports = {
   splitName
 };
