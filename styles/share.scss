@@ -63,6 +63,19 @@ $top-bg: rgba(22,28,83,1);
   width: 100%;
 }
 
-.icon-email {
+.share-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.icon {
   font-size: 2em;
+  padding: 0px 10px;
+
+  &:hover {
+    color: $top-bg;
+    transition: 0.3s ease-in-out;
+  }
 }

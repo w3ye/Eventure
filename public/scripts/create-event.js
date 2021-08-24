@@ -1,5 +1,3 @@
-const escape = require('escape');
-
 const eventCreation = function() {
   const $eventContainer = $('#create-event');
 
