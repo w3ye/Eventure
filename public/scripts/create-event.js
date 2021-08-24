@@ -68,7 +68,7 @@ const nextButton = function () {
   $("#next-button").click((event) => {
     event.preventDefault();
     const serialize = $("#new-event").serialize();
-    console.log(serialize);
+    $.post("/create", serialize).done(console.log("success"));
   });
 };
 

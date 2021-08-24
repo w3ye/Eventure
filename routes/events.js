@@ -12,10 +12,12 @@ module.exports = (db) => {
       startDate: req.body.from,
       endDate: req.body.to,
       closeSubmission: req.body.deadline,
+      title: req.body.title,
       detail: req.body.description,
+      link: null
     };
-    event.newEvent(queryObj).then((result) => {
-      return result;
+    event.newEvent(queryObj).then(() => {
+      res.json({ success : true});
     });
   });
 
