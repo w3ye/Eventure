@@ -5,7 +5,6 @@ const router = express.Router();
 module.exports = (db) => {
   const event = new EVENT(db);
   router.post("/create", (req, res) => {
-    console.log(req.body);
     // TODO: ownerId is still set to one, change ownerId according to user
     const queryObj = {
       ownerId: 1,
