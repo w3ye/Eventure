@@ -1,17 +1,16 @@
-$accent-color: #DAD5ED;
+$accent-color: #dad5ed;
 $details-color: #bab8f5ad;
-$font-body: 'Cabin', sans-serif;
-$font-emphasis: 'Staatliches', cursive;
-$top-bg: rgba(22,28,83,1);
-
+$font-body: "Cabin", sans-serif;
+$font-emphasis: "Staatliches", cursive;
+$top-bg: rgba(22, 28, 83, 1);
 
 .master-box {
-  background-color: rgba(255,255,255, 0.2);
-  border-radius:  10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
   padding: 10px 15px;
   margin-top: 10px;
   z-index: 10;
-  box-shadow: 0 50px 200px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 50px 200px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
 }
 
@@ -37,16 +36,16 @@ $top-bg: rgba(22,28,83,1);
 }
 
 .master-catchphrase-words {
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
   font-size: 3em;
-  text-shadow: 0 30px 20px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+  text-shadow: 0 30px 20px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .master-catchphrase-eventure {
   color: $accent-color;
   font-family: $font-emphasis;
   font-size: 4em;
-  text-shadow: 0 30px 20px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+  text-shadow: 0 30px 20px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .title-create {
@@ -108,7 +107,8 @@ input.owner {
   font-size: 1em;
 }
 
-#owner-name, #owner-email {
+#owner-name,
+#owner-email {
   width: 50%;
   color: $top-bg;
 }

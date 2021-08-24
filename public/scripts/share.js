@@ -1,6 +1,3 @@
-var a2a_config = a2a_config || {};
-a2a_config.onclick = 1;
-
 const generateRandomString = () => {
   const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
   let result = "";
@@ -66,19 +63,3 @@ $(document).ready(function() {
   eventConfirmation();
   submitButton();
 });
-
-// <!-- AddToAny BEGIN -->
-// <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-// <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-// <a class="a2a_button_copy_link"></a>
-// <a class="a2a_button_email"></a>
-// <a class="a2a_button_linkedin"></a>
-// <a class="a2a_button_facebook_messenger"></a>
-// <a class="a2a_button_whatsapp"></a>
-// </div>
-// <script>
-// var a2a_config = a2a_config || {};
-// a2a_config.onclick = 1;
-// </script>
-// <script async src="https://static.addtoany.com/menu/page.js"></script>
-// <!-- AddToAny END -->
