@@ -1,0 +1,451 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(22,28,83,1) 3%, rgba(95,39,90,1) 70%, rgba(135,31,65,1) 98%);
+  font-family: 'Cabin', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  height: 100px;
+  padding: 1.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+p {
+  margin: 0px;
+  padding: 2px;
+}
+
+.eventure-logo {
+  color: #000;
+  opacity: 0.5;
+  font-family: 'Staatliches', cursive;
+  font-size: 2.5em;
+  transition: 0.3s ease-in-out;
+}
+
+.eventure-logo:hover {
+  color: #DAD5ED;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: 0.3s ease-in-out;
+}
+
+main {
+  left: 50%;
+  max-width: 80%;
+  padding: 10px 15px;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 47%;
+  width: 700px;
+  z-index: 10;
+}
+
+.master-box {
+  background-color: rgba(255,255,255, 0.2);
+  border-radius:  10px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  z-index: 10;
+  box-shadow: 0 50px 200px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+
+.master-header {
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  /* box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3); */
+}
+
+.master-header {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  outline: none;
+}
+
+.close-button {
+  background-color: rgba(95,39,90,1);
+  color:#DAD5ED;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.catchphrase {
+  color: #DAD5ED;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.catchphrase-words {
+  font-family: 'Caveat', cursive;
+  font-size: 3em;
+  text-shadow: 0 30px 20px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+
+}
+
+.catchphrase-eventure {
+  color: #DAD5ED;
+  font-family: 'Staatliches', cursive;
+  font-size: 4em;
+  text-shadow: 0 30px 20px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+}
+
+.title-create {
+  background-color: inherit;
+  border: 0px;
+  color: #FFF;
+  font-size: 1.5rem;
+  font-family: 'Cabin', sans-serif;
+  font-weight: bold;
+  width: 100%;
+}
+
+.title-create::placeholder {
+  font-family: 'Cabin', sans-serif;
+  color: #DAD5ED;
+}
+
+.title-create:focus {
+  outline: none;
+}
+
+.master-body {
+  color: #DAD5ED;
+  padding: 10px 15px;
+  margin: 10px;
+  font-size: 18px;
+}
+
+.details {
+  margin-top: 7px;
+}
+
+textarea {
+  background-color: transparent;
+  outline: none;
+  resize: none;
+  border: 0;
+  border-bottom: 1px solid #89878f;
+  height: 25px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+#event-details {
+  height: 50px;
+  color: #bab8f5ad;
+  /* box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3); */
+}
+
+#owner-name, #owner-email {
+  width: 50%;
+  color: #bab8f5ad;
+  /* box-shadow: 0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3); */
+}
+
+.indent {
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+.date {
+  font-size: 1em;
+  color: #bab8f5ad;
+}
+
+.button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 1em;
+}
+
+.button-next {
+  font-size: 0.85em;
+}
+
+button {
+  color: rgba(22,28,83,1);
+  cursor: pointer;
+  background-color: rgba(218,213,237, 0.8);
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 0 50px 400px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+  padding: 10px 20px;
+}
+
+.modal {
+  position: fixed;
+  padding: 20px 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  border: 0px;
+  border-radius: 20px;
+  z-index: 20;
+  background-color: rgba(226, 225, 225, 1);
+  width: 1200px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fix-title {
+  color: rgba(22,28,83,1);
+  font-size: 1.25rem;
+  font-family: 'Cabin', sans-serif;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 15px;
+  flex-basis: 85%;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+}
+
+.button-submit {
+  color: #DAD5ED;
+  cursor: pointer;
+  background-color: rgba(95,39,90, 1);
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 0 50px 400px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+  padding: 10px 20px;
+  font-size: 1.05em;
+}
+
+#overlay {
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  left: 0;
+  right: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+  color: #B895AD;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+
+
+.star2 {
+  background: white;
+  width: 100px;
+  height: 13px;
+  position: absolute;
+  top: 6%;
+  left: 80%;
+  opacity: 0.1;
+  border-radius: 10px;
+}
+.star3 {
+  background: white;
+  width: 70px;
+  height: 13px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  opacity: 0.1;
+  border-radius: 10px;
+}
+.star4 {
+  background: white;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 250ms;
+}
+.star5 {
+  background: white;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 750ms;
+}
+.star6 {
+  background: white;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 900ms;
+}
+.star7 {
+  background: white;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 1s;
+}
+.star8 {
+  background: white;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  top: 40%;
+  left: 8%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 2s;
+}
+.star9 {
+  background: white;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  top: 4%;
+  left: 28%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 500ms;
+}
+.star10 {
+  background: white;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  top: 25%;
+  left: 98%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+  animation-delay: 660ms;
+}
+.star11 {
+  background: white;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 68%;
+  border-radius: 100%;
+  opacity: 0.5;
+  animation-name: glowing-stars;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+}
+
+@keyframes glowing-stars {
+  0%   {opacity: 0;}
+  50%  {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
