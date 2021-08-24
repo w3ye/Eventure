@@ -10,35 +10,36 @@ const eventCreation = function () {
   </div>
 
   <div class="master-box" id="master-box">
-    <div class="master-header">
-      <form class="title" id="new-event">
+    <form class="title" id="new-event">
+      <div class="master-header">
         <label for="title">
           <input type="text" name="title" class="title-create" placeholder="Eventure Title" maxlength="30" autocomplete="off" required>
         </label>
-    </div>
-
-    <div class="master-body">
-      <p class="details">Select Date(s):</p>
-      <div class="indent date">
-        <label for="from">From</label>
-        <input type="text" id="from" name="from" required>
-        <label for="to">To</label>
-        <input type="text" id="to" name="to" required>
       </div>
-      <p class="details">Submission Deadline:</p>
-      <div class="indent date">
-        <label for="deadline"><i>(Optional)</i></label>
-        <input name="deadline" type="text" id="deadline">
-      </div>
-      <p class="details">Event Description:</p>
-      <textarea name="description" id="event-details" maxlength="250" required></textarea>
-      <p class="details">Name:</p>
-      <input name="name" id="owner-name" class="owner" maxlength="30" required></textarea>
-      <p class="details">E-mail:</p>
-      <input name="email" id="owner-email" class="owner" maxlength="50" required></textarea>
 
-      <div class="next">
-        <button type="submit" id="next-button" onclick="openForm()">Next</button>
+      <div class="master-body">
+        <p class="details">Select Date(s):</p>
+        <div class="indent date">
+          <label for="from">From</label>
+          <input type="text" id="from" name="from" required>
+          <label for="to">To</label>
+          <input type="text" id="to" name="to" required>
+        </div>
+        <p class="details">Submission Deadline:</p>
+        <div class="indent date">
+          <label for="deadline"><i>(Optional)</i></label>
+          <input name="deadline" type="text" id="deadline">
+        </div>
+        <p class="details">Event Description:</p>
+        <textarea name="description" id="event-details" maxlength="250" required></textarea>
+        <p class="details">Name:</p>
+        <input name="name" id="owner-name" class="owner" maxlength="30" required></textarea>
+        <p class="details">E-mail:</p>
+        <input name="email" id="owner-email" class="owner" maxlength="50" required></textarea>
+
+        <div class="next">
+          <button type="submit" id="next-button" onclick="openForm()">Next</button>
+        </div>
       </div>
     </form>
   </div>
@@ -55,8 +56,17 @@ const enterTitle = function () {
   });
 };
 
+const nextButton = function () {
+  $("#next-button").click((event) => {
+    event.preventDefault();
+    const serialize = $("#new-event").serialize();
+    console.log(serialize);
+  });
+};
+
 $(document).ready(function () {
   eventCreation();
   $('.master-body').hide();
   enterTitle();
+  nextButton();
 });
