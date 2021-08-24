@@ -1,5 +1,5 @@
-const EVENT = require('../lib/event-queries');
-const express = require('express');
+const EVENT = require("../lib/event-queries");
+const express = require("express");
 const router = express.Router();
 
 module.exports = (db) => {
@@ -12,30 +12,12 @@ module.exports = (db) => {
       startDate: req.body.from,
       endDate: req.body.to,
       closeSubmission: req.body.deadline,
-      detail: req.body.description
+      detail: req.body.description,
     };
-    event.newEvent(queryObj)
-      .then(result => {
-        return result;
-      });
+    event.newEvent(queryObj).then((result) => {
+      return result;
+    });
   });
-
-  // router.get('/api/events', (req, res) => {
-  //   eventQueries.getEvents()
-  //   .then((events) => {
-  //     res.json(events)
-  //   })
-  // });
 
   return router;
 };
-
-// router.get('/api/events', (req, res) => {
-//   eventQueries.getEvents()
-//   .then((events) => {
-//     res.json(events)
-//   })
-// });
-//   return router;
-// };
-
