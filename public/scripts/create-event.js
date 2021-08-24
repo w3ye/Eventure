@@ -24,7 +24,7 @@ const eventCreation = function () {
     </div>
 
     <div class="master-body">
-      <p>Select Date(s):</p>
+      <p class="details">Select Date(s):</p>
       <div class="indent date">
         <label for="from">From</label>
         <input type="text" id="from" name="from" required>
@@ -51,7 +51,7 @@ const eventCreation = function () {
   `;
 
   return $eventContainer.html($creation);
-}
+};
 
 const enterTitle = function () {
   $('.title-create').on('click', () => {
@@ -59,7 +59,7 @@ const enterTitle = function () {
     $('.master-body').show();
     $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)');
   });
-}
+};
 
 $(document).ready(function () {
   eventCreation();
