@@ -15,11 +15,11 @@ button {
   padding-top: 1em;
 }
 
-.next-button {
+#next-button {
   font-size: 0.85em;
 }
 
-.close-button {
+#close-button {
   background-color: #5f275a;
   color: #DAD5ED;
   border: none;
@@ -28,7 +28,7 @@ button {
   cursor: pointer;
 }
 
-.submit-button {
+#submit-button {
   color: #DAD5ED;
   cursor: pointer;
   background-color: #5f275a;

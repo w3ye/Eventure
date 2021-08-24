@@ -40,6 +40,7 @@
   <script type="text/javascript" src="/scripts/escape.js"></script>
   <script type="text/javascript" src="/scripts/footer.js"></script>
   <script type="text/javascript" src="/scripts/modal.js"></script>
+  <script type="text/javascript" src="/scripts/share.js"></script>
   <script type="text/javascript" src="/scripts/stars.js"></script>
   <script type="text/javascript" src="/scripts/timepicker.js"></script>
   <script type="text/javascript" src="/scripts/timeslots.js"></script>
@@ -66,12 +67,15 @@
         <p>Share:</p>
       </div> -->
 
+  <main id="share-event">
+  </main>
+
   <main id="add-timeslots">
     <div class="form-popup" id="timeslot">
       <form action="/" class="form-container">
         <div class="modal-header">
           <p class="fix-title">Eventure Title</p>
-          <button type="button" onclick="closeForm()" class="close-button">&times;</button>
+          <button type="button" onclick="closeForm()" id="close-button">&times;</button>
         </div>
 
         <div class="modal-body">
@@ -94,7 +98,7 @@
             <button type="submit" class="add-time">Add</button>
             <button type="submit" class="remove-time">Remove</button>
           </div>
-          <button type="submit" class="submit-button">Submit</button>
+          <button type="submit" id="submit-button">Submit</button>
         </div>
       </form>
     </div>
