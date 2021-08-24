@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS events CASCADE;
-DROP TABLE IF EXISTS available_days CASCADE;
+DROP TABLE IF EXISTS time_slots CASCADE;
 DROP TABLE IF EXISTS user_votes CASCADE;
 
 CREATE TABLE users(
@@ -32,5 +32,5 @@ CREATE TABLE time_slots (
 CREATE TABLE user_votes (
     id SERIAL PRIMARY KEY NOT NULL,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-    available_day_id INTEGER REFERENCES available_days(id) ON DELETE CASCADE
+    time_slot_id INTEGER REFERENCES time_slots(id) ON DELETE CASCADE
 );

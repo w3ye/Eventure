@@ -23,7 +23,7 @@ VALUES
 (3, '2021-09-05', NULL, NULL),
 (3, '2021-09-03', '11:00', '11:30');
 
-INSERT INTO user_votes(user_id, available_day_id)
+INSERT INTO user_votes (user_id, time_slot_id)
 VALUES
 (2, 1),
 (3, 1),
