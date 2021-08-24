@@ -1,10 +1,10 @@
 const generateRandomString = () => {
   const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  let $result = "";
+  let result = "";
   for (let i = 15; i > 0; i--) {
     result += chars[Math.floor(Math.random() * chars.length)];
   }
-  return $result;
+  return result;
 }
 
 const eventConfirmation = function () {
@@ -21,7 +21,7 @@ const eventConfirmation = function () {
         <p>Eventure Title is ready.</p>
         </div>
       <div class="share-body">
-        <p class="secret-link">Secret Link: <input type="text" id="link" name="link" class="link" value="eventure.com/aj1poid1238lkjasdh123" readonly></p>
+        <p class="secret-link">Secret Link: <input type="text" id="link" name="link" class="link" value="" readonly></p>
         <p>Share:</p>
         <a href="mailto:"><i class="icon-email fas fa-at"></i></a>
 
@@ -42,6 +42,7 @@ const submitButton = function () {
     $('.master-catchphrase').hide();
     eventConfirmation();
     $('#share-event').show();
+    $('#link').val(generateRandomString());
   });
 };
 
