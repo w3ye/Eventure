@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS user_votes CASCADE;
 CREATE TABLE users(
     id SERIAL PRIMARY KEY NOT NULL,
     first_name VARCHAR(255) NOT NULL,
-    last_name VARCHAR(255),
+    last_name VARCHAR(255) NOT NULL,
     email TEXT
 );
 
@@ -17,8 +17,7 @@ CREATE TABLE events(
     end_date DATE NOT NULL,
     close_submission DATE,
     title TEXT,
-    detail TEXT NOT NULL,
-    link TEXT
+    detail TEXT NOT NULL
 );
 
 CREATE TABLE time_slots (

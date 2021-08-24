@@ -1,0 +1,82 @@
+$accent-color: #dad5ed;
+$details-color: #bab8f5ad;
+$font-body: "Cabin", sans-serif;
+$font-emphasis: "Staatliches", cursive;
+$top-bg: rgba(22, 28, 83, 1);
+
+.share-catchphrase {
+  color: $accent-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-catchphrase-words {
+  font-family: "Caveat", cursive;
+  font-size: 3em;
+  text-shadow: 0 30px 20px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.share-catchphrase-eventure {
+  color: $accent-color;
+  font-family: $font-emphasis;
+  font-size: 4em;
+  text-shadow: 0 30px 20px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.share-box {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  z-index: 10;
+  box-shadow: 0 50px 200px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  color: $accent-color;
+}
+
+.share-header {
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  box-shadow: 0 50px 200px -200px rgba(0, 0, 0, 0.5),
+    0 10px 10px -10px rgba(0, 0, 0, 0.3);
+}
+
+.share-body {
+  padding: 10px 15px;
+  margin: 10px;
+  font-size: 18px;
+}
+
+.secret-link {
+  padding-bottom: 15px;
+}
+
+.link {
+  width: 100%;
+}
+
+.share-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.icon {
+  font-size: 2em;
+  padding: 0px 10px;
+
+  &:hover {
+    color: $top-bg;
+    transition: 0.3s ease-in-out;
+  }
+}

@@ -1,15 +1,15 @@
 // SASS Variables
-$font-color: #FFF;
-$font-emphasis: 'Staatliches', cursive;
-$font-body: 'Cabin', sans-serif;
-$accent-color: #DAD5ED;
+$font-color: #fff;
+$font-emphasis: "Staatliches", cursive;
+$font-body: "Cabin", sans-serif;
+$accent-color: #dad5ed;
 $details-color: #bab8f5ad;
-$top-bg: rgba(22,28,83,1);
-$shadow: 0 50px 200px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+$top-bg: rgba(22, 28, 83, 1);
+$shadow: 0 50px 200px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
 
 #overlay {
   bottom: 0;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   left: 0;
   right: 0;
   opacity: 0;
@@ -26,7 +26,7 @@ $shadow: 0 50px 200px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
 
 footer {
   bottom: 0;
-  color: #B895AD;
+  color: #b895ad;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

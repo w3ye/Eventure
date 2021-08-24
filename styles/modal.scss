@@ -1,46 +1,3 @@
-/* .modal {
-  position: fixed;
-  padding: 20px 25px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -48%);
-  transition: 300ms ease-in-out;
-  border: 0px;
-  border-radius: 20px;
-  z-index: 20;
-  background-color: #e2e1e1;
-  width: 1200px;
-  max-width: 100%;
-  height: 700px;
-  display: flex;
-  flex-direction: column;
-} */
-/*
-.modal.active {
-  transform: translate(-50%, -48%) scale(1);
-}
-
-.modal-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-
-.modal-body {
-  padding: 15px;
-  flex-basis: 85%;
-}
-
-.submit {
-  display: flex;
-  justify-content: center;
-}
-
-#timeslot {
-  transition: 300ms ease-in-out;
-} */
-
 .modal-header {
   display: flex;
   flex-direction: row;
@@ -67,12 +24,8 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  /* transform: translate(-50%, -48%);
-  transition: 300ms ease-in-out;
-  border: 3px solid #f1f1f1; */
   width: 1200px;
   max-width: 100%;
-  /* max-height: 90%; */
   height: 700px;
   z-index: 10;
   background-color: #e2e1e1;
@@ -83,21 +36,17 @@
   z-index: 20;
   padding: 20px 25px;
   font-size: 16px;
-
 }
 
 /* Add styles to the form container */
 .form-container {
-  /* width: 90%; */
   height: 90%;
   transition: 300ms ease-in-out;
   font-size: 16px;
-
-  /* background-color: white; */
 }
 
 /* Full-width input fields */
-.form-container input[type=text] {
+.form-container input[type="text"] {
   width: 100px;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -107,20 +56,21 @@
 }
 
 /* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
   background-color: #ddd;
   outline: none;
 }
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   color: white;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
   width: 100%;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   opacity: 0.8;
 }
 
@@ -130,7 +80,8 @@
 }
 
 /* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
+.form-container .btn:hover,
+.open-button:hover {
   opacity: 1;
 }
 
@@ -157,5 +108,4 @@
 
 .start-row {
   flex-basis: 40%;
-
 }

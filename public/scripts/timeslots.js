@@ -1,4 +1,4 @@
-const rerunTimepicker = function () {
+const rerunTimepicker = function() {
   $(".start").timepicker({
     timeFormat: "hh:mm a",
     interval: 15,
@@ -28,9 +28,9 @@ const rerunTimepicker = function () {
     dropdown: true,
     scrollbar: true,
   });
-}
+};
 
-const addMeetingTime = function () {
+const addMeetingTime = function() {
   const $timeslotContainer = $('#generate-timeslot');
 
   const $newMeetingTime = `
@@ -44,18 +44,18 @@ const addMeetingTime = function () {
       <input type="text" class="end" name="end" />
     </div>
   </div>
-  `
+  `;
   return $timeslotContainer.append($newMeetingTime);
-}
+};
 
 const removeMeetingTime = function() {
   const $timeContainers = $('.new-meeting-time');
-  for (const container of $timeContainers){
+  for (const container of $timeContainers) {
     return container.remove();
   }
-}
+};
 
-$(document).ready(function () {
+$(document).ready(function() {
   $('.add-time').on('click', (event) => {
     event.preventDefault();
     addMeetingTime();
@@ -65,5 +65,5 @@ $(document).ready(function () {
   $('.remove-time').on('click', (event) => {
     event.preventDefault();
     removeMeetingTime();
-  })
+  });
 });

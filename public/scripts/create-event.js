@@ -1,9 +1,3 @@
-// const escape = function (str) {
-//   let div = document.createElement("div");
-//   div.appendChild(document.createTextNode(str));
-//   return div.innerHTML;
-// };
-
 const eventCreation = function () {
   const $eventContainer = $("#create-event");
 
@@ -79,7 +73,7 @@ const enterTitle = function () {
   });
 };
 
-const nextButton = function () {
+const nextButton = function() {
   $("#next-button").click((event) => {
     event.preventDefault();
     const serialize = $("#new-event").serialize();
@@ -87,7 +81,7 @@ const nextButton = function () {
   });
 };
 
-$(document).ready(function () {
+$(document).ready(function() {
   eventCreation();
   $(".master-body").hide();
   enterTitle();

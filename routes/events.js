@@ -38,8 +38,6 @@ module.exports = (db) => {
           res.json({ success: true});
         });
       });
-
   });
-
   return router;
 };
