@@ -1,4 +1,6 @@
-const eventCreation = function () {
+const escape = require('escape');
+
+const eventCreation = function() {
   const $eventContainer = $('#create-event');
 
   const $creation = `
@@ -46,7 +48,7 @@ const eventCreation = function () {
   return $eventContainer.html($creation);
 };
 
-const enterTitle = function () {
+const enterTitle = function() {
   $('.title-create').on('click', () => {
     $('.master-body').slideDown();
     $('.master-body').show();
@@ -54,7 +56,7 @@ const enterTitle = function () {
   });
 };
 
-const nextButton = function () {
+const nextButton = function() {
   $("#next-button").click((event) => {
     event.preventDefault();
     const serialize = $("#new-event").serialize();
@@ -62,7 +64,7 @@ const nextButton = function () {
   });
 };
 
-$(document).ready(function () {
+$(document).ready(function() {
   eventCreation();
   $('.master-body').hide();
   enterTitle();

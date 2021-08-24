@@ -5,11 +5,11 @@ const generateRandomString = () => {
     result += chars[Math.floor(Math.random() * chars.length)];
   }
   return result;
-}
+};
 
-const eventConfirmation = function () {
+const eventConfirmation = function() {
   const $shareContainer = $('#share-event');
-  const $confirm=`
+  const $confirm = `
     <div class="share-catchphrase">
       <p class="share-catchphrase-words">Your&nbsp;</p>
       <p class="share-catchphrase-eventure">Eventure</p>
@@ -29,9 +29,9 @@ const eventConfirmation = function () {
     </div>
   `;
   return $shareContainer.html($confirm);
-}
+};
 
-const submitButton = function () {
+const submitButton = function() {
   $("#submit-button").click((event) => {
     event.preventDefault();
     $('#overlay').css('opacity', '0');
@@ -46,7 +46,7 @@ const submitButton = function () {
   });
 };
 
-$(document).ready(function () {
+$(document).ready(function() {
   $('#share-event').hide();
   eventConfirmation();
   submitButton();

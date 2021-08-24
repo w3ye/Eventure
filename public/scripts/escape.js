@@ -3,3 +3,5 @@ const escape = function(str) {
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
+
+module.exports = { escape }
