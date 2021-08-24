@@ -1,13 +1,13 @@
-const escape = function(str) {
+const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-const eventCreation = function() {
+const eventCreation = function () {
   const $eventContainer = $('#create-event');
 
-  const $creation =`
+  const $creation = `
   <div class="catchphrase">
   <p class="catchphrase-words">Start your&nbsp;</p>
     <p class="catchphrase-eventure">
@@ -20,15 +20,10 @@ const eventCreation = function() {
   <div class="master-box" id="master-box">
     <div class="master-header">
       <form class="title" id="new-event">
-      <!-- <div class="title"> -->
-        <!-- <form class="" action="" method="post"> -->
         <label for="title">
           <input type="text" name="title" class="title-create" placeholder="Eventure Title" maxlength="30" autocomplete="off" required>
         </label>
-        <!-- </form> -->
-      <!-- </div> -->
     </div>
-    <!-- <form method="POST" action="/create" class="master-body" id="new-event"> -->
 
     <div class="master-body">
       <p>Select Date(s):</p>
@@ -51,7 +46,7 @@ const eventCreation = function() {
       <input name="email" id="owner-email" class="owner" maxlength="50" required></textarea>
 
       <div class="next">
-        <button type="submit" data-modal-target="#modal" id="next-button">Next</button>
+        <button type="submit" id="next-button" onclick="openForm()">Next</button>
       </div>
     <!-- </div> -->
     </form>
@@ -61,21 +56,19 @@ const eventCreation = function() {
     </from> -->
   </div>
   `;
-  // $('.master-body').hide();
-  // $('.master-body').css('display', 'none');
 
-  return $eventContainer.html($creation)
+  return $eventContainer.html($creation);
 }
 
-const enterTitle = function() {
+const enterTitle = function () {
   $('.title-create').on('click', () => {
     $('.master-body').slideDown();
     $('.master-body').show();
-    $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)')
+    $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)');
   });
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
   eventCreation();
   $('.master-body').hide();
   enterTitle();
