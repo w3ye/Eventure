@@ -47,7 +47,7 @@ function closeModal(modal) {
 }
 
 const enterTitle = function() {
-  $('.title-create').on('click', () => {
+  $('.close-button').on('click', () => {
     $('.master-body').slideDown();
   });
 }

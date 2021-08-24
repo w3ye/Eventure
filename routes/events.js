@@ -20,3 +20,13 @@ module.exports = (db) => {
   });
   return router;
 };
+
+// router.get('/api/events', (req, res) => {
+//   eventQueries.getEvents()
+//   .then((events) => {
+//     res.json(events)
+//   })
+// });
+//   return router;
+// };
+
