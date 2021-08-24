@@ -6,6 +6,7 @@ module.exports = (db) => {
   const event = new EVENT(db);
   router.post("/create", (req, res) => {
     console.log(req.body);
+    // TODO: events now have a new table
     const queryObj = {
       ownerId: 1,
       startDate: req.body.from,
@@ -18,6 +19,14 @@ module.exports = (db) => {
         return result;
       });
   });
+
+  // router.get('/api/events', (req, res) => {
+  //   eventQueries.getEvents()
+  //   .then((events) => {
+  //     res.json(events)
+  //   })
+  // });
+
   return router;
 };
 

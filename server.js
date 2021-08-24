@@ -40,7 +40,7 @@ const eventRoutes = require("./routes/events");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-app.use("/", eventRoutes(db));
+app.use("/api/events", eventRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 

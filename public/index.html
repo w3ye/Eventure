@@ -34,6 +34,8 @@
     <!-- JavaScript -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/date-range.js"></script>
+    <script type="text/javascript" src="/scripts/footer.js"></script>
+    <script type="text/javascript" src="/scripts/stars.js"></script>
     <script type="text/javascript" src="/scripts/timepicker.js"></script>
     <script defer src="/scripts/modal.js"></script>
 
@@ -59,7 +61,9 @@
           <form class="title" id="new-event">
           <!-- <div class="title"> -->
             <!-- <form class="" action="" method="post"> -->
-            <input type="text" name="title" class="title-create" placeholder="Eventure Title" maxlength="30" autocomplete="off" required>
+            <label for="title">
+              <input type="text" name="title" class="title-create" placeholder="Eventure Title" maxlength="30" autocomplete="off" required>
+            </label>
             <!-- </form> -->
           <!-- </div> -->
         </div>
@@ -132,31 +136,13 @@
           qui officia deserunt mollit anim id est laborum. -->
         </div>
         <div class="submit">
-          <button data-close-button class="submit-button">Submit</button>
+          <button class="submit-button">Submit</button>
         </div>
       </div>
 
     </main>
-		<footer>
-      <div>
-        Github:
-        <a href="https://github.com/zeeplo">@zeeplo</a>,
-        <a href="https://github.com/rafay-siddiqui/">@rafay-siddiqui</a>,
-        <a href="https://github.com/diannegabriel">@diannegabriel</a>
-			</div>
-			<div>
-        Made by The Eventurers
-			</div>
-		</footer>
+		<footer></footer>
     <div id="overlay"></div>
-    <div class="star2"></div>
-    <div class="star4"></div>
-    <div class="star5"></div>
-    <div class="star6"></div>
-    <div class="star7"></div>
-    <div class="star8"></div>
-    <div class="star9"></div>
-    <div class="star10"></div>
-    <div class="star11"></div>
+    <div id="stars"></div>
 	</body>
 </html>
