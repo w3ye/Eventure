@@ -2,11 +2,9 @@ const eventCreation = function () {
   const $eventContainer = $('#create-event');
 
   const $creation = `
-  <div class="catchphrase">
-  <p class="catchphrase-words">Start your&nbsp;</p>
-    <p class="catchphrase-eventure">
-    Eventure
-  </p>
+  <div class="master-catchphrase">
+    <p class="master-catchphrase-words">Start your&nbsp;</p>
+    <p class="master-catchphrase-eventure">Eventure</p>
   </div>
 
   <div class="master-box" id="master-box">

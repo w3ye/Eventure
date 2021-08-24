@@ -28,7 +28,7 @@ $top-bg: rgba(22,28,83,1);
   outline: none;
 }
 
-.catchphrase {
+.master-catchphrase {
   color: $accent-color;
   display: flex;
   flex-direction: row;
@@ -36,13 +36,13 @@ $top-bg: rgba(22,28,83,1);
   align-items: center;
 }
 
-.catchphrase-words {
+.master-catchphrase-words {
   font-family: 'Caveat', cursive;
   font-size: 3em;
   text-shadow: 0 30px 20px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
 }
 
-.catchphrase-eventure {
+.master-catchphrase-eventure {
   color: $accent-color;
   font-family: $font-emphasis;
   font-size: 4em;
