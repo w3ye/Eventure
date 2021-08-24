@@ -1,6 +1,6 @@
 $(() => {
   const $starsContainer = $('#stars');
-  const $stars =`
+  const $stars = `
     <div class="star2"></div>
     <div class="star4"></div>
     <div class="star5"></div>
@@ -11,5 +11,5 @@ $(() => {
     <div class="star10"></div>
     <div class="star11"></div>
   `;
-  return $starsContainer.html($stars)
+  return $starsContainer.html($stars);
 });

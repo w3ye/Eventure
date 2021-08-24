@@ -12,5 +12,5 @@ $(() => {
     </div>
   `;
 
-  return $footer.html($madeBy)
+  return $footer.html($madeBy);
 });
