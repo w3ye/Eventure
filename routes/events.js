@@ -19,22 +19,22 @@ module.exports = (db) => {
       });
   });
 
-  router.get('/api/events', (req, res) => {
-    eventQueries.getEvents()
-    .then((events) => {
-      res.json(events)
-    })
-  });
+  // router.get('/api/events', (req, res) => {
+  //   eventQueries.getEvents()
+  //   .then((events) => {
+  //     res.json(events)
+  //   })
+  // });
 
-  return router;
+  // return router;
 };
 
-router.get('/api/events', (req, res) => {
-  eventQueries.getEvents()
-  .then((events) => {
-    res.json(events)
-  })
-});
+// router.get('/api/events', (req, res) => {
+//   eventQueries.getEvents()
+//   .then((events) => {
+//     res.json(events)
+//   })
+// });
 //   return router;
 // };
 
