@@ -37,6 +37,14 @@
     <script type="text/javascript" src="/scripts/timepicker.js"></script>
     <script defer src="/scripts/modal.js"></script>
 
+    <script>
+      $(document).ready(function () {
+         $('#certform').ajaxForm(function () {
+         window.close();
+         console.log("click!")
+         });
+      });
+   </script>
 
 	</head>
 	<body>
@@ -110,7 +118,7 @@
       <div class="modal" id="modal">
         <div class="modal-header">
           <p class="fix-title">Eventure Title</p>
-          <button data-close-button class="close-button">&times;</button>
+          <button data-close-button class="close-button" onsubmit="return closeSelf(this);">&times;</button>
         </div>
         <div class="modal-body">
           <p>

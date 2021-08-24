@@ -4,46 +4,6 @@ const escape = function(str) {
   return div.innerHTML;
 };
 
-<<<<<<< HEAD
-=======
-const closeModalButtons = document.querySelectorAll('[data-close-button]');
-
-const renderTimeslots = function() {
-  $('#add-timeslots').append(addTimeslots());
-}
-
-const addTimeslots = function() {
-  const $timeslot = $('<section>').addClass('add-timeslots');
-  const html = `
-    <div class="modal" id="modal">
-      <div class="modal-header">
-        <p class="fix-title">Eventure Title</p>
-        <button data-close-button class="close-button">&times;</button>
-      </div>
-      <div class="modal-body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
-        adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-        qui officia deserunt mollit anim id est laborum.
-      </div>
-      <div class="submit">
-        <button type="submit" form="nameform" value="Submit" class="button-submit">Submit</button>
-      </div>
-    </div>
-  `;
-  return $timeslot.html(html);
-}
-
->>>>>>> c21bbd9de5ed996c8d5a1b9ad5ecb03d9903fab9
 const enterTitle = function() {
   $('.title-create').on('click', () => {
     $('.master-body').slideDown();
@@ -51,28 +11,8 @@ const enterTitle = function() {
     $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)')
   });
 }
-<<<<<<< HEAD
 
 $(document).ready(function() {
   $('.master-body').hide();
   enterTitle();
-=======
-
-$(document).ready(function() {
-  $('.master-body').hide();
-  enterTitle();
-  // $('.title-create').on('click', () => {
-    // $('.master-body').slideDown();
-    // $('.master-body').show();
-    // $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)')
-  // });
-
-  $('.button-next').on('click', () => {
-    $('.catchphrase').hide();
-    renderTimeslots();
-    $('#overlay').css('opacity', '1');
-  });
-
-
->>>>>>> c21bbd9de5ed996c8d5a1b9ad5ecb03d9903fab9
 });
