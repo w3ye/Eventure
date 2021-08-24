@@ -16,10 +16,11 @@ CREATE TABLE events(
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
     close_submission DATE,
+    title TEXT,
     detail TEXT NOT NULL
 );
 
-CREATE TABLE available_days (
+CREATE TABLE time_slots (
     id SERIAL PRIMARY KEY NOT NULL,
     event_id INTEGER REFERENCES events(id) ON DELETE CASCADE,
     a_day DATE NOT NULL,
