@@ -8,7 +8,6 @@ module.exports = (db) => {
   const event = new EVENT(db);
   const user = new USER(db);
   router.post("/create", (req, res) => {
-    // TODO: ownerId is still set to one, change ownerId according to user
     const name = splitName(req.body.name);
     const userQueryObj = {
       firstName: name[0],
@@ -19,18 +18,22 @@ module.exports = (db) => {
     user
       .newUser(userQueryObj)
       .then((result) => {
-        userQueryObj["id"] = result.id;
+        return result.id;
       })
-      .then(() => {
+      .then((id) => {
         const eventQueryObj = {
-          ownerId: userQueryObj["id"],
+          ownerId: id,
           startDate: req.body.from,
           endDate: req.body.to,
           closeSubmission: req.body.deadline,
           title: req.body.title,
           detail: req.body.description,
+          // TODO implement link
           link: null,
         };
+
+        // newEvent needs to be called within the newUser promise
+        // events table need user_id as reference
         event.newEvent(eventQueryObj).then(() => {
           res.json({ success: true});
         });
