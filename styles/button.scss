@@ -1,18 +1,10 @@
-$font-color: #FFF;
-$font-emphasis: 'Staatliches', cursive;
-$font-body: 'Cabin', sans-serif;
-$accent-color: #DAD5ED;
-$details-color: #bab8f5ad;
-$top-bg: rgba(22,28,83,1);
-$shadow: 0 50px 200px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
-
 button {
-  color: $top-bg;
+  color: #161c53;
   cursor: pointer;
-  background-color: rgba(218,213,237, 0.8);
+  background-color: rgba(218, 213, 237, 0.8);
   border: 0px;
   border-radius: 10px;
-  box-shadow: 0 50px 400px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 50px 400px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
 }
 
@@ -27,10 +19,9 @@ button {
   font-size: 0.85em;
 }
 
-
 .close-button {
-  background-color: rgba(95,39,90,1);
-  color:$accent-color;
+  background-color: #5f275a;
+  color: #DAD5ED;
   border: none;
   font-size: 1.25rem;
   font-weight: bold;
@@ -38,12 +29,14 @@ button {
 }
 
 .submit-button {
-  color: $accent-color;
+  color: #DAD5ED;
   cursor: pointer;
-  background-color: rgba(95,39,90, 1);
+  background-color: #5f275a;
   border: 0px;
   border-radius: 10px;
-  box-shadow: 0 50px 400px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 50px 400px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   font-size: 1.05em;
+  width: 100px;
+  align-self: center;
 }

@@ -35,6 +35,7 @@
   <link href="../styles/stars.css" rel="stylesheet">
 
   <!-- JavaScript -->
+  <script type="text/javascript" src="/scripts/add-meeting.js"></script>
   <script type="text/javascript" src="/scripts/create-event.js"></script>
   <script type="text/javascript" src="/scripts/date-range.js"></script>
   <script type="text/javascript" src="/scripts/escape.js"></script>
@@ -75,12 +76,20 @@
 
         <div class="modal-body">
           <div class="meeting-dates">
-            <p>Date:</p>
-            <div class="add-timeslot">
-              <label for="start">Start Time:</label>
-              <input type="text" id="start" name="start" />
-              <label for="end">End Time:</label>
-              <input type="text" id="end" name="end" />
+            <p id="date">Date:</p>
+            <div id="add-timeslot">
+              <div class="start-row">
+                <label for="start">Start Time:</label>
+                <input type="text" class="start" name="start" />
+              </div>
+              <div class="end-row">
+                <label for="end">End Time:</label>
+                <input type="text" class="end" name="end" />
+              </div>
+
+            </div>
+            <div id="generate-timeslot">
+
             </div>
             <button type="submit" class="time-button">Add Meeting Time</button>
           </div>
