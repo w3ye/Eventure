@@ -32,5 +32,5 @@ CREATE TABLE time_slots (
 CREATE TABLE user_votes (
     id SERIAL PRIMARY KEY NOT NULL,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-    available_day_id INTEGER REFERENCES available_days(id) ON DELETE CASCADE
+    time_slot_id INTEGER REFERENCES time_slots(id) ON DELETE CASCADE
 );
