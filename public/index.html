@@ -43,6 +43,7 @@
   <script type="text/javascript" src="/scripts/date-range.js"></script>
   <script type="text/javascript" src="/scripts/escape.js"></script>
   <script type="text/javascript" src="/scripts/footer.js"></script>
+  <script type="text/javascript" src="/scripts/modal.js"></script>
   <script type="text/javascript" src="/scripts/modify.js"></script>
   <script type="text/javascript" src="/scripts/share.js"></script>
   <script type="text/javascript" src="/scripts/stars.js"></script>
@@ -63,8 +64,6 @@
   <main id="main-container">
 
     <section id="create-event" class="page"></section>
-
-    <section id="share-event" class="page"></section>
 
     <section id="add-timeslots" class="page">
       <div class="form-popup" id="timeslot">
@@ -97,23 +96,14 @@
       </div>
     </section>
 
+    <section id="share-event" class="page"></section>
+
+    <section id="attend-event" class="page"></section>
+
   </main>
+
   <footer></footer>
   <div id="overlay"></div>
   <div id="stars"></div>
-  <script>
-
-    // eslint-disable-next-line func-style
-    function openForm() {
-      document.getElementById("overlay").style.opacity = "1";
-      document.getElementById("timeslot").style.display = "block";
-    }
-
-    // eslint-disable-next-line func-style
-    function closeForm() {
-      document.getElementById("overlay").style.opacity = "0";
-      document.getElementById("timeslot").style.display = "none";
-    }
-  </script>
 </body>
 </html>
