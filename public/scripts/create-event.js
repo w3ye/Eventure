@@ -8,11 +8,9 @@ const eventCreation = function () {
   const $eventContainer = $("#create-event");
 
   const $creation = `
-  <div class="catchphrase">
-    <p class="catchphrase-words">Start your&nbsp;</p>
-    <p class="catchphrase-eventure">
-    Eventure
-  </p>
+  <div class="master-catchphrase">
+    <p class="master-catchphrase-words">Start your&nbsp;</p>
+    <p class="master-catchphrase-eventure">Eventure</p>
   </div>
 
   <div class="master-box" id="master-box">
@@ -44,11 +42,13 @@ const eventCreation = function () {
       <input name="email" id="owner-email" class="owner" maxlength="50" required></textarea>
 
       <div class="next">
-        <button type="submit" id="next-button" onclick="openForm()">Next</button>
+        <a href="#success"><button type="submit" id="next-button"">Next</button></a>
       </div>
     </form>
   </div>
   `;
+  // THIS BUTTON IS TO OPEN MODAL (STRETCH)
+  // <button type="submit" id="next-button" onclick="openForm()">Next</button>
 
   return $eventContainer.html($creation);
 };
@@ -67,6 +67,9 @@ const enterTitle = function () {
 const nextButton = function () {
   $("#next-button").click((event) => {
     event.preventDefault();
+    $('#master-box').hide();
+    $('.master-catchphrase').hide();
+    $('#share-event').show();
     const serialize = $("#new-event").serialize();
     $.post("/create", serialize).done(console.log("success"));
   });
