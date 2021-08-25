@@ -1,5 +1,6 @@
 const generateRandomString = () => {
-  const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const chars =
+    "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let result = "";
   for (let i = 15; i > 0; i--) {
     result += chars[Math.floor(Math.random() * chars.length)];
@@ -81,24 +82,32 @@ const enterTitle = function () {
 //   });
 // };
 
-const confirmButton = function() {
+const confirmButton = function () {
   $("#confirm-button").click((event) => {
     event.preventDefault();
-    $('#overlay').css('opacity', '0');
-    $('#master-box').hide();
-    $('.master-catchphrase').hide();
-    $("input").prop('required',true);
-    $('#share-event').fadeIn();
+    $("#overlay").css("opacity", "0");
+    $("#master-box").hide();
+    $(".master-catchphrase").hide();
+    $("input").prop("required", true);
     let serialize = $("#new-event").serialize();
     serialize += `&link=${randomString}`;
-    $.post('/create', serialize).done(console.log(serialize));
+    
+    $.post("/create", serialize).done((result) => {
+      $("#share-event").fadeIn();
+      console.log('inside /create', result);
+      $.get("/links").then((link) => {
+        console.log(link);
+        $("#link").val(link);
+      });
+    });
+
   });
 };
 
-const homePageAnimate = function() {
+const homePageAnimate = function () {
   $(window).on("load", function () {
-    $('#create-event').slideDown(800);
-    $('#create-event').fadeIn(800);
+    $("#create-event").slideDown(800);
+    $("#create-event").fadeIn(800);
   });
 };
 
