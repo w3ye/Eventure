@@ -32,10 +32,11 @@ module.exports = (db) => {
           link: null,
         };
 
+        // console.log(eventQueryObj);
         // newEvent needs to be called within the newUser promise
         // events table need user_id as reference
         event.newEvent(eventQueryObj).then(() => {
-          res.json({ success: true});
+          res.json({ success: true });
         });
       });
   });
