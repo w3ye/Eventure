@@ -4,10 +4,6 @@ const express = require("express");
 const router = express.Router();
 const { splitName } = require("../helper");
 
-const getLink = (link) => {
-  return link;
-};
-
 module.exports = (db) => {
   const event = new EVENT(db);
   const user = new USER(db);
@@ -39,14 +35,30 @@ module.exports = (db) => {
         // console.log(eventQueryObj);
         // newEvent needs to be called within the newUser promise
         // events table need user_id as reference
-        event.newEvent(eventQueryObj).then(() => {
+        event.newEvent(eventQueryObj).then((result) => {
+          req.session["event_id"] = result.id;
           res.json({ success: true });
+          return result;
         });
       });
   });
 
-  router.post('/create/link', (req, res) => {
+  router.get("/links", (req, res) => {
+    const eventId = req.session["event_id"];
     const event = new EVENT(db);
+
+    if (eventId) {
+      event
+        .findLink(eventId)
+        .then((result) => {
+          console.log('inside get', result);
+          // return result.link;
+          res.send(result.link);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   });
 
   return router;
