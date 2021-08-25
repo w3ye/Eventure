@@ -45,18 +45,18 @@ const eventConfirmation = function() {
 };
 
 // WHEN MODAL IS ONLY ACTIVATED
-const submitButton = function() {
-  $("#submit-button").click((event) => {
-    event.preventDefault();
-    $('#overlay').css('opacity', '0');
-    $('#timeslot').hide();
-    $('#master-box').hide();
-    $('.master-catchphrase').hide();
-    $('#share-event').show();
-    const serialize = $("#time-container").serialize();
-    console.log(serialize)
-  });
-};
+// const submitButton = function() {
+//   $("#submit-button").click((event) => {
+//     event.preventDefault();
+//     $('#overlay').css('opacity', '0');
+//     $('#timeslot').hide();
+//     $('#master-box').hide();
+//     $('.master-catchphrase').hide();
+//     $('#share-event').show();
+//     const serialize = $("#time-container").serialize();
+//     console.log(serialize)
+//   });
+// };
 
 const modifyButton = function() {
   $("#modify-button").click((event) => {
