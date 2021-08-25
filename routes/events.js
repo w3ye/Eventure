@@ -17,22 +17,25 @@ module.exports = (db) => {
 
     user.newUser(userQueryObj).then((result) => {
       return result.id;
-    });
-    const eventQueryObj = {
-      ownerId: 1,
-      startDate: req.body.from,
-      endDate: req.body.to,
-      closeSubmission: req.body.deadline,
-      title: req.body.title,
-      detail: req.body.description,
-      // TODO implement link
-      link: null,
-    };
+    })
+    .then((id) => {
+      const eventQueryObj = {
+        ownerId: id,
+        startDate: req.body.from,
+        endDate: req.body.to,
+        closeSubmission: req.body.deadline,
+        title: req.body.title,
+        detail: req.body.description,
+        // TODO implement link
+        link: null,
+      };
 
-    // newEvent needs to be called within the newUser promise
-    // events table need user_id as reference
-    event.newEvent(eventQueryObj).then(() => {
-      res.json({ success: true });
+      // console.log(eventQueryObj);
+      // newEvent needs to be called within the newUser promise
+      // events table need user_id as reference
+      event.newEvent(eventQueryObj).then(() => {
+        res.json({ success: true });
+      });
     });
   });
 
