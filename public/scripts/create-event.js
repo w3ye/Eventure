@@ -18,9 +18,9 @@ const eventCreation = function() {
       <div class="master-body">
         <p class="details">Select Date(s):</p>
         <div class="indent date">
-          <label for="from">From</label>
+          <label for="from">From:</label>
           <input type="text" id="from" name="from" required>
-          <label for="to">To</label>
+          <label for="to">To:</label>
           <input type="text" id="to" name="to" required>
         </div>
         <p class="details">Submission Deadline:</p>
