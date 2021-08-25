@@ -44,6 +44,7 @@ const eventConfirmation = function() {
   return $shareContainer.html($confirm);
 };
 
+// WHEN MODAL IS ONLY ACTIVATED
 // const submitButton = function() {
 //   $("#submit-button").click((event) => {
 //     event.preventDefault();

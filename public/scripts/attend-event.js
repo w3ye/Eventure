@@ -28,14 +28,6 @@ const attendEvent = function() {
   return $eventContainer.html($attendee);
 };
 
-// const enterTitle = function() {
-//   $('.title-create').on('click', () => {
-//     $('.master-body').slideDown();
-//     $('.master-body').show();
-//     $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)');
-//   });
-// };
-
 const nextButton = function() {
   $("#next-button").click((event) => {
     event.preventDefault();

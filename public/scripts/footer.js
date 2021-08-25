@@ -11,6 +11,5 @@ $(() => {
     Made by The Eventurers
     </div>
   `;
-
   return $footer.html($madeBy);
 });

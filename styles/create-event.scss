@@ -1,0 +1,137 @@
+$accent-color: #dad5ed;
+$details-color: #bab8f5ad;
+$font-body: "Cabin", sans-serif;
+$font-emphasis: "Staatliches", cursive;
+$top-bg: rgba(22, 28, 83, 1);
+
+.master-box {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  z-index: 10;
+  box-shadow: 0 50px 200px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.master-header {
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  outline: none;
+}
+
+.master-catchphrase {
+  color: $accent-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.master-catchphrase-words {
+  font-family: "Caveat", cursive;
+  font-size: 3em;
+  text-shadow: 0 30px 20px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.master-catchphrase-eventure {
+  color: $accent-color;
+  font-family: $font-emphasis;
+  font-size: 4em;
+  text-shadow: 0 30px 20px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title-create {
+  background-color: inherit;
+  border: 0px;
+  color: $accent-color;
+  font-size: 1.5rem;
+  font-family: $font-body;
+  font-weight: bold;
+  width: 100%;
+
+  &::placeholder {
+    font-family: $font-body;
+    color: #a8a6bbdc;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.master-body {
+  color: $accent-color;
+  padding: 10px 15px;
+  margin: 10px;
+  font-size: 18px;
+}
+
+input#from, input#to, input#deadline {
+  font-size: 16px;
+  padding: 5px;
+  border: 0px;
+  outline: none;
+  width: 110px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0px 15px 0px 3px;
+  opacity: 0.7;
+  color: $top-bg;
+}
+
+.details {
+  margin-top: 7px;
+}
+
+textarea {
+  background-color: transparent;
+  outline: none;
+  resize: none;
+  border: 0;
+  border-bottom: 1px solid #89878f;
+  height: 25px;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+}
+
+#event-details {
+  height: 50px;
+  color: $top-bg;
+}
+
+input.owner {
+  background-color: transparent;
+  outline: none;
+  resize: none;
+  border: 0;
+  border-bottom: 1px solid #89878f;
+  height: 25px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+#owner-name,
+#owner-email {
+  width: 50%;
+  color: $top-bg;
+}
+
+.indent {
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+.date {
+  font-size: 1em;
+  color: $top-bg;
+}
