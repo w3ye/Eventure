@@ -19,7 +19,7 @@ const attendEvent = function() {
         <p class="details">E-mail:</p>
         <input name="email" id="owner-email" class="owner" maxlength="50" required></textarea>
         <div class="next">
-          <a href="#timeslot"><button type="submit" id="next-button">Next</button></a>
+          <a href="#timeslot"><button type="submit" id="next-button" onclick="openForm()">Next</button></a>
         </div>
       </div>
     </div>

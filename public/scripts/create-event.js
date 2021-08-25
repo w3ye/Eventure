@@ -42,7 +42,7 @@ const eventCreation = function () {
       <input name="email" id="owner-email" class="owner" maxlength="50" required></textarea>
 
       <div class="next">
-        <a href="#success"><button type="submit" id="next-button"">Next</button></a>
+        <a href="#success"><button type="submit" id="next-button" onclick="openForm()">Next</button></a>
       </div>
     </form>
   </div>
@@ -69,7 +69,6 @@ const nextButton = function () {
     event.preventDefault();
     $('#master-box').hide();
     $('.master-catchphrase').hide();
-    // $('#share-event').show();
     $('#share-event').fadeIn();
     const serialize = $("#new-event").serialize();
     $.post("/create", serialize).done(console.log("success"));
