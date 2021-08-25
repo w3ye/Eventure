@@ -62,7 +62,7 @@ const modifyButton = function() {
   $("#modify-button").click((event) => {
     event.preventDefault();
     $('#share-event').hide();
-    $('#master-box').show();
+    $('#master-box').fadeIn();
   });
 }
 

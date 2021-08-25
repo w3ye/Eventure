@@ -69,13 +69,23 @@ const nextButton = function () {
     event.preventDefault();
     $('#master-box').hide();
     $('.master-catchphrase').hide();
-    $('#share-event').show();
+    // $('#share-event').show();
+    $('#share-event').fadeIn();
     const serialize = $("#new-event").serialize();
     $.post("/create", serialize).done(console.log("success"));
   });
 };
 
+const homePageAnimate = function() {
+  $(window).on("load", function () {
+    $('#create-event').slideDown(800);
+    $('#create-event').fadeIn(800);
+  });
+}
+
 $(document).ready(function () {
+  $("#create-event").hide();
+  homePageAnimate();
   eventCreation();
   $(".master-body").hide();
   enterTitle();
