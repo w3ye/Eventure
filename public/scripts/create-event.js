@@ -42,13 +42,13 @@ const eventCreation = function () {
       <input name="email" id="owner-email" class="owner" maxlength="50" required></textarea>
 
       <div class="next">
-        <a href="#success"><button type="submit" id="next-button"">Next</button></a>
+        <a href="#success"><button type="submit" id="confirm-button">Confirm</button></a>
       </div>
     </form>
   </div>
   `;
   // THIS BUTTON IS TO OPEN MODAL (STRETCH)
-  // <button type="submit" id="next-button" onclick="openForm()">Next</button>
+  // <a href="#timeslot"><button type="submit" id="next-button" onclick="openForm()">Next</button></a>
 
   return $eventContainer.html($creation);
 };
@@ -64,15 +64,28 @@ const enterTitle = function () {
   });
 };
 
-const nextButton = function () {
-  $("#next-button").click((event) => {
+// ONLY FOR MODAL IMPEMENTATION (TIMESLOT)
+// const nextButton = function () {
+//   $("#next-button").click((event) => {
+//     event.preventDefault();
+//     $('#master-box').hide();
+//     $('.master-catchphrase').hide();
+//     $('#share-event').fadeIn();
+//     const serialize = $("#new-event").serialize();
+//     $.post("/create", serialize).done(console.log("success"));
+//   });
+// };
+
+const confirmButton = function() {
+  $("#confirm-button").click((event) => {
     event.preventDefault();
+    $('#overlay').css('opacity', '0');
     $('#master-box').hide();
     $('.master-catchphrase').hide();
-    // $('#share-event').show();
+    $("input").prop('required',true);
     $('#share-event').fadeIn();
     const serialize = $("#new-event").serialize();
-    $.post("/create", serialize).done(console.log("success"));
+    $.post("/create", serialize).done(console.log("success!", serialize));
   });
 };
 
@@ -89,5 +102,6 @@ $(document).ready(function () {
   eventCreation();
   $(".master-body").hide();
   enterTitle();
-  nextButton();
+  // nextButton(); // ONLY ACTIVATE WHEN TIMESLOTS ARE IMPLEMENTED
+  confirmButton();
 });
