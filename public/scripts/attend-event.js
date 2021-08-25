@@ -9,23 +9,11 @@ const attendEvent = function() {
   <div class="master-box" id="master-box">
     <div class="title" id="new-event">
       <div class="master-header">
-        <p class="title-create">Eventure Title
+        <p class="title-create">Eventure Title - Meetings!
       </div>
       <div class="master-body">
-        <p class="details">Select Date(s):</p>
-        <div class="indent date">
-          <label for="from">From:</label>
-          <input type="text" id="from" name="from" required>
-          <label for="to">To:</label>
-          <input type="text" id="to" name="to" required>
-        </div>
-        <p class="details">Submission Deadline:</p>
-        <div class="indent date">
-          <label for="deadline"><i>(Optional)</i></label>
-          <input name="deadline" type="text" id="deadline">
-        </div>
+        <p class="details">Dates: 09/03/2021 - 09/07/2021</p>
         <p class="details">Event Description:</p>
-        <textarea name="description" id="event-details" maxlength="250" required></textarea>
         <p class="details">Name:</p>
         <input name="name" id="owner-name" class="owner" maxlength="30" required></textarea>
         <p class="details">E-mail:</p>
