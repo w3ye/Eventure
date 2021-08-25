@@ -50,8 +50,6 @@ const submitButton = function() {
   $("#submit-button").click((event) => {
     event.preventDefault();
     $('#overlay').css('opacity', '0');
-    // $('#timeslot').css('display', 'none');
-    // $('#master-box').css('display', 'none');
     $('#timeslot').hide();
     $('#master-box').hide();
     $('.master-catchphrase').hide();
@@ -68,7 +66,6 @@ const modifyButton = function() {
     $('#master-box').show();
   });
 }
-
 
 $(document).ready(function() {
   $('#share-event').hide();
