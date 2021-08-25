@@ -4,6 +4,10 @@ const express = require("express");
 const router = express.Router();
 const { splitName } = require("../helper");
 
+const getLink = (link) => {
+  return link;
+};
+
 module.exports = (db) => {
   const event = new EVENT(db);
   const user = new USER(db);
@@ -29,7 +33,7 @@ module.exports = (db) => {
           title: req.body.title,
           detail: req.body.description,
           // TODO implement link
-          link: null,
+          link: req.body.link,
         };
 
         // console.log(eventQueryObj);
@@ -39,6 +43,10 @@ module.exports = (db) => {
           res.json({ success: true });
         });
       });
+  });
+
+  router.post('/create/link', (req, res) => {
+    const event = new EVENT(db);
   });
 
   return router;

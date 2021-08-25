@@ -1,8 +1,13 @@
-// const escape = function (str) {
-//   let div = document.createElement("div");
-//   div.appendChild(document.createTextNode(str));
-//   return div.innerHTML;
-// };
+const generateRandomString = () => {
+  const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let result = "";
+  for (let i = 15; i > 0; i--) {
+    result += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return result;
+};
+
+const randomString = generateRandomString();
 
 const eventCreation = function () {
   const $eventContainer = $("#create-event");
@@ -84,7 +89,9 @@ const confirmButton = function() {
     $('.master-catchphrase').hide();
     $("input").prop('required',true);
     $('#share-event').fadeIn();
-    const serialize = $("#new-event").serialize();
+    let serialize = $("#new-event").serialize();
+    serialize += `&link=${randomString}`;
+    $.post('/create', serialize).done(console.log(serialize));
   });
 };
 
