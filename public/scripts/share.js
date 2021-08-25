@@ -43,12 +43,6 @@ const eventConfirmation = function() {
       </div>
     </div>
   `;
-
-
-
-  // $("#modify-button").click((event) => {
-
-
   return $shareContainer.html($confirm);
 };
 
@@ -61,13 +55,12 @@ const submitButton = function() {
     $('#timeslot').hide();
     $('#master-box').hide();
     $('.master-catchphrase').hide();
-    // eventConfirmation();
     $('#share-event').show();
     const serialize = $("#time-container").serialize();
     console.log(serialize)
-
   });
 };
+
 
 $(document).ready(function() {
   $('#share-event').hide();

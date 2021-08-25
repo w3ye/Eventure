@@ -9,13 +9,10 @@ const modifyButton = function() {
 }
 
 $(() => {
-  $("#modify-button").on('submit', (event) => {
-    event.preventDefault();
-    // const serialized = $form.serialize();
-    $('#share-box').hide();
-    $('#master-box').show();
-    $('.master-catchphrase').show();
-
-      // });
-  });
+  // $("#modify-button").on('submit', (event) => {
+  //   event.preventDefault();
+  //   $('#share-box').hide();
+  //   $('#master-box').show();
+  //   $('.master-catchphrase').show();
+  // });
 });
