@@ -55,11 +55,16 @@ const removeMeetingTime = function() {
   }
 };
 
+
 $(document).ready(function() {
   $('.add-time').on('click', (event) => {
     event.preventDefault();
     addMeetingTime();
     rerunTimepicker();
+    $.ajax({
+      type: 'POST',
+      url: '/timeslot',
+    })
   });
 
   $('.remove-time').on('click', (event) => {

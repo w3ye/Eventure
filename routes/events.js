@@ -34,10 +34,19 @@ module.exports = (db) => {
 
         // newEvent needs to be called within the newUser promise
         // events table need user_id as reference
-        event.newEvent(eventQueryObj).then(() => {
+        event.newEvent(eventQueryObj).then((result) => {
+          console.log("it's working");
+          console.log(result);
           res.json({ success: true});
         });
       });
   });
+  router.post('/timeslot', (req, res) => {
+    event.getDayRange()
+    .then((result) => {
+      return res.send(result);
+    })
+  })
+
   return router;
 };

@@ -51,11 +51,28 @@ const enterTitle = function() {
   });
 };
 
+//Turn serialized data into an object
+function objectifyForm(formArray) {
+  //serialize data function
+  var returnArray = {};
+  for (var i = 0; i < formArray.length; i++){
+      returnArray[formArray[i]['name']] = formArray[i]['value'];
+  }
+  return returnArray;
+}
+
 const nextButton = function() {
   $("#next-button").click((event) => {
+    console.log('click');
     event.preventDefault();
-    const serialize = $("#new-event").serialize();
-    console.log(serialize);
+    const serialize = $("#new-event").serializeArray();
+    const objectSerial = objectifyForm(serialize)
+    console.log(objectSerial);
+    $.ajax({
+      type: 'POST',
+      url: '/create',
+      data: objectSerial
+    })
   });
 };
 
