@@ -1,3 +1,10 @@
+$accent-color: #dad5ed;
+$details-color: #bab8f5ad;
+$font-body: "Cabin", sans-serif;
+$font-emphasis: "Staatliches", cursive;
+$top-bg: rgba(22, 28, 83, 1);
+$bottom-bg: #5f275a;
+
 button {
   color: #161c53;
   cursor: pointer;
@@ -6,6 +13,12 @@ button {
   border-radius: 10px;
   box-shadow: 0 50px 400px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+  }
 }
 
 .next {
@@ -16,22 +29,34 @@ button {
 }
 
 #next-button {
-  font-size: 0.85em;
+  font-size: 1em;
 }
 
 #close-button {
-  background-color: #5f275a;
-  color: #dad5ed;
+  background-color: $bottom-bg;
+  color: $accent-color;
   border: none;
   font-size: 1.25rem;
   font-weight: bold;
   cursor: pointer;
 }
 
+.add-time, .remove-time {
+  background-color: $top-bg;
+  color: $accent-color;
+  opacity: 1;
+
+  &:active {
+    color: $top-bg;
+    background-color: $accent-color;
+    transition: 0s;
+  }
+}
+
 #submit-button {
-  color: #dad5ed;
+  color: $accent-color;
   cursor: pointer;
-  background-color: #5f275a;
+  background-color: $bottom-bg;
   border: 0px;
   border-radius: 10px;
   box-shadow: 0 50px 400px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -39,4 +64,49 @@ button {
   font-size: 1.05em;
   width: 100px;
   align-self: center;
+  opacity: 1;
+
+  &:hover {
+    background-color: $accent-color;
+    color: $bottom-bg;
+    border: 1px solid $bottom-bg;
+  }
+}
+
+#modify-button {
+  color: $accent-color;
+  cursor: pointer;
+  background-color: $top-bg;
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 0 50px 400px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  font-size: 1.05em;
+  width: 100px;
+  align-self: center;
+
+  &:hover {
+    transition: 0.3s ease-in-out;
+    background-color: $accent-color;
+    color: $top-bg;
+  }
+}
+
+#result-button {
+  color: $accent-color;
+  cursor: pointer;
+  background-color: $top-bg;
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 0 50px 400px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  font-size: 1.05em;
+  width: 100px;
+  align-self: center;
+
+  &:hover{
+    transition: 0.3s ease-in-out;
+    background-color: $accent-color;
+    color: $top-bg;
+  }
 }

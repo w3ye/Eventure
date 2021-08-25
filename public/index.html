@@ -43,13 +43,10 @@
   <script type="text/javascript" src="/scripts/date-range.js"></script>
   <script type="text/javascript" src="/scripts/escape.js"></script>
   <script type="text/javascript" src="/scripts/footer.js"></script>
-  <script type="text/javascript" src="/scripts/modal.js"></script>
   <script type="text/javascript" src="/scripts/share.js"></script>
   <script type="text/javascript" src="/scripts/stars.js"></script>
   <script type="text/javascript" src="/scripts/timepicker.js"></script>
   <script type="text/javascript" src="/scripts/timeslots.js"></script>
-  <script defer src="/scripts/modal.js"></script>
-  <!-- <script defer src="/scripts/create-event.js"></script> -->
 
 </head>
 
@@ -59,11 +56,8 @@
       <a href="/" class="eventure-logo">Eventure</a>
     </div>
   </nav>
-
   <main id="create-event"></main>
-
   <main id="share-event"></main>
-
   <main id="add-timeslots">
     <div class="form-popup" id="timeslot">
       <form action="/" class="form-container">
@@ -71,7 +65,6 @@
           <p class="fix-title">Eventure Title</p>
           <button type="button" onclick="closeForm()" id="close-button">&times;</button>
         </div>
-
         <div class="modal-body">
           <div class="meeting-dates">
             <p id="date">Date:</p>
@@ -84,11 +77,9 @@
                 <label for="end">End Time:</label>
                 <input type="text" class="end" name="end" />
               </div>
-
             </div>
             <div id="generate-timeslot">
             </div>
-
             <button type="submit" class="add-time">Add</button>
             <button type="submit" class="remove-time">Remove</button>
           </div>
@@ -96,12 +87,10 @@
         </div>
       </form>
     </div>
-
   </main>
   <footer></footer>
   <div id="overlay"></div>
   <div id="stars"></div>
-
   <script>
 
     // eslint-disable-next-line func-style
@@ -117,5 +106,4 @@
     }
   </script>
 </body>
-
 </html>
