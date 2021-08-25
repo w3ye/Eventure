@@ -38,11 +38,17 @@ const eventConfirmation = function() {
         </div>
         <div class="last-step">
           <button type="submit" id="modify-button">Modify</button>
-          <button type="submit" id="result-button">Result</button>
+          <button id="result-button">Result</button>
         </div>
       </div>
     </div>
   `;
+
+
+
+  // $("#modify-button").click((event) => {
+
+
   return $shareContainer.html($confirm);
 };
 
@@ -55,13 +61,16 @@ const submitButton = function() {
     $('#timeslot').hide();
     $('#master-box').hide();
     $('.master-catchphrase').hide();
-    eventConfirmation();
+    // eventConfirmation();
     $('#share-event').show();
+    const serialize = $("#time-container").serialize();
+    console.log(serialize)
+
   });
 };
 
 $(document).ready(function() {
   $('#share-event').hide();
-  eventConfirmation();
   submitButton();
+  eventConfirmation();
 });

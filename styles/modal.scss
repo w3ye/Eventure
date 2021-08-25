@@ -38,14 +38,14 @@
 }
 
 /* Add styles to the form container */
-.form-container {
+#time-container {
   height: 90%;
   transition: 300ms ease-in-out;
   font-size: 16px;
 }
 
 /* Full-width input fields */
-.form-container input[type="text"] {
+#time-container input[type="text"] {
   width: 100px;
   padding: 10px;
   margin: 5px 0 15px 10px;
@@ -56,14 +56,14 @@
 }
 
 /* When the inputs get focus, do something */
-.form-container input[type="text"]:focus,
-.form-container input[type="password"]:focus {
+#time-container input[type="text"]:focus,
+#time-container input[type="password"]:focus {
   background-color: #ddd;
   outline: none;
 }
 
 /* Add some hover effects to buttons */
-.form-container .btn:hover,
+#time-container .btn:hover,
 .open-button:hover {
   opacity: 1;
 }
