@@ -37,7 +37,7 @@ const eventConfirmation = function() {
           <a target="_blank" title="Twitter" href="https://twitter.com/intent/tweet?text=Join%20My%20Eventure!&url=${randomLink}"><i class="icon fab fa-twitter"></i></a>
         </div>
         <div class="last-step">
-          <button type="submit" id="modify-button">Modify</button>
+          <a href="#create"><button type="submit" id="modify-button">Modify</button></a>
           <button id="result-button">Result</button>
         </div>
       </div>
@@ -50,8 +50,8 @@ const submitButton = function() {
   $("#submit-button").click((event) => {
     event.preventDefault();
     $('#overlay').css('opacity', '0');
-    $('#timeslot').css('display', 'none');
-    $('#master-box').css('display', 'none');
+    // $('#timeslot').css('display', 'none');
+    // $('#master-box').css('display', 'none');
     $('#timeslot').hide();
     $('#master-box').hide();
     $('.master-catchphrase').hide();
@@ -61,9 +61,18 @@ const submitButton = function() {
   });
 };
 
+const modifyButton = function() {
+  $("#modify-button").click((event) => {
+    event.preventDefault();
+    $('#share-event').hide();
+    $('#master-box').show();
+  });
+}
+
 
 $(document).ready(function() {
   $('#share-event').hide();
   submitButton();
   eventConfirmation();
+  modifyButton();
 });

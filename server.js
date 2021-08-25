@@ -22,7 +22,7 @@ db.connect();
 app.use(morgan("dev"));
 
 app.set("view engine", "ejs");
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   "/styles",
@@ -41,9 +41,13 @@ const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const eventRoutes = require("./routes/events");
 
+// const eventRouter = express.Router();
+// eventRoutes(eventRouter, db);
+// app.use('/create', eventRouter);
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-app.use("/", eventRoutes(db));
+// app.use("/", eventRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 

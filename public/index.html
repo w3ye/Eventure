@@ -48,22 +48,25 @@
   <script type="text/javascript" src="/scripts/stars.js"></script>
   <script type="text/javascript" src="/scripts/timepicker.js"></script>
   <script type="text/javascript" src="/scripts/timeslots.js"></script>
-
+  <!-- <script type="text/javascript" src="/scripts/views_manager.js"></script> -->
 </head>
 
 <body>
+  <!-- ========= START NAV BAR ========= -->
   <nav>
     <div class="eventure">
-      <a href="/" class="eventure-logo">Eventure</a>
+      <a href="/" class="eventure-logo" id="eventure-logo">Eventure</a>
     </div>
   </nav>
+  <!-- ========== END NAV BAR ========= -->
+
   <main id="main-container">
 
-    <section id="create-event"></section>
+    <section id="create-event" class="page"></section>
 
-    <section id="share-event"></section>
+    <section id="share-event" class="page"></section>
 
-    <section id="add-timeslots">
+    <section id="add-timeslots" class="page">
       <div class="form-popup" id="timeslot">
         <form action="/" id="time-container">
           <div class="modal-header">
@@ -88,7 +91,7 @@
               <button type="submit" class="add-time">Add</button>
               <button type="submit" class="remove-time">Remove</button>
             </div>
-            <button type="submit" id="submit-button">Submit</button>
+            <button type="submit" id="submit-button"><a href="#success">Submit</a></button>
           </div>
         </form>
       </div>
