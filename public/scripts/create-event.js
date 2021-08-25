@@ -85,7 +85,6 @@ const confirmButton = function() {
     $("input").prop('required',true);
     $('#share-event').fadeIn();
     const serialize = $("#new-event").serialize();
-    $.post("/create", serialize).done(console.log("success!", serialize));
   });
 };
 
@@ -94,7 +93,7 @@ const homePageAnimate = function() {
     $('#create-event').slideDown(800);
     $('#create-event').fadeIn(800);
   });
-}
+};
 
 $(document).ready(function () {
   $("#create-event").hide();
