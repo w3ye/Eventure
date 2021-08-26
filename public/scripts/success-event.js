@@ -6,7 +6,7 @@ const randomLink = "";
  * Twitter - https://twitter.com/intent/tweet?text=Join%20My%20Eventure!&url=https%3A%2F%2Fwww.amazon.ca&related=
  */
 
-const eventConfirmation = function () {
+const eventConfirmation = function() {
   const $shareContainer = $("#share-event");
   const $confirm = `
     <div class="share-catchphrase">
@@ -36,7 +36,7 @@ const eventConfirmation = function () {
 };
 
 // WHEN MODAL IS ONLY ACTIVATED
-const submitButton = function () {
+const submitButton = function() {
   $("#submit-button").click((event) => {
     event.preventDefault();
     $("#overlay").css("opacity", "0");
@@ -48,7 +48,7 @@ const submitButton = function () {
   });
 };
 
-const modifyButton = function () {
+const modifyButton = function() {
   $("#modify-button").click((event) => {
     event.preventDefault();
     $("#share-event").hide();
@@ -56,12 +56,21 @@ const modifyButton = function () {
   });
 };
 
+const resultButton = function() {
+  $("#result-button").click((event) => {
+    event.preventDefault();
+    $.get("/polls");
+    console.log('clicked result')
+    $("#share-event").hide();
+  });
+}
 
-$(document).ready(function () {
+$(document).ready(function() {
   $("#share-event").hide();
   submitButton();
   eventConfirmation();
   modifyButton();
+  resultButton();
   $.get("link").then((link) => {
     console.log(link);
     $("#link").val(link);
