@@ -59,9 +59,8 @@ const modifyButton = function() {
 const resultButton = function() {
   $("#result-button").click((event) => {
     event.preventDefault();
-    $.get("/polls");
-    console.log('clicked result')
     $("#share-event").hide();
+    $.get("/polls");
   });
 }
 
