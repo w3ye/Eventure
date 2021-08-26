@@ -3,6 +3,7 @@ const USER = require("../lib/user-queries");
 const express = require("express");
 const router = express.Router();
 const { splitName } = require("../helper");
+const { Events } = require("pg");
 
 module.exports = (db) => {
   const event = new EVENT(db);
@@ -35,11 +36,22 @@ module.exports = (db) => {
         // console.log(eventQueryObj);
         // newEvent needs to be called within the newUser promise
         // events table need user_id as reference
-        event.newEvent(eventQueryObj).then((result) => {
-          req.session["event_id"] = result.id;
-          res.json({ success: true });
-          return result;
-        });
+        event.newEvent(eventQueryObj)
+          .then((result) => {
+            req.session["event_id"] = result.id;
+            res.json({ success: true });
+            return result;
+          })
+          .then((event_details) => {
+            const eventId = event_details.id
+            console.log('eventId: ', eventId);
+            const theRange = event.generateRange(eventId);
+            console.log('theRange: ', theRange);
+            return event.generateRange(eventId);
+          })
+          .then(result => {
+            console.log('range: ', result);
+          })
       });
   });
 
