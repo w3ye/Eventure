@@ -60,7 +60,7 @@ const nextButton = function() {
   $("#next-button").click((event) => {
     event.preventDefault();
     // $('#attend-event').hide();
-
+    $("#overlay").css("opacity", "0");
     const serialize = $("#guest-details").serialize();
     $.post('/user/create', serialize).done((result) => {
       console.log(result);

@@ -51,10 +51,11 @@ const submitButton = function() {
   $("#submit-button").click((event) => {
     event.preventDefault();
     // $('#overlay').css('opacity', '0');
-    // $('#timeslot').hide();
-    // $('#master-box').hide();
-    // $('.master-catchphrase').hide();
-    $('#result-event').show();
+    $('#timeslot').fadeOut();
+    $('#timeslot').slideUp();
+    $('#attend-event').fadeOut();
+    $("#result-event").slideDown(500);
+    $("#result-event").fadeIn(500);
     const serialize = $("#time-container").serialize();
     console.log(serialize)
   });
