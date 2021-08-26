@@ -1,8 +1,18 @@
-const attendEvent = function(event) {
-  $.get("/create").then((event) => {
-    console.log(event);
-  });
+const renderEvents = (event) => {
+  const $eventContainer = $('#attend-event');
+  const eventDetails = findEventByLink(event);
 
+  // console.log("HEY!")
+  // return "HEY!"
+
+
+
+console.log(eventDetails);
+return eventDetails;
+}
+
+const attendEvent = function(event) {
+  let $eventInformation;
   const $eventContainer = $('#attend-event');
   const $attendee = `
   <div class="master-catchphrase">
@@ -32,7 +42,11 @@ const attendEvent = function(event) {
     </div>
   </div>
   `;
-  return $eventContainer.html($attendee);
+
+  $eventInformation = $eventContainer.append($attendee);
+
+  // return $eventContainer.html($attendee);
+  return $eventInformation;
 };
 
 
@@ -46,7 +60,7 @@ const nextButton = function() {
 };
 
 $(document).ready(function() {
-
+  renderEvents();
   attendEvent();
   $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)');
   nextButton();
