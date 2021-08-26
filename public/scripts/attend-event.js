@@ -1,5 +1,3 @@
-const url = window.location.pathname;
-
 const option = {
   year: 'numeric',
   month: 'short',
@@ -69,8 +67,6 @@ const nextButton = function() {
 };
 
 $(document).ready(function() {
-  const link = url.substring(7, 22);
-  renderEvent(link);
   $('#attend-event').hide();
   $('#create-event').hide();
   attendEvent();

@@ -1,4 +1,4 @@
-// const eventURL = window.location.pathname;
+const url = window.location.pathname;
 
 $(() => {
   window.addEventListener('load', (event) => {

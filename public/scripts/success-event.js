@@ -50,12 +50,12 @@ const eventConfirmation = function () {
 const submitButton = function() {
   $("#submit-button").click((event) => {
     event.preventDefault();
-    // $('#overlay').css('opacity', '0');
-    $('#timeslot').fadeOut();
-    $('#timeslot').slideUp();
-    $('#attend-event').fadeOut();
     $("#result-event").slideDown(500);
     $("#result-event").fadeIn(500);
+    $('#overlay').css('opacity', '1');
+    $('#timeslot').fadeOut();
+    $('#timeslot').hide();
+    // $('#attend-event').fadeOut();
     const serialize = $("#time-container").serialize();
     console.log(serialize)
   });
