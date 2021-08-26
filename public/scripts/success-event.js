@@ -20,6 +20,13 @@ const randomLink = "";
 //   });
 // }
 
+// const renderConfirmation = (link) => {
+//   $.get(`/api/event/${link}`).then((data) => {
+//     console.log(data)
+//     $('#eventure-title').text(data.title);
+//   });
+// }
+
 const eventConfirmation = function () {
   const $shareContainer = $("#share-event");
   const $confirm = `
@@ -29,7 +36,7 @@ const eventConfirmation = function () {
       <p class="share-catchphrase-words">has been created!</p>
     </div>
     <div class="share-box">
-      <p class="eventure-title">Eventure Title is ready.</p>
+      <p id="eventure-title"></p>
       <div class="share-body">
         <p class="secret-link">Secret Link:</p>
         <p><input type="text" id="link" name="link" class="link" value="" readonly></p>
@@ -55,7 +62,7 @@ const submitButton = function() {
     $('#overlay').css('opacity', '1');
     $('#timeslot').fadeOut();
     $('#timeslot').hide();
-    // $('#attend-event').fadeOut();
+    $('#attend-event').hide();
     const serialize = $("#time-container").serialize();
     console.log(serialize)
   });

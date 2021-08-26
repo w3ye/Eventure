@@ -1,3 +1,15 @@
+const renderResult = (link) => {
+  $.get(`/api/event/${link}`).then((data) => {
+    console.log(data)
+    $('.title-create').text(data.title);
+    // $('#first-name').html(`<strong>${data.first_name}</strong> has invited you to an event!`);
+    // const startDate = getDate(data.start_date);
+    // const endDate = getDate(data.end_date);
+    // $('#event-date-range').html(`Dates: ${startDate} &nbsp - &nbsp; ${endDate}`)
+    // $('#event-detail').html(`Description: ${data.detail}`);
+  });
+}
+
 const eventResult = function() {
   const $resultContainer = $('#result-event');
   const $result = `
@@ -6,7 +18,7 @@ const eventResult = function() {
       <p class="share-catchphrase-eventure">Eventure</p>
     </div>
     <div class="share-box">
-      <p class="eventure-title">Eventure Title: Midterm Meeting</p>
+      <p class="title-create"></p>
       <div class="share-body">
         <p>Results:</p>
         <div class="share-row">
@@ -44,8 +56,8 @@ const editButton = function() {
 }
 
 $(document).ready(function() {
+
   $('#result-event').hide();
-  submitButton();
   eventResult();
   editButton();
 });
