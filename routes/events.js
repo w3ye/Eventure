@@ -53,7 +53,7 @@ module.exports = (db) => {
       event
         .findLink(eventId)
         .then((result) => {
-          console.log('inside get', result);
+          console.log('inside get links', result);
           // return result.link;
           res.send(result.link);
         })
@@ -63,21 +63,21 @@ module.exports = (db) => {
     }
   });
 
-  router.get('/polls', (req, res) => {
+  router.get("/polls", (req, res) => {
     const eventId = req.session["event_id"];
     const event = new EVENT(db);
 
-    if (eventId) {
-      console.log('eventId: ', eventId);
-      const theRange = event.generateRange(eventId);
-      console.log('theRange: ', theRange);
-      return event.generateRange(eventId)
-
-        .then(result => {
-          //console.log('range: ', result);
-          res.send(result);
-        })
-    }
+    event.generateRange(eventId)
+      .then(rangeDates => {
+        event.generateDaysObject(rangeDates)
+          .then(daysObject => {
+            console.log(daysObject);
+            res.send(daysObject);
+          })
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   });
 
   return router;
