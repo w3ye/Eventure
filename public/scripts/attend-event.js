@@ -1,14 +1,17 @@
+const loadEvent = () => {
+  $.get(`/event/`)
+    .then((event) => {
+      console.log(event);
+      renderProducts(event);
+    });
+};
+
 const renderEvents = (event) => {
   const $eventContainer = $('#attend-event');
-  const eventDetails = findEventByLink(event);
+  const $eventDetails = findEventByLink(event);
 
-  // console.log("HEY!")
-  // return "HEY!"
-
-
-
-console.log(eventDetails);
-return eventDetails;
+  // console.log(eventDetails);
+  return $eventContainer.append($eventDetails);
 }
 
 const attendEvent = function(event) {
@@ -43,6 +46,7 @@ const attendEvent = function(event) {
   </div>
   `;
 
+
   $eventInformation = $eventContainer.append($attendee);
 
   // return $eventContainer.html($attendee);
@@ -60,6 +64,7 @@ const nextButton = function() {
 };
 
 $(document).ready(function() {
+  loadEvent();
   renderEvents();
   attendEvent();
   $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)');
