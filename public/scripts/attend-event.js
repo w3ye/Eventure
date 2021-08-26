@@ -23,7 +23,7 @@ const renderEvent = (link) => {
   });
 }
 
-const attendEvent = function(event) {
+const attendEvent = function() {
   const $eventContainer = $('#attend-event');
   const $attendee = `
   <div class="master-catchphrase">
