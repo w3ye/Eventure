@@ -16,6 +16,22 @@ const splitName = (name) => {
   return arr;
 };
 
+const generateRandomString = () => {
+  const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let result = "";
+  for (let i = 15; i > 0; i--) {
+    result += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return result;
+};
+
+
+// const escape = function (str) {
+//   let div = document.createElement("div");
+//   div.appendChild(document.createTextNode(str));
+//   return div.innerHTML;
+// };
 module.exports = {
-  splitName
+  splitName,
+  generateRandomString
 };

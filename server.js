@@ -7,6 +7,7 @@ const ENV = process.env.ENV || "development";
 const express = require("express");
 const bodyParser = require("body-parser");
 const sass = require("node-sass-middleware");
+const cookieSession = require('cookie-session');
 const app = express();
 const morgan = require("morgan");
 
@@ -34,6 +35,12 @@ app.use(
   })
 );
 app.use(express.static("public"));
+
+// cookies
+app.use(cookieSession({
+  name: 'session',
+  keys: ['purple-delicious-icecream-lover']
+}));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own

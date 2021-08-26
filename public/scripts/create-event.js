@@ -1,8 +1,14 @@
-// const escape = function (str) {
-//   let div = document.createElement("div");
-//   div.appendChild(document.createTextNode(str));
-//   return div.innerHTML;
-// };
+const generateRandomString = () => {
+  const chars =
+    "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let result = "";
+  for (let i = 15; i > 0; i--) {
+    result += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return result;
+};
+
+const randomString = generateRandomString();
 
 const eventCreation = function () {
   const $eventContainer = $("#create-event");
@@ -76,25 +82,34 @@ const enterTitle = function () {
 //   });
 // };
 
-const confirmButton = function() {
+const confirmButton = function () {
   $("#confirm-button").click((event) => {
     event.preventDefault();
-    $('#overlay').css('opacity', '0');
-    $('#master-box').hide();
-    $('.master-catchphrase').hide();
-    $("input").prop('required',true);
-    $('#share-event').fadeIn();
-    const serialize = $("#new-event").serialize();
-    $.post("/create", serialize).done(console.log("success!", serialize));
+    $("#overlay").css("opacity", "0");
+    $("#master-box").hide();
+    $(".master-catchphrase").hide();
+    $("input").prop("required", true);
+    let serialize = $("#new-event").serialize();
+    serialize += `&link=${randomString}`;
+    
+    $.post("/create", serialize).done((result) => {
+      $("#share-event").fadeIn();
+      console.log('inside /create', result);
+      $.get("/links").then((link) => {
+        console.log(link);
+        $("#link").val(link);
+      });
+    });
+
   });
 };
 
-const homePageAnimate = function() {
+const homePageAnimate = function () {
   $(window).on("load", function () {
-    $('#create-event').slideDown(800);
-    $('#create-event').fadeIn(800);
+    $("#create-event").slideDown(800);
+    $("#create-event").fadeIn(800);
   });
-}
+};
 
 $(document).ready(function () {
   $("#create-event").hide();

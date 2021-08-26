@@ -29,16 +29,36 @@ module.exports = (db) => {
           title: req.body.title,
           detail: req.body.description,
           // TODO implement link
-          link: null,
+          link: req.body.link,
         };
 
         // console.log(eventQueryObj);
         // newEvent needs to be called within the newUser promise
         // events table need user_id as reference
-        event.newEvent(eventQueryObj).then(() => {
+        event.newEvent(eventQueryObj).then((result) => {
+          req.session["event_id"] = result.id;
           res.json({ success: true });
+          return result;
         });
       });
+  });
+
+  router.get("/links", (req, res) => {
+    const eventId = req.session["event_id"];
+    const event = new EVENT(db);
+
+    if (eventId) {
+      event
+        .findLink(eventId)
+        .then((result) => {
+          console.log('inside get', result);
+          // return result.link;
+          res.send(result.link);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   });
 
   return router;
