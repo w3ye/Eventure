@@ -54,20 +54,22 @@ module.exports = (db) => {
     const eventId = req.session["event_id"];
     const event = new EVENT(db);
 
-    event
-      .findLink(eventId)
-      .then((result) => {
-        console.log("inside get", result);
-        // return result.link;
-        res.send(result.link);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (eventId) {
+      event
+        .findLink(eventId)
+        .then((result) => {
+          console.log("inside get", result);
+          // return result.link;
+          res.send(result.link);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   });
 
-  router.get("/:link_val", (req, res) => {
-    
+  router.get("/event/:link_val", (req, res) => {
+    console.log('here');
   });
 
   return router;
