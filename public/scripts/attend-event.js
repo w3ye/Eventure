@@ -59,7 +59,8 @@ const attendEvent = function() {
 const nextButton = function() {
   $("#next-button").click((event) => {
     event.preventDefault();
-    $('#attend-event').hide();
+    // $('#attend-event').hide();
+
     const serialize = $("#guest-details").serialize();
     $.post('/user/create', serialize).done((result) => {
       console.log(result);

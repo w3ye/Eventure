@@ -50,10 +50,10 @@ const eventConfirmation = function () {
 const submitButton = function() {
   $("#submit-button").click((event) => {
     event.preventDefault();
-    $('#overlay').css('opacity', '0');
-    $('#timeslot').hide();
-    $('#master-box').hide();
-    $('.master-catchphrase').hide();
+    // $('#overlay').css('opacity', '0');
+    // $('#timeslot').hide();
+    // $('#master-box').hide();
+    // $('.master-catchphrase').hide();
     $('#result-event').show();
     const serialize = $("#time-container").serialize();
     console.log(serialize)
