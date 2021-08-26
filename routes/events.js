@@ -7,6 +7,7 @@ const { splitName } = require("../helper");
 module.exports = (db) => {
   const event = new EVENT(db);
   const user = new USER(db);
+
   router.post("/create", (req, res) => {
     const name = splitName(req.body.name);
     const userQueryObj = {
@@ -43,16 +44,14 @@ module.exports = (db) => {
       });
   });
 
-  router.get('/api/events', (req, res) => {
-    const event = new EVENT(db);
-    event.getEvents().then(data => {
+  router.get("/api/events", (req, res) => {
+    event.getEvents().then((data) => {
       res.json(data);
     });
   });
 
   router.get("/links", (req, res) => {
     const eventId = req.session["event_id"];
-    const event = new EVENT(db);
 
     if (eventId) {
       event
@@ -69,7 +68,16 @@ module.exports = (db) => {
   });
 
   router.get("/event/:link_val", (req, res) => {
-    console.log('here');
+    event
+      .findEventByLink(req.params.link_val)
+      .then((result) => {
+        console.log(result);
+        res.json(result);
+        return result;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   });
 
   return router;
