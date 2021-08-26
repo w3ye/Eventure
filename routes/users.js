@@ -7,19 +7,24 @@
 
 const express = require('express');
 const router  = express.Router();
+const USER = require('../lib/user-queries');
+const { splitName } = require('../helper');
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
-      .then(data => {
-        const users = data.rows;
-        res.json({ users });
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      });
+  const user = new USER(db);
+  router.post("/create", (req, res) => {
+    const name = splitName(req.body.name);
+    const userQueryObj = {
+      firstName: name[0],
+      lastName: name.length === 2 ? name[1] : null,
+      email: req.body.email,
+    };
+
+    user.newUser(userQueryObj)
+    .then((result) => {
+      return { success: true };
+    });
+
   });
   return router;
 };

@@ -52,6 +52,7 @@ const eventRoutes = require("./routes/events");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/", eventRoutes(db));
+app.use('/user', usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
@@ -62,9 +63,9 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.resolve("public", "index.html"))
-})
+// app.get("/*", (req, res) => {
+//   res.sendFile(path.resolve("public", "index.html"))
+// })
 
 app.get("/event/*", (req, res) => {
   res.render("index");

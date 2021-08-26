@@ -10,6 +10,7 @@ const getDate = (str) => {
   const date = new Date(str);
   return date.toLocaleDateString('en-Us', option);
 };
+
 const renderEvent = (link) => {
   $.get(`/api/event/${link}`).then((data) => {
     console.log(data)
@@ -59,7 +60,9 @@ const nextButton = function() {
   $("#next-button").click((event) => {
     event.preventDefault();
     const serialize = $("#guest-details").serialize();
-    console.log(serialize);
+    $.post('/user/create', serialize).done((result) => {
+      console.log(result);
+    });
   });
 };
 

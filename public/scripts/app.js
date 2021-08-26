@@ -29,19 +29,14 @@ $(() => {
   router();
 
   window.addEventListener('load', (event) => {
-    console.log('page is fully loaded');
 
     if (window.location.pathname.includes("/event/")) {
-      // console.log("THIS IS EVENT!")
       $("#attend-event").slideDown(600);
       $("#attend-event").fadeIn(600);
     }
     else if (window.location.host) {
-      console.log("THIS IS INDEX!")
       $("#create-event").slideDown(800);
       $("#create-event").fadeIn(800);
-    } else if (window.location.pathname.includes("/*")) {
-      console.log("THIS IS AN ERROR!")
     }
   });
 });
