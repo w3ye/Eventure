@@ -82,10 +82,10 @@ const checkVote = function() {
 };
 
 const submitPoll = function() {
-$("#submit-button").on('click', function(event) {
-  event.preventDefault();
-  console.log($(this).closest('form'));
-})
+  $("#submit-button").on('click', function(event) {
+    event.preventDefault();
+    console.log($(this).parent().find('div'));
+  })
 };
 
 const resultButton = function() {
