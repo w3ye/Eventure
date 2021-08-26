@@ -12,7 +12,7 @@ const eventResult = function() {
         <div class="share-row">
         </div>
         <div class="last-step">
-          <a href="#timeslots"><button type="submit" id="edit-button" onclick="openForm()">Edit</button></a>
+          <button type="submit" id="edit-button" onclick="openForm()">Edit</button></a>
         </div>
       </div>
     </div>

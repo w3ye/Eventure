@@ -26,7 +26,7 @@ const eventConfirmation = function () {
           <a target="_blank" title="Twitter" href="https://twitter.com/intent/tweet?text=Join%20My%20Eventure!&url=${randomLink}"><i class="icon fab fa-twitter"></i></a>
         </div>
         <div class="last-step">
-          <a href="#create"><button type="submit" id="modify-button">Modify</button></a>
+          <button type="submit" id="modify-button">Modify</button>
           <button id="result-button">Result</button>
         </div>
       </div>
@@ -43,7 +43,6 @@ const submitButton = function() {
     $('#timeslot').hide();
     $('#master-box').hide();
     $('.master-catchphrase').hide();
-    // $('#share-event').show();
     $('#result-event').show();
     const serialize = $("#time-container").serialize();
     console.log(serialize)
