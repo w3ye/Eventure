@@ -65,7 +65,7 @@ const nextButton = function() {
 };
 
 $(document).ready(function() {
-  loadEvent();
+  // loadEvent();
   // renderEvents();
   attendEvent();
   $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)');
