@@ -20,7 +20,6 @@ const randomLink = "";
 //   });
 // }
 
-
 const eventConfirmation = function () {
   const $shareContainer = $("#share-event");
   const $confirm = `
@@ -61,26 +60,6 @@ const submitButton = function() {
   });
 };
 
-// const submitButton = function () {
-//   $("#submit-button").click((event) => {
-//     event.preventDefault();
-//     $("#overlay").css("opacity", "0");
-//     $("#timeslot").hide();
-//     $("#master-box").hide();
-//     $(".master-catchphrase").hide();
-//     $("#share-event").show();
-//     const serialize = $("#time-container").serialize();
-//   });
-// };
-
-// const resultButton = function() {
-//   $("#modify-button").click((event) => {
-//     event.preventDefault();
-//     $("#share-event").hide();
-//     $("#master-box").fadeIn();
-//   });
-// }
-
 const modifyButton = function () {
   $("#modify-button").click((event) => {
     event.preventDefault();
@@ -89,14 +68,9 @@ const modifyButton = function () {
   });
 };
 
-
 $(document).ready(function () {
   $("#share-event").hide();
   submitButton();
   eventConfirmation();
   modifyButton();
-  // $.get("link").then((link) => {
-  //   console.log(link);
-  //   $("#link").val(link);
-  // });
 });

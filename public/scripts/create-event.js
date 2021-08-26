@@ -106,6 +106,7 @@ const confirmButton = function () {
           <a target="_blank" title="Twitter" href="https://twitter.com/intent/tweet?text=Join%20My%20Eventure!&url=${link}"><i class="icon fab fa-twitter"></i></a>
           `;
         $shareRow.append($shareLinks);
+
         const $resultButton = $("#result-button");
         const $resultLink = `
         <a href="/result/${link}">Result</a>
@@ -114,13 +115,6 @@ const confirmButton = function () {
       });
     });
 
-  });
-};
-
-const homePageAnimate = function () {
-  $(window).on("load", function () {
-    $("#create-event").slideDown(800);
-    $("#create-event").fadeIn(800);
   });
 };
 
