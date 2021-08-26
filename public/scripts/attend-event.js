@@ -1,18 +1,19 @@
-const loadEvent = () => {
-  $.get(`/event/`)
-    .then((event) => {
-      console.log(event);
-      renderProducts(event);
-    });
-};
+// const loadEvent = () => {
+//   $.get(`/api/events`)
+//     .then((event) => {
+//       console.log(event[0]);
 
-const renderEvents = (event) => {
-  const $eventContainer = $('#attend-event');
-  const $eventDetails = findEventByLink(event);
+//       // renderProducts(event);
+//     });
+// };
 
-  // console.log(eventDetails);
-  return $eventContainer.append($eventDetails);
-}
+// const renderEvents = (event) => {
+//   const $eventContainer = $('#attend-event');
+//   const $eventDetails = findEventByLink(event);
+
+//   console.log($eventContainer.append($eventDetails));
+//   return $eventContainer.append($eventDetails);
+// }
 
 const attendEvent = function(event) {
   let $eventInformation;
@@ -65,7 +66,7 @@ const nextButton = function() {
 
 $(document).ready(function() {
   loadEvent();
-  renderEvents();
+  // renderEvents();
   attendEvent();
   $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)');
   nextButton();
