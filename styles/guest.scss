@@ -1,0 +1,23 @@
+$accent-color: #dad5ed;
+$details-color: #bab8f5ad;
+$font-body: "Cabin", sans-serif;
+$font-emphasis: "Staatliches", cursive;
+$top-bg: rgba(22, 28, 83, 1);
+
+input.guest {
+  background-color: transparent;
+  outline: none;
+  resize: none;
+  border: 0;
+  border-bottom: 1px solid #89878f;
+  height: 25px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+#guest-name,
+#guest-email {
+  width: 50%;
+  color: $top-bg;
+}

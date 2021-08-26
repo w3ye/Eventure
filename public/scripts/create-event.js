@@ -43,9 +43,9 @@ const eventCreation = function () {
       <p class="details">Event Description:</p>
       <textarea name="description" id="event-details" maxlength="250" required></textarea>
       <p class="details">Name:</p>
-      <input name="name" id="owner-name" class="owner" maxlength="30" required></textarea>
+      <input name="name" id="owner-name" class="owner" maxlength="30" required></input>
       <p class="details">E-mail:</p>
-      <input name="email" id="owner-email" class="owner" maxlength="50" required></textarea>
+      <input name="email" id="owner-email" class="owner" maxlength="50" required></input>
 
       <div class="next">
         <a href="#success"><button type="submit" id="confirm-button">Confirm</button></a>
@@ -91,7 +91,7 @@ const confirmButton = function () {
     $("input").prop("required", true);
     let serialize = $("#new-event").serialize();
     serialize += `&link=${randomString}`;
-    
+
     $.post("/create", serialize).done((result) => {
       $("#share-event").fadeIn();
       console.log('inside /create', result);

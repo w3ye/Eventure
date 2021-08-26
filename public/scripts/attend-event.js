@@ -1,4 +1,8 @@
-const attendEvent = function() {
+const attendEvent = function(event) {
+  $.get("/create").then((event) => {
+    console.log(event);
+  });
+
   const $eventContainer = $('#attend-event');
   const $attendee = `
   <div class="master-catchphrase">
@@ -9,17 +13,20 @@ const attendEvent = function() {
   <div class="master-box" id="master-box">
     <div class="title" id="new-event">
       <div class="master-header">
-        <p class="title-create">Eventure Title - Meetings!
+        <p class="title-create">Eventure Title
       </div>
       <div class="master-body">
+        <p class="details">Name invited you to this event!${event}</p>
         <p class="details">Dates: 09/03/2021 - 09/07/2021</p>
         <p class="details">Event Description:</p>
         <p class="details">Name:</p>
-        <input name="name" id="owner-name" class="owner" maxlength="30" required></textarea>
-        <p class="details">E-mail:</p>
-        <input name="email" id="owner-email" class="owner" maxlength="50" required></textarea>
+      <form id="guest-details">
+          <input name="name" id="guest-name" class="guest" maxlength="30" required></input>
+          <p class="details">E-mail:</p>
+          <input name="email" id="guest-email" class="guest" maxlength="50" required></input>
+        </form>
         <div class="next">
-          <a href="#timeslot"><button type="submit" id="next-button" onclick="openForm()">Next</button></a>
+          <button type="submit" id="next-button" onclick="openForm()">Next</button>
         </div>
       </div>
     </div>
@@ -28,17 +35,19 @@ const attendEvent = function() {
   return $eventContainer.html($attendee);
 };
 
+
+
 const nextButton = function() {
   $("#next-button").click((event) => {
     event.preventDefault();
-    const serialize = $("#new-event").serialize();
+    const serialize = $("#guest-details").serialize();
     console.log(serialize);
   });
 };
 
 $(document).ready(function() {
+
   attendEvent();
   $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)');
-  // enterTitle();
   nextButton();
 });

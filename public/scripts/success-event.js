@@ -15,7 +15,7 @@ const eventConfirmation = function () {
       <p class="share-catchphrase-words">has been created!</p>
     </div>
     <div class="share-box">
-      <p class="eventure-title">Eventure Title is ready.</p>>
+      <p class="eventure-title">Eventure Title is ready.</p>
       <div class="share-body">
         <p class="secret-link">Secret Link:</p>
         <p><input type="text" id="link" name="link" class="link" value="" readonly></p>
@@ -43,7 +43,8 @@ const submitButton = function() {
     $('#timeslot').hide();
     $('#master-box').hide();
     $('.master-catchphrase').hide();
-    $('#share-event').show();
+    // $('#share-event').show();
+    $('#result-event').show();
     const serialize = $("#time-container").serialize();
     console.log(serialize)
   });
@@ -75,8 +76,8 @@ $(document).ready(function () {
   submitButton();
   eventConfirmation();
   modifyButton();
-  $.get("link").then((link) => {
-    console.log(link);
-    $("#link").val(link);
-  });
+  // $.get("link").then((link) => {
+  //   console.log(link);
+  //   $("#link").val(link);
+  // });
 });

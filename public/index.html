@@ -32,6 +32,7 @@
   <link href="../styles/button.css" rel="stylesheet">
   <link href="../styles/create-event.css" rel="stylesheet">
   <link href="../styles/footer.css" rel="stylesheet">
+  <link href="../styles/guest.css" rel="stylesheet">
   <link href="../styles/layout.css" rel="stylesheet">
   <link href="../styles/master-box.css" rel="stylesheet">
   <link href="../styles/modal.css" rel="stylesheet">
@@ -41,19 +42,19 @@
 
   <!-- JavaScript -->
   <script type="text/javascript" src="/scripts/attend-event.js"></script>
-  <!-- <script type="text/javascript" src="/scripts/create-event.js"></script> -->
+  <script type="text/javascript" src="/scripts/create-event.js"></script>
   <script type="text/javascript" src="/scripts/date-range.js"></script>
   <script type="text/javascript" src="/scripts/escape.js"></script>
   <script type="text/javascript" src="/scripts/footer.js"></script>
   <script type="text/javascript" src="/scripts/result-event.js"></script>
   <!-- <script type="text/javascript" src="/scripts/modify-event.js"></script> -->
   <script type="text/javascript" src="/scripts/stars.js"></script>
-  <!-- <script type="text/javascript" src="/scripts/success-event.js"></script> -->
+  <script type="text/javascript" src="/scripts/success-event.js"></script>
 
   <!-- SCRIPTS TO ACTIVATE WHEN MODAL IS IMPLEMENTED -->
   <script type="text/javascript" src="/scripts/modal.js"></script>
+  <script type="text/javascript" src="/scripts/modal-buttons.js"></script>
   <script type="text/javascript" src="/scripts/timepicker.js"></script>
-  <script type="text/javascript" src="/scripts/timeslots.js"></script>
 </head>
 
 <body>
@@ -81,21 +82,6 @@
           <div class="modal-body">
             <div class="meeting-dates">
               <p id="date">Date:</p>
-              <!-- <div id="add-timeslot">
-                <div class="start-row">
-                  <label for="start">Start Time:</label>
-                  <input type="text" class="start" name="start" />
-                </div>
-                <div class="end-row">
-                  <label for="end">End Time:</label>
-                  <input type="text" class="end" name="end" />
-                </div>
-              </div>
-              <div id="generate-timeslot">
-              </div>
-              <button type="submit" class="add-time">Add</button>
-              <button type="submit" class="remove-time">Remove</button>
-            </div> -->
             <button type="submit" id="submit-button"><a href="#success">Submit</a></button>
           </div>
         </form>
