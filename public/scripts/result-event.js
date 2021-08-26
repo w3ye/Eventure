@@ -40,8 +40,6 @@ const editButton = function() {
     event.preventDefault();
     console.log("EDIT!")
     $('#add-timeslots').show();
-    // $('#result-event').hide();
-    // $('#master-box').fadeIn();
   });
 }
 

@@ -48,7 +48,7 @@ const eventCreation = function () {
       <input name="email" id="owner-email" class="owner" maxlength="50" required></input>
 
       <div class="next">
-        <a href="#success"><button type="submit" id="confirm-button">Confirm</button></a>
+        <button type="submit" id="confirm-button">Confirm</button>
       </div>
     </form>
   </div>
@@ -99,14 +99,18 @@ const confirmButton = function () {
         console.log(link);
         $("#link").val(link);
         const $shareRow = $("#share-row")
-    const $shareLinks = `
-      <a title="Mail" href="mailto:?subject=Eventure Invite&body=Hey! Check out my event here: ${link}"><i class="icon fas fa-at"></i></a>
-      <a target="_blank" title="Facebook" href="https://www.facebook.com/sharer/sharer.php?u=${link}" class="fb-xfbml-parse-ignore"><i class="icon fab fa-facebook"></i></a>
-      <a target="_blank" title="Messenger" href="https://www.facebook.com/dialog/send?app_id=140586622674265&link=${link}.&redirect_uri=https%3A%2F%2Fwww.addthis.com%2Fmessengerredirect"><i class="icon fab fa-facebook-messenger"></i></a>
-      <a target="_blank" title="Twitter" href="https://twitter.com/intent/tweet?text=Join%20My%20Eventure!&url=${link}"><i class="icon fab fa-twitter"></i></a>
-    `
-    $shareRow.append($shareLinks)
-
+        const $shareLinks = `
+          <a title="Mail" href="mailto:?subject=Eventure Invite&body=Hey! Check out my event here: ${link}"><i class="icon fas fa-at"></i></a>
+          <a target="_blank" title="Facebook" href="https://www.facebook.com/sharer/sharer.php?u=${link}" class="fb-xfbml-parse-ignore"><i class="icon fab fa-facebook"></i></a>
+          <a target="_blank" title="Messenger" href="https://www.facebook.com/dialog/send?app_id=140586622674265&link=${link}.&redirect_uri=https%3A%2F%2Fwww.addthis.com%2Fmessengerredirect"><i class="icon fab fa-facebook-messenger"></i></a>
+          <a target="_blank" title="Twitter" href="https://twitter.com/intent/tweet?text=Join%20My%20Eventure!&url=${link}"><i class="icon fab fa-twitter"></i></a>
+          `;
+        $shareRow.append($shareLinks);
+        const $resultButton = $("#result-button");
+        const $resultLink = `
+        <a href="/result/${link}">Result</a>
+        `
+        $resultButton.append($resultLink);
       });
     });
 

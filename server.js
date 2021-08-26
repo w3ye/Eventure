@@ -55,7 +55,7 @@ const resRoutes = require('./routes/result');
 app.use("/", eventRoutes(db));
 app.use('/user', usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-app.use('/votes', resRoutes(db));
+app.use('/', resRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -70,7 +70,11 @@ app.get("/", (req, res) => {
 // })
 
 app.get("/event/*", (req, res) => {
-  res.render("index");
+  res.sendFile(path.resolve("public", "index.html"))
+});
+
+app.get("/result/*", (req, res) => {
+  res.sendFile(path.resolve("public", "index.html"))
 });
 
 app.listen(PORT, () => {

@@ -39,7 +39,7 @@ const eventConfirmation = function () {
         </div>
         <div class="last-step">
           <button type="submit" id="modify-button">Modify</button>
-          <button id="result-button">Result</button>
+          <button id="result-button"></button>
         </div>
       </div>
     </div>
@@ -72,6 +72,14 @@ const submitButton = function() {
 //     const serialize = $("#time-container").serialize();
 //   });
 // };
+
+// const resultButton = function() {
+//   $("#modify-button").click((event) => {
+//     event.preventDefault();
+//     $("#share-event").hide();
+//     $("#master-box").fadeIn();
+//   });
+// }
 
 const modifyButton = function () {
   $("#modify-button").click((event) => {
