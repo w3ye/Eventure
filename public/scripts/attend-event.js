@@ -1,22 +1,13 @@
-// const loadEvent = () => {
-//   $.get(`/api/events`)
-//     .then((event) => {
-//       console.log(event[0]);
+const url = window.location.pathname;
 
-//       // renderProducts(event);
-//     });
-// };
-
-// const renderEvents = (event) => {
-//   const $eventContainer = $('#attend-event');
-//   const $eventDetails = findEventByLink(event);
-
-//   console.log($eventContainer.append($eventDetails));
-//   return $eventContainer.append($eventDetails);
-// }
+const getEventLink = () => {
+  $.get(`/api/event/${link}`).then((data) => {
+    console.log(data.detail);
+  });
+}
 
 const attendEvent = function(event) {
-  let $eventInformation;
+  // let $eventInformation;
   const $eventContainer = $('#attend-event');
   const $attendee = `
   <div class="master-catchphrase">
@@ -27,11 +18,11 @@ const attendEvent = function(event) {
   <div class="master-box" id="master-box">
     <div class="title" id="new-event">
       <div class="master-header">
-        <p class="title-create">Eventure Title
+        <p class="title-create">
       </div>
       <div class="master-body">
-        <p class="details">Name invited you to this event!${event}</p>
-        <p class="details">Dates: 09/03/2021 - 09/07/2021</p>
+        <p class="details">Name invited you to this event!</p>
+        <p class="details">Dates: to </p>
         <p class="details">Event Description:</p>
         <p class="details">Name:</p>
       <form id="guest-details">
@@ -46,15 +37,8 @@ const attendEvent = function(event) {
     </div>
   </div>
   `;
-
-
-  $eventInformation = $eventContainer.append($attendee);
-
-  // return $eventContainer.html($attendee);
-  return $eventInformation;
+  return $eventContainer.html($attendee);
 };
-
-
 
 const nextButton = function() {
   $("#next-button").click((event) => {
@@ -65,9 +49,8 @@ const nextButton = function() {
 };
 
 $(document).ready(function() {
-  // loadEvent();
-  // renderEvents();
+  $('#attend-event').hide();
+  $('#create-event').hide();
   attendEvent();
-  $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)');
   nextButton();
 });

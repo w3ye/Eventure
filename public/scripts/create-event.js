@@ -113,7 +113,7 @@ const homePageAnimate = function () {
 
 $(document).ready(function () {
   $("#create-event").hide();
-  homePageAnimate();
+  // homePageAnimate();
   eventCreation();
   $(".master-body").hide();
   enterTitle();

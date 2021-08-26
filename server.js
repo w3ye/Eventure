@@ -5,6 +5,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 const ENV = process.env.ENV || "development";
 const express = require("express");
+const path = require("path");
 const bodyParser = require("body-parser");
 const sass = require("node-sass-middleware");
 const cookieSession = require('cookie-session');
@@ -58,6 +59,14 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.resolve("public", "index.html"))
+})
+
+app.get("/event/*", (req, res) => {
   res.render("index");
 });
 

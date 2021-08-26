@@ -1,8 +1,10 @@
 const EVENT = require("../lib/event-queries");
 const USER = require("../lib/user-queries");
 const express = require("express");
+const path = require("path");
 const router = express.Router();
 const { splitName } = require("../helper");
+const { json } = require("body-parser");
 
 module.exports = (db) => {
   const event = new EVENT(db);
@@ -67,17 +69,19 @@ module.exports = (db) => {
     }
   });
 
+  router.get('/api/event/:link_val', (req, res) => {
+    event.findEventByLink(req.params.link_val)
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      res.send(400).send('This link does not exist');
+    });
+
+  });
+
   router.get("/event/:link_val", (req, res) => {
-    event
-      .findEventByLink(req.params.link_val)
-      .then((result) => {
-        console.log(result);
-        res.json(result);
-        return result;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    res.sendFile(path.resolve("public", "index.html"))
   });
 
   return router;
