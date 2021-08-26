@@ -1,53 +1,42 @@
-const resultButton = function() {
-  $("#result-button").click((event) => {
-    event.preventDefault();
-    console.log('clicked result')
-    // $('#share-event').hide();
-    // $('').fadeIn();
-    $.get("/polls").then((daysObj) => {
-      console.log('clicked result');
-      const startDate = days.start_date.split('T')[0]
-      const dayRange = days.range;
-
-    });
-  });
-}
-
-$(document).ready(function() {
-  $("#share-event").hide();
-  resultButton();
-});
-
-
-
-//TEMPORARILY GETTING POLL INFO IN HERE
-
-//TEMPORARY CODE BLOCK
-
-
-<div class="form-popup" id="polling">
-  <form action="/" id="days-container">
-    <div class="modal-header">
-      <p class="fix-title">Eventure Title</p>
-    </div>
-    <div class="modal-body">
-      <div class="voting-days">
-        <p id="date">Please Select Your Available Days</p>
-        <div id="add-timeslot">
-
-          ADD DIV "FOREACH" DAY CONTAINING THE NAME OF THE DAY AND A CHECKBOX TO VOTE FOR IT
-
-        </div>
-        <div id="generate-timeslot">
-        </div>
-        <button type="submit" class="add-time">Add</button>
-        <button type="submit" class="remove-time">Remove</button>
+const pollingConfirmation = function() {
+  const $pollContainer = $("#polling-event");
+  const $pollConfirm = `
+  <div class="form-popup" id="polling">
+    <form action="/" id="days-container">
+      <div class="modal-header">
+        <p class="fix-title">Eventure Title</p>
       </div>
-      <button type="submit" id="submit-button"><a href="#success">Submit</a></button>
-    </div>
-  </form>
-</div>
+      <div class="modal-body">
+        <div class="voting-days">
+         <p id="date">Please Select Your Available Days:</p>
 
+          <div id="generate-voteslot">
+
+          </div>
+
+        </div>
+        <button type="submit" id="submit-button"><a href="#success">Submit Availability</a></button>
+      </div>
+    </form>
+  </div>
+  `;
+  return $pollContainer.html($pollConfirm);
+};
+
+
+// const addVoteslot = function(dayStr) {
+//   const $voteContainer = $("#generate-voteslot");
+
+//   const $newVoteslot = `
+//   <div class="voteslots">
+//     <h3>${dayStr}</h3>
+//     <div class="vote-checkbox">
+//       <small>Select:</small>
+//       <input type="checkbox" id="day1" name="day1" value="thisDay">
+//     </div>
+//   </div>
+//   `
+// };
 
 //USE THIS TO ADD NEW DAYS TO VOTE ON
 /*
@@ -68,4 +57,13 @@ const addMeetingTime = function() {
   `;
   return $timeslotContainer.append($newMeetingTime);
 };
+
 */
+
+$(document).ready(function() {
+  $("#share-event").hide();
+  $(".form-popup").show();
+  pollingConfirmation();
+  $("#polling-event").show();
+  // resultButton();
+});

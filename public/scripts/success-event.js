@@ -56,13 +56,59 @@ const modifyButton = function() {
   });
 };
 
+const addVoteslot = function(dayStr, index) {
+  const $voteContainer = $("#generate-voteslot");
+
+  const $newVoteslot = `
+  <div class="voteslots">
+    <h3>${dayStr}</h3>
+    <div class="vote-checkbox">
+      <small>Select:</small>
+      <input type="checkbox" id="day${index}" name="day${index}" value="${dayStr}">
+    </div>
+  </div>
+  `;
+  return $voteContainer.append($newVoteslot);
+};
+
+const checkVote = function() {
+  $("#days-container :checkbox").change(function(event) {
+    if (this.checked) {
+      console.log($(this).val())
+    } else {
+      console.log('unchecked ', $(this).val())
+    }
+  })
+};
+
+const submitPoll = function() {
+$("#submit-button").on('click', function(event) {
+  event.preventDefault();
+  console.log($(this).closest('form'));
+})
+};
+
 const resultButton = function() {
   $("#result-button").click((event) => {
     event.preventDefault();
     $("#share-event").hide();
-    $.get("/polls");
+    // $("#polling-event").fadeIn();
+    $(".form-popup").show();
+    $(".form-popup").fadeIn();
+    $("#polling-event").show();
+    $.get("/polls")
+      .then(dayArray => {
+        dayArray.forEach((day, order) => {
+          const dayDate = (new Date(Date.parse(day.day)).toString().split(' ').splice(0, 4).join(' '));
+          addVoteslot(dayDate, order)
+        })
+      })
+      .then(() => {
+        checkVote();
+        submitPoll();
+      });
   });
-}
+};
 
 $(document).ready(function() {
   $("#share-event").hide();
@@ -70,6 +116,7 @@ $(document).ready(function() {
   eventConfirmation();
   modifyButton();
   resultButton();
+  $("#polling-event").show();
   $.get("link").then((link) => {
     console.log(link);
     $("#link").val(link);
