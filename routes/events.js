@@ -42,16 +42,6 @@ module.exports = (db) => {
             res.json({ success: true });
             return result;
           })
-          .then((event_details) => {
-            const eventId = event_details.id
-            console.log('eventId: ', eventId);
-            const theRange = event.generateRange(eventId);
-            console.log('theRange: ', theRange);
-            return event.generateRange(eventId);
-          })
-          .then(result => {
-            console.log('range: ', result);
-          })
       });
   });
 
@@ -70,6 +60,23 @@ module.exports = (db) => {
         .catch((err) => {
           console.log(err);
         });
+    }
+  });
+
+  router.get('/polls', (req, res) => {
+    const eventId = req.session["event_id"];
+    const event = new EVENT(db);
+
+    if (eventId) {
+      console.log('eventId: ', eventId);
+      const theRange = event.generateRange(eventId);
+      console.log('theRange: ', theRange);
+      return event.generateRange(eventId)
+
+        .then(result => {
+          //console.log('range: ', result);
+          res.send(result);
+        })
     }
   });
 
