@@ -26,7 +26,7 @@ const linkForSubmitPoll = function(link) {
 const renderEvent = (link) => {
   $.get(`/api/event/${link}`).then((data) => {
     linkForSubmit(data.link)
-    linkForSubmitPoll(data.link)
+    // linkForSubmitPoll(data.link)
     console.log(data)
     $(".master-header").css(
       "box-shadow",

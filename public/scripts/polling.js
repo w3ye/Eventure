@@ -30,4 +30,8 @@ $(document).ready(function() {
       $("#share-event").show();
     }
   });
+  $("#submit-poll").click((event) => {
+    event.preventDefault;
+    $("#polling-event").hide();
+  });
 });

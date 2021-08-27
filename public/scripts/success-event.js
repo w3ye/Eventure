@@ -72,6 +72,7 @@ const submitPoll = function () {
   $("#submit-poll").on("click", function (event) {
     event.preventDefault();
     let votedDays = [];
+
     $("#generate-voteslot")
       .find("input")
       .each(function (input) {
@@ -85,14 +86,13 @@ const submitPoll = function () {
   });
 };
 
-const resultButton = function () {
+const voteButton = function () {
   $("#vote-button").click((event) => {
     event.preventDefault();
     $("#share-event").hide();
     $(".form-popup").show();
-    $(".form-popup").fadeIn();
-    $("#overlay").fadeIn();
     $("#polling-event").show();
+    $("#overlay").fadeIn();
     $.get("/polls")
       .then((dayArray) => {
         dayArray.forEach((day, order) => {
@@ -115,6 +115,7 @@ $(document).ready(function () {
   submitButton();
   eventConfirmation();
   modifyButton();
-  resultButton();
+  voteButton();
+  submitPoll();
   $("#polling-event").show();
 });

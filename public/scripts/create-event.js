@@ -118,9 +118,12 @@ const confirmButton = function () {
         $('#share-row').empty()
         $('#result-button').empty()
         generateLinks(link);
-      });
+        $("#submit-poll").click((event) => {
+          event.preventDefault;
+          window.location.pathname = `/result/${link}`
+        });
+        });
     });
-
   });
 };
 
