@@ -70,20 +70,19 @@ const attendEvent = function() {
   return $eventContainer.html($attendee);
 };
 
-const nextButton = function() {
-  $("#next-button").click((event) => {
-    event.preventDefault();
-    $("#overlay").css("opacity", "0");
-    const serialize = $("#guest-details").serialize();
-    $.post('/user/create', serialize).done((result) => {
-      console.log(result);
-    });
-  });
-};
+// const nextButton = function() {
+//   $("#next-button").click((event) => {
+//     event.preventDefault();
+//     $("#overlay").css("opacity", "0");
+//     const serialize = $("#guest-details").serialize();
+//     $.post('/user/create', serialize).done((result) => {
+//       console.log(result);
+//     });
+//   });
+// };
 
 $(document).ready(function() {
   $('#attend-event').hide();
   $('#create-event').hide();
   attendEvent();
-  nextButton();
 });

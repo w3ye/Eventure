@@ -73,7 +73,8 @@ module.exports = (db) => {
     event
       .findEventByLink(req.params.link_val)
       .then((result) => {
-        req.session["event_id"] = result.event_id;
+        req.session["event_id"] = result.id;
+        console.log('apiCookie: ',req.session["event_id"])
         res.json(result);
       })
       .catch((err) => {
@@ -89,7 +90,10 @@ module.exports = (db) => {
     const eventId = req.session["event_id"];
     const event = new EVENT(db);
 
+    console.log('polls cookie: ', eventId);
+
     event.generateRange(eventId).then((rangeDates) => {
+      console.log('rangeDates events.js: ', rangeDates);
       event
         .generateDaysObject(rangeDates)
 

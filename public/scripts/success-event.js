@@ -84,10 +84,10 @@ const submitPoll = function () {
   });
 };
 
-const resultButton = function () {
-  $("#result-button").click((event) => {
+const nextButton = function () {
+  $("#next-button").click((event) => {
     event.preventDefault();
-    $("#share-event").hide();
+    $("#attend-event").hide();
     $(".form-popup").show();
     $(".form-popup").fadeIn();
     $("#polling-event").show();
@@ -108,12 +108,23 @@ const resultButton = function () {
   });
 };
 
+// const nextButton = function() {
+//   $("#next-button").click((event) => {
+//     event.preventDefault();
+//     $("#overlay").css("opacity", "0");
+//     const serialize = $("#guest-details").serialize();
+//     $.post('/user/create', serialize).done((result) => {
+//       console.log(result);
+//     });
+//   });
+// };
+
 $(document).ready(function () {
   $("#share-event").hide();
   submitButton();
   eventConfirmation();
   modifyButton();
-  resultButton();
+  nextButton();
   $("#polling-event").show();
   $.get("link").then((link) => {
     console.log(link);
