@@ -116,7 +116,6 @@ $(document).ready(function () {
   resultButton();
   $("#polling-event").show();
   $.get("link").then((link) => {
-    console.log(link);
     $("#link").val(link);
   });
 });

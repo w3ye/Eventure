@@ -2,19 +2,13 @@ const pollingConfirmation = function() {
   const $pollContainer = $("#polling-event");
   const $pollConfirm = `
   <div class="form-popup" id="polling">
-    <form action="/" id="days-container">
-      <div class="modal-header">
-        <p class="fix-title">Eventure Title</p>
-      </div>
+    <form id="days-container">
       <div class="modal-body">
         <div class="voting-days">
          <p id="date">Please Select Your Available Days:</p>
-
           <div id="generate-voteslot">
-
           </div>
-
-          <button type="submit" id="submit-poll"><a href="#success">Submit Availability</a></button>
+          <button type="submit" id="submit-poll">Submit Availability</button>
         </div>
       </div>
     </form>

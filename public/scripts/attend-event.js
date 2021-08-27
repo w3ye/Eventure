@@ -1,5 +1,3 @@
-
-
 const option = {
   year: 'numeric',
   month: 'short',
@@ -18,9 +16,17 @@ const linkForSubmit = function(link) {
   });
 }
 
+const linkForSubmitPoll = function(link) {
+  $("#submit-poll").click((event) => {
+    event.preventDefault();
+    window.location = `/result/${link}`;
+  });
+}
+
 const renderEvent = (link) => {
   $.get(`/api/event/${link}`).then((data) => {
     linkForSubmit(data.link)
+    linkForSubmitPoll(data.link)
     console.log(data)
     $(".master-header").css(
       "box-shadow",
@@ -73,10 +79,12 @@ const attendEvent = function() {
 const nextButton = function() {
   $("#next-button").click((event) => {
     event.preventDefault();
+    $(".form-popup").fadeIn();
+    // openForm();
     $("#overlay").css("opacity", "0");
     const serialize = $("#guest-details").serialize();
     $.post('/user/create', serialize).done((result) => {
-      console.log(result);
+      // console.log(result);
     });
   });
 };
