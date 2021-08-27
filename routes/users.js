@@ -22,6 +22,7 @@ module.exports = (db) => {
 
     user.newUser(userQueryObj).then((result) => {
       req.session['user_id'] = result.id;
+      console.log(result);
       return { success: true };
     });
   });
