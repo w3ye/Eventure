@@ -21,7 +21,6 @@ const eventConfirmation = function () {
         </div>
         <div class="last-step">
           <button type="submit" id="modify-button">Modify</button>
-          <button id="vote-button">Vote</button>
           <button id="result-button">Result</button>
         </div>
       </div>
@@ -31,19 +30,19 @@ const eventConfirmation = function () {
 };
 
 // WHEN MODAL IS ONLY ACTIVATED
-const submitButton = function () {
-  $("#submit-button").click((event) => {
-    event.preventDefault();
-    $("#result-event").slideDown(500);
-    $("#result-event").fadeIn(500);
-    $("#overlay").css("opacity", "1");
-    $("#timeslot").fadeOut();
-    $("#timeslot").hide();
-    $("#attend-event").hide();
-    const serialize = $("#time-container").serialize();
-    console.log(serialize);
-  });
-};
+// const submitButton = function () {
+//   $("#submit-button").click((event) => {
+//     event.preventDefault();
+//     $("#result-event").slideDown(500);
+//     $("#result-event").fadeIn(500);
+//     $("#overlay").css("opacity", "1");
+//     $("#timeslot").fadeOut();
+//     $("#timeslot").hide();
+//     $("#attend-event").hide();
+//     const serialize = $("#time-container").serialize();
+//     console.log(serialize);
+//   });
+// };
 
 const modifyButton = function () {
   $("#modify-button").click((event) => {
@@ -55,10 +54,8 @@ const modifyButton = function () {
 
 $(document).ready(function () {
   $("#share-event").hide();
-  submitButton();
+  // submitButton();
   eventConfirmation();
   modifyButton();
-  voteButton();
-  submitPoll();
   $("#polling-event").show();
 });

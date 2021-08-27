@@ -119,10 +119,10 @@ const nextButton = function () {
   $("#next-button").click((event) => {
     event.preventDefault();
     $("#attend-event").fadeOut(400);
-    setTimeout(() => {
-      $(".form-popup").fadeIn();
-      $("#polling-event").fadeIn(500);
-    }, 300);
+    $(".form-popup").fadeIn();
+    $("#polling-event").fadeIn(500);
+    // setTimeout(() => {
+    // }, 300);
     const serialize = $("#guest-details").serialize();
     $.post("/user/create", serialize).done((result) => {
       console.log("/user/create: ", result);

@@ -11,7 +11,7 @@ const pollingConfirmation = function() {
           </div>
           <div id="generate-voteslot">
           </div>
-          <button type="submit" id="submit-poll">Submit Availability</button>
+          <button type="submit" id="submit-poll" onclick="closeForm()">Submit Availability</button>
         </div>
       </div>
     </form>

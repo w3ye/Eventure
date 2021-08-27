@@ -7,11 +7,6 @@ const renderResult = (link) => {
       "box-shadow",
       "0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)"
     );
-    // $('#first-name').html(`<strong>${data.first_name}</strong> has invited you to an event!`);
-    // const startDate = getDate(data.start_date);
-    // const endDate = getDate(data.end_date);
-    // $('#event-date-range').html(`Dates: ${startDate} &nbsp - &nbsp; ${endDate}`)
-    // $('#event-detail').html(`Description: ${data.detail}`);
   });
 }
 
@@ -59,8 +54,7 @@ const editButton = function() {
     $('#polling-event').show();
     $('#polling-event').fadeIn();
     $('.form-popup').show();
-    $(".form-popup").fadeIn();
-
+    $('.form-popup').fadeIn();
   });
 }
 
