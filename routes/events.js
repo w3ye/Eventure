@@ -69,6 +69,19 @@ module.exports = (db) => {
     }
   });
 
+  router.get("/event/:link_val", (req, res) => {
+    event
+      .findEventByLink(req.params.link_val)
+      .then((result) => {
+        console.log(result);
+        res.json(result);
+        return result;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
   router.get("/polls", (req, res) => {
     const eventId = req.session["event_id"];
     const event = new EVENT(db);
@@ -76,22 +89,13 @@ module.exports = (db) => {
     event.generateRange(eventId)
       .then(rangeDates => {
         event.generateDaysObject(rangeDates)
+
           .then(daysObject => {
             console.log(daysObject);
             res.send(daysObject);
-          })
-        router.get("/event/:link_val", (req, res) => {
-          event
-            .findEventByLink(req.params.link_val)
-            .then((result) => {
-              console.log(result);
-              res.json(result);
-              return result;
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-        });
-
-        return router;
+          });
       });
+  });
+
+  return router;
+};
