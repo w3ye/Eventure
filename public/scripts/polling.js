@@ -23,8 +23,11 @@ const pollingConfirmation = function() {
 $(document).ready(function() {
   $(".form-popup").show();
   pollingConfirmation();
-  $("#close-button").click(() => {
+  $("#close-button").click((event) => {
+    event.preventDefault;
     $("#polling-event").hide();
-    $("#share-event").show();
+    if (window.location.pathname == "/") {
+      $("#share-event").show();
+    }
   });
 });
