@@ -78,8 +78,10 @@ const submitPoll = function () {
     $("#generate-voteslot")
       .find("input")
       .each(function (input) {
+        const formattedDate = new Date($(this).val());
+        const dateISO = formattedDate.toISOString();
         if (this.checked) {
-          votedDays.push($(this).val());
+          votedDays.push(dateISO);
         }
       });
     console.log("You are available on: ", votedDays);
