@@ -1,3 +1,5 @@
+
+
 const option = {
   year: 'numeric',
   month: 'short',
@@ -9,10 +11,24 @@ const getDate = (str) => {
   return date.toLocaleDateString('en-Us', option);
 };
 
+const linkForSubmit = function(link) {
+  $("#submit-button").click((event) => {
+    event.preventDefault();
+    window.location = `/result/${link}`;
+  });
+}
+
 const renderEvent = (link) => {
   $.get(`/api/event/${link}`).then((data) => {
+    linkForSubmit(data.link)
     console.log(data)
-    $('#title-create').text(data.title);
+    $(".master-header").css(
+      "box-shadow",
+      "0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)"
+    );
+    $('.title-create').text(data.title);
+    $('.title-create').css('text-align', 'center');
+    $('.title-create').css('background-color', 'transparent');
     $('#first-name').html(`<strong>${data.first_name}</strong> has invited you to an event!`);
     const startDate = getDate(data.start_date);
     const endDate = getDate(data.end_date);
@@ -32,7 +48,7 @@ const attendEvent = function() {
   <div class="master-box" id="master-box">
     <div class="title" id="new-event">
       <div class="master-header">
-        <p class="title-create" id="title-create"></p>
+        <p class="title-create"></p>
       </div>
       <div class="master-body">
         <p class="details" id="first-name"></p>

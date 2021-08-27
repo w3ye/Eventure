@@ -18,7 +18,7 @@ $top-bg: rgba(22, 28, 83, 1);
   align-items: center;
   border-bottom: 1px solid transparent;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px 15px;
   background: none;
   border: none;
@@ -48,14 +48,16 @@ $top-bg: rgba(22, 28, 83, 1);
   text-shadow: 0 30px 20px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
-.title-create {
+input.title-create {
   background-color: inherit;
   border: 0px;
   color: $accent-color;
+  display: flex;
   font-size: 1.5rem;
   font-family: $font-body;
   font-weight: bold;
-  width: 100%;
+  justify-content: center;
+  width: 1000px;
 
   &::placeholder {
     font-family: $font-body;

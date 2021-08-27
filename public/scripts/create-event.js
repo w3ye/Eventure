@@ -117,7 +117,7 @@ const confirmButton = function () {
         $("#link").val(link);
         $('#share-row').empty()
         $('#result-button').empty()
-        generateLinks(link)
+        generateLinks(link);
       });
     });
 

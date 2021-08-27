@@ -72,6 +72,7 @@ module.exports = (db) => {
   router.get('/api/event/:link_val', (req, res) => {
     event.findEventByLink(req.params.link_val)
     .then((result) => {
+      req.session["event_id"] = result.event_id;
       res.json(result);
     })
     .catch((err) => {
@@ -81,7 +82,7 @@ module.exports = (db) => {
   });
 
   router.get("/event/:link_val", (req, res) => {
-    res.sendFile(path.resolve("public", "index.html"))
+    res.sendFile(path.resolve("public", "index.html"));
   });
 
   return router;
