@@ -1,3 +1,42 @@
+
+
+const option = {
+  year: 'numeric',
+  month: 'short',
+  day: '2-digit'
+};
+
+const getDate = (str) => {
+  const date = new Date(str);
+  return date.toLocaleDateString('en-Us', option);
+};
+
+const linkForSubmit = function(link) {
+  $("#submit-button").click((event) => {
+    event.preventDefault();
+    window.location = `/result/${link}`;
+  });
+}
+
+const renderEvent = (link) => {
+  $.get(`/api/event/${link}`).then((data) => {
+    linkForSubmit(data.link)
+    console.log(data)
+    $(".master-header").css(
+      "box-shadow",
+      "0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)"
+    );
+    $('.title-create').text(data.title);
+    $('.title-create').css('text-align', 'center');
+    $('.title-create').css('background-color', 'transparent');
+    $('#first-name').html(`<strong>${data.first_name}</strong> has invited you to an event!`);
+    const startDate = getDate(data.start_date);
+    const endDate = getDate(data.end_date);
+    $('#event-date-range').html(`Dates: ${startDate} &nbsp - &nbsp; ${endDate}`)
+    $('#event-detail').html(`Description: ${data.detail}`);
+  });
+}
+
 const attendEvent = function() {
   const $eventContainer = $('#attend-event');
   const $attendee = `
@@ -9,17 +48,20 @@ const attendEvent = function() {
   <div class="master-box" id="master-box">
     <div class="title" id="new-event">
       <div class="master-header">
-        <p class="title-create">Eventure Title - Meetings!
+        <p class="title-create"></p>
       </div>
       <div class="master-body">
-        <p class="details">Dates: 09/03/2021 - 09/07/2021</p>
-        <p class="details">Event Description:</p>
+        <p class="details" id="first-name"></p>
+        <p class="details" id="event-date-range"></p>
+        <p class="details" id="event-detail">Event Description:</p>
         <p class="details">Name:</p>
-        <input name="name" id="owner-name" class="owner" maxlength="30" required></textarea>
-        <p class="details">E-mail:</p>
-        <input name="email" id="owner-email" class="owner" maxlength="50" required></textarea>
+      <form id="guest-details">
+          <input name="name" id="guest-name" class="guest" maxlength="30" required></input>
+          <p class="details">E-mail:</p>
+          <input name="email" id="guest-email" class="guest" maxlength="50" required></input>
+        </form>
         <div class="next">
-          <a href="#timeslot"><button type="submit" id="next-button" onclick="openForm()">Next</button></a>
+          <button type="submit" id="next-button" onclick="openForm()">Next</button>
         </div>
       </div>
     </div>
@@ -31,14 +73,17 @@ const attendEvent = function() {
 const nextButton = function() {
   $("#next-button").click((event) => {
     event.preventDefault();
-    const serialize = $("#new-event").serialize();
-    console.log(serialize);
+    $("#overlay").css("opacity", "0");
+    const serialize = $("#guest-details").serialize();
+    $.post('/user/create', serialize).done((result) => {
+      console.log(result);
+    });
   });
 };
 
 $(document).ready(function() {
+  $('#attend-event').hide();
+  $('#create-event').hide();
   attendEvent();
-  $('.master-header').css('box-shadow', '0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)');
-  // enterTitle();
   nextButton();
 });

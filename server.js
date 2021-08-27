@@ -5,6 +5,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 const ENV = process.env.ENV || "development";
 const express = require("express");
+const path = require("path");
 const bodyParser = require("body-parser");
 const sass = require("node-sass-middleware");
 const cookieSession = require('cookie-session');
@@ -47,11 +48,14 @@ app.use(cookieSession({
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const eventRoutes = require("./routes/events");
+const resRoutes = require('./routes/result');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/", eventRoutes(db));
+app.use('/user', usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+app.use('/', resRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -59,6 +63,18 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
   res.render("index");
+});
+
+// app.get("/*", (req, res) => {
+//   res.sendFile(path.resolve("public", "index.html"))
+// })
+
+app.get("/event/*", (req, res) => {
+  res.sendFile(path.resolve("public", "index.html"))
+});
+
+app.get("/result/*", (req, res) => {
+  res.sendFile(path.resolve("public", "index.html"))
 });
 
 app.listen(PORT, () => {

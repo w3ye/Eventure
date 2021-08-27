@@ -1,15 +1,37 @@
-const openForm = function() {
-  document.getElementById("overlay").style.opacity = "1";
-  document.getElementById("timeslot").style.display = "block";
-}
+// const rerunTimepicker = function() {
+//   $(".start").timepicker({
+//     timeFormat: "hh:mm a",
+//     interval: 15,
+//     maxTime: "11:45 PM",
+//     startTime: "12:00 AM",
+//     endTime: "11:45 PM",
+//     dynamic: false,
+//     dropdown: true,
+//     scrollbar: true,
+//   });
 
-const closeForm = function() {
-  document.getElementById("overlay").style.opacity = "0";
-  document.getElementById("timeslot").style.display = "none";
-}
+//   $(".start").timepicker("option", "change", function(time) {
+//     const startHour = parseInt($(".start").val().substring(0, 2));
+//     const startMinutes = $(".start").val().substring(2, 8);
+//     const endMinTime = startHour.toString().concat(startMinutes + 0.15);
 
-const ownerModal = function() {
-  const $dateTimeContainer = $('#add-timeslots');
+//     $(".end").timepicker("option", "minTime", endMinTime);
+//     $(".end").timepicker("setTime", endMinTime);
+//   });
+
+//   $(".end").timepicker({
+//     timeFormat: "hh:mm a",
+//     interval: 15,
+//     maxTime: "11:45 PM",
+//     endTime: "11:45 PM",
+//     dynamic: false,
+//     dropdown: true,
+//     scrollbar: true,
+//   });
+// };
+
+const ownerModal = function () {
+  const $dateTimeContainer = $("#add-timeslots");
   const $selections = `
     <div class="form-popup" id="timeslot">
       <form action="/" id="time-container">
@@ -41,10 +63,10 @@ const ownerModal = function() {
     </div>
   `;
   return $dateTimeContainer.html($selections);
-}
+};
 
-const guestModal = function() {
-  const $dateTimeContainer = $('#add-timeslots');
+const guestModal = function () {
+  const $dateTimeContainer = $("#add-timeslots");
   const $selections = `
     <div class="form-popup" id="timeslot">
       <form action="/" id="time-container">
@@ -61,10 +83,10 @@ const guestModal = function() {
     </div>
   `;
   return $dateTimeContainer.html($selections);
-}
+};
 
-const addMeetingTime = function() {
-  const $timeslotContainer = $('#generate-timeslot');
+const addMeetingTime = function () {
+  const $timeslotContainer = $("#generate-timeslot");
 
   const $newMeetingTime = `
   <div class="new-meeting-time">
@@ -81,32 +103,24 @@ const addMeetingTime = function() {
   return $timeslotContainer.append($newMeetingTime);
 };
 
-const removeMeetingTime = function() {
-  const $timeContainers = $('.new-meeting-time');
+const removeMeetingTime = function () {
+  const $timeContainers = $(".new-meeting-time");
   for (const container of $timeContainers) {
     return container.remove();
   }
 };
 
-$(document).ready(function() {
-  $('#timeslot').hide();
-  $('#overlay').hide();
+$(document).ready(function () {
+  $("#timeslot").hide();
+  $("#overlay").hide();
 
-  $('.add-time').on('click', (event) => {
+  $(".add-time").on("click", (event) => {
     event.preventDefault();
     addMeetingTime();
-    rerunTimepicker();
   });
 
-  $('.remove-time').on('click', (event) => {
+  $(".remove-time").on("click", (event) => {
     event.preventDefault();
     removeMeetingTime();
   });
 });
-
-
-$(document).ready(function() {
-  openForm();
-  closeForm();
-});
-

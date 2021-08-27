@@ -1,6 +1,7 @@
 const EVENT = require("../lib/event-queries");
 const USER = require("../lib/user-queries");
 const express = require("express");
+const path = require("path");
 const router = express.Router();
 const { splitName } = require("../helper");
 const { Events } = require("pg");
@@ -37,12 +38,11 @@ module.exports = (db) => {
         // console.log(eventQueryObj);
         // newEvent needs to be called within the newUser promise
         // events table need user_id as reference
-        event.newEvent(eventQueryObj)
-          .then((result) => {
-            req.session["event_id"] = result.id;
-            res.json({ success: true });
-            return result;
-          })
+        event.newEvent(eventQueryObj).then((result) => {
+          req.session["event_id"] = result.id;
+          res.json({ success: true });
+          return result;
+        });
       });
   });
 
@@ -69,32 +69,35 @@ module.exports = (db) => {
     }
   });
 
-  router.get("/event/:link_val", (req, res) => {
+  router.get("/api/event/:link_val", (req, res) => {
     event
       .findEventByLink(req.params.link_val)
       .then((result) => {
-        console.log(result);
+        req.session["event_id"] = result.event_id;
         res.json(result);
-        return result;
       })
       .catch((err) => {
-        console.log(err);
+        res.send(400).send("This link does not exist");
       });
+  });
+
+  router.get("/event/:link_val", (req, res) => {
+    res.sendFile(path.resolve("public", "index.html"));
   });
 
   router.get("/polls", (req, res) => {
     const eventId = req.session["event_id"];
     const event = new EVENT(db);
 
-    event.generateRange(eventId)
-      .then(rangeDates => {
-        event.generateDaysObject(rangeDates)
+    event.generateRange(eventId).then((rangeDates) => {
+      event
+        .generateDaysObject(rangeDates)
 
-          .then(daysObject => {
-            console.log(daysObject);
-            res.send(daysObject);
-          });
-      });
+        .then((daysObject) => {
+          console.log(daysObject);
+          res.send(daysObject);
+        });
+    });
   });
 
   return router;
