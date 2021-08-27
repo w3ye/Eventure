@@ -68,7 +68,7 @@ const addVoteslot = function (dayStr, index) {
 };
 
 const submitPoll = function () {
-  $("#submit-button").on("click", function (event) {
+  $("#submit-poll").on("click", function (event) {
     event.preventDefault();
     let votedDays = [];
     $("#generate-voteslot")
