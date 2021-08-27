@@ -1,17 +1,26 @@
 const renderResult = (link) => {
-  $.get(`/api/event/${link}`).then((data) => {
+  $.get(`/api/rank/${link}`).then((data) => {
     console.log(data)
-    $('.title-create').text(data.title);
-    $('.title-create').css("background-color", "transparent");
+    data.forEach(i => {
+      const d = new Date(i.a_day);
+      const date = d.toString().substring(0,10);
+      $('.date-row').text(`${date}:`)
+      $('.count-row').text(i.count);
+    });
+    // $('.title-create').text(data.title);
+    // $('.title-create').css("background-color", "transparent");
     $(".title-create").css(
       "box-shadow",
       "0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)"
     );
-    // $('#first-name').html(`<strong>${data.first_name}</strong> has invited you to an event!`);
-    // const startDate = getDate(data.start_date);
-    // const endDate = getDate(data.end_date);
-    // $('#event-date-range').html(`Dates: ${startDate} &nbsp - &nbsp; ${endDate}`)
-    // $('#event-detail').html(`Description: ${data.detail}`);
+  });
+
+  $.get(`/api/event/${link}`).then((data) => {
+    $('.title-create').text(data.title);
+     $('.title-create').css("background-color", "transparent");
+     $(".title-create").css(
+       "box-shadow",
+       "0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)")
   });
 }
 
@@ -27,6 +36,10 @@ const eventResult = function() {
       <div class="share-body">
         <p>Results:</p>
         <div class="share-row">
+          <table>
+            <tbody>
+            </tbody>
+          </table>
         </div>
         <div class="last-step">
           <button type="submit" id="edit-button" onclick="openForm()">Edit</button></a>
@@ -36,6 +49,18 @@ const eventResult = function() {
   `;
   return $resultContainer.html($result);
 };
+
+const generateResults = function() {
+  const $generateResultContainer = $('tbody');
+  const $eachResult = `
+    <tr class="time-row">
+      <td class="date-row">:</td>
+      <td class="count-row"></td>
+    </tr>
+  `;
+
+  return $generateResultContainer.append($eachResult);
+}
 
 // WHEN MODAL IS ONLY ACTIVATED
 // const submitButton = function() {
@@ -68,4 +93,5 @@ $(document).ready(function() {
   $('#result-event').hide();
   eventResult();
   editButton();
+  generateResults();
 });

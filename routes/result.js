@@ -30,8 +30,8 @@ module.exports = (db) => {
     `;
     db.query(query, [req.session["event_id"]])
       .then((result) => {
-        // console.log(result.rows);
-        return result.rows;
+        console.log(result.rows);
+        res.send(result.rows)
       });
   });
   return router;

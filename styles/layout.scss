@@ -40,3 +40,16 @@ main {
   width: 700px;
   z-index: 10;
 }
+
+table {
+  width: 100%;
+}
+
+tr {
+  display: flex;
+  justify-content: center;
+}
+
+td {
+  flex-basis: 20%;
+}
