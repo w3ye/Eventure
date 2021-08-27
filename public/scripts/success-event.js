@@ -92,7 +92,6 @@ const resultButton = function () {
   $("#result-button").click((event) => {
     event.preventDefault();
     $("#share-event").hide();
-    // $("#polling-event").fadeIn();
     $(".form-popup").show();
     $(".form-popup").fadeIn();
     $("#polling-event").show();
