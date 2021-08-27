@@ -64,14 +64,14 @@ const attendEvent = function () {
         <p class="details" id="event-date-range"></p>
         <p class="details" id="event-detail">Event Description:</p>
         <p class="details">Name:</p>
-      <form id="guest-details">
-          <input name="name" id="guest-name" class="guest" maxlength="30" required></input>
-          <p class="details">E-mail:</p>
-          <input name="email" id="guest-email" class="guest" maxlength="50" required></input>
+        <form id="guest-details">
+            <input name="name" id="guest-name" class="guest" maxlength="30" required></input>
+            <p class="details">E-mail:</p>
+            <input name="email" id="guest-email" class="guest" maxlength="50" required></input>
+          <div class="next">
+            <button type="submit" id="next-button" onclick="openForm()">Next</button>
+          </div>
         </form>
-        <div class="next">
-          <button type="submit" id="next-button" onclick="openForm()">Next</button>
-        </div>
       </div>
     </div>
   </div>
@@ -124,7 +124,7 @@ const nextButton = function () {
     // setTimeout(() => {
     // }, 300);
     const serialize = $("#guest-details").serialize();
-    $.post("/user/create", serialize).done((result) => {
+    $.post("/create", serialize).done((result) => {
       console.log("/user/create: ", result);
     });
     $.get("/polls")
