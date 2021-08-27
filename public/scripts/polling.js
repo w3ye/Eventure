@@ -14,7 +14,7 @@ const pollingConfirmation = function() {
 
           </div>
 
-          <button type="submit" id="submit-button"><a href="#success">Submit Availability</a></button>
+          <button type="submit" id="submit-poll"><a href="#success">Submit Availability</a></button>
         </div>
       </div>
     </form>

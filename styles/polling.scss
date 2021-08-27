@@ -3,6 +3,7 @@ $details-color: #bab8f5ad;
 $font-body: "Cabin", sans-serif;
 $font-emphasis: "Staatliches", cursive;
 $top-bg: rgba(22, 28, 83, 1);
+$bottom-bg: #5f275a;
 
 #polling-event {
   display: block;
@@ -76,4 +77,24 @@ $top-bg: rgba(22, 28, 83, 1);
   display: flex;
   flex-direction: column;
   align-content: center;
+}
+
+#submit-poll {
+  color: $accent-color;
+  cursor: pointer;
+  background-color: $bottom-bg;
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 0 50px 400px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  font-size: 1.05em;
+  align-self: center;
+  opacity: 1;
+
+
+  &:hover {
+    background-color: $accent-color;
+    color: $bottom-bg;
+    border: 1px solid $bottom-bg;
+  }
 }
