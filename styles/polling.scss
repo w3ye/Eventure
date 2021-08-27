@@ -10,7 +10,7 @@ $bottom-bg: #5f275a;
 }
 
 #polling {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 10px;
   padding: 10px 15px;
   margin-top: 10px;
@@ -19,16 +19,16 @@ $bottom-bg: #5f275a;
   border-radius: 20px;
 }
 
-.modal-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .modal-body {
   padding: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.voting-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .form-popup {

@@ -1,5 +1,3 @@
-
-
 const option = {
   year: 'numeric',
   month: 'short',
@@ -18,9 +16,17 @@ const linkForSubmit = function(link) {
   });
 }
 
+const linkForSubmitPoll = function(link) {
+  $("#submit-poll").click((event) => {
+    event.preventDefault();
+    window.location = `/result/${link}`;
+  });
+}
+
 const renderEvent = (link) => {
   $.get(`/api/event/${link}`).then((data) => {
     linkForSubmit(data.link)
+    linkForSubmitPoll(data.link)
     console.log(data)
     $(".master-header").css(
       "box-shadow",

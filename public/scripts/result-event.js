@@ -56,12 +56,15 @@ const editButton = function() {
   $("#edit-button").click((event) => {
     event.preventDefault();
     console.log("EDIT!")
-    $('#add-timeslots').show();
+    $('#polling-event').show();
+    $('#polling-event').fadeIn();
+    $('.form-popup').show();
+    $(".form-popup").fadeIn();
+
   });
 }
 
 $(document).ready(function() {
-
   $('#result-event').hide();
   eventResult();
   editButton();
