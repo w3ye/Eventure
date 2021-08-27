@@ -21,6 +21,7 @@ module.exports = (db) => {
     user
       .newUser(userQueryObj)
       .then((result) => {
+        req.session['user_id'] = result.id;
         return result.id;
       })
       .then((id) => {
@@ -74,7 +75,7 @@ module.exports = (db) => {
       .findEventByLink(req.params.link_val)
       .then((result) => {
         req.session["event_id"] = result.id;
-        console.log('apiCookie: ',req.session["event_id"])
+        console.log("apiCookie: ", req.session["event_id"]);
         res.json(result);
       })
       .catch((err) => {
@@ -86,14 +87,28 @@ module.exports = (db) => {
     res.sendFile(path.resolve("public", "index.html"));
   });
 
+  router.post("/api/dates", (req, res) => {
+    const arr = req.body.myarr;
+    const query = `
+      INSERT INTO time_slots (event_id, user_id, a_day)
+      VALUES
+      ($1, $2, $3)
+      RETURNING *;
+    `;
+    arr.forEach(i => {
+      db.query(query, [req.session['event_id'], req.session['user_id'], i]);
+    });
+
+  });
+
   router.get("/polls", (req, res) => {
     const eventId = req.session["event_id"];
     const event = new EVENT(db);
 
-    console.log('polls cookie: ', eventId);
+    console.log("polls cookie: ", eventId);
 
     event.generateRange(eventId).then((rangeDates) => {
-      console.log('rangeDates events.js: ', rangeDates);
+      console.log("rangeDates events.js: ", rangeDates);
       event
         .generateDaysObject(rangeDates)
 

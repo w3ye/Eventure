@@ -24,9 +24,8 @@ CREATE TABLE events(
 CREATE TABLE time_slots (
     id SERIAL PRIMARY KEY NOT NULL,
     event_id INTEGER REFERENCES events(id) ON DELETE CASCADE,
-    a_day DATE NOT NULL,
-    start_time TIME,
-    end_time TIME
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    a_day DATE NOT NULL
 );
 
 CREATE TABLE user_votes (

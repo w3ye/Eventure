@@ -1,50 +1,53 @@
 const option = {
-  year: 'numeric',
-  month: 'short',
-  day: '2-digit'
+  year: "numeric",
+  month: "short",
+  day: "2-digit",
 };
 
 const getDate = (str) => {
   const date = new Date(str);
-  return date.toLocaleDateString('en-Us', option);
+  return date.toLocaleDateString("en-Us", option);
 };
 
-const linkForSubmit = function(link) {
+const linkForSubmit = function (link) {
   $("#submit-button").click((event) => {
     event.preventDefault();
     window.location = `/result/${link}`;
   });
-}
+};
 
-const linkForSubmitPoll = function(link) {
+const linkForSubmitPoll = function (link) {
   $("#submit-poll").click((event) => {
-    event.preventDefault();
     window.location = `/result/${link}`;
   });
-}
+};
 
 const renderEvent = (link) => {
   $.get(`/api/event/${link}`).then((data) => {
-    linkForSubmit(data.link)
-    linkForSubmitPoll(data.link)
-    console.log(data)
+    linkForSubmit(data.link);
+    linkForSubmitPoll(data.link);
+    console.log(data);
     $(".master-header").css(
       "box-shadow",
       "0 50px 200px -200px rgba(0,0,0,0.5), 0 10px 10px -10px rgba(0,0,0,0.3)"
     );
-    $('.title-create').text(data.title);
-    $('.title-create').css('text-align', 'center');
-    $('.title-create').css('background-color', 'transparent');
-    $('#first-name').html(`<strong>${data.first_name}</strong> has invited you to an event!`);
+    $(".title-create").text(data.title);
+    $(".title-create").css("text-align", "center");
+    $(".title-create").css("background-color", "transparent");
+    $("#first-name").html(
+      `<strong>${data.first_name}</strong> has invited you to an event!`
+    );
     const startDate = getDate(data.start_date);
     const endDate = getDate(data.end_date);
-    $('#event-date-range').html(`Dates: ${startDate} &nbsp - &nbsp; ${endDate}`)
-    $('#event-detail').html(`Description: ${data.detail}`);
+    $("#event-date-range").html(
+      `Dates: ${startDate} &nbsp - &nbsp; ${endDate}`
+    );
+    $("#event-detail").html(`Description: ${data.detail}`);
   });
-}
+};
 
-const attendEvent = function() {
-  const $eventContainer = $('#attend-event');
+const attendEvent = function () {
+  const $eventContainer = $("#attend-event");
   const $attendee = `
   <div class="master-catchphrase">
     <p class="master-catchphrase-words">You're invited to an&nbsp;</p>
@@ -103,7 +106,12 @@ const submitPoll = function () {
           votedDays.push(dateISO);
         }
       });
-    console.log("You are available on: ", votedDays);
+    console.log(votedDays);
+    $.ajax({
+      url: '/api/dates',
+      type: 'POST',
+      data: { myarr: votedDays }
+    });
   });
 };
 
@@ -116,8 +124,8 @@ const nextButton = function () {
       $("#polling-event").fadeIn(500);
     }, 300);
     const serialize = $("#guest-details").serialize();
-    $.post('/user/create', serialize).done((result) => {
-      console.log('/user/create: ', result);
+    $.post("/user/create", serialize).done((result) => {
+      console.log("/user/create: ", result);
     });
     $.get("/polls")
       .then((dayArray) => {
@@ -136,9 +144,9 @@ const nextButton = function () {
   });
 };
 
-$(document).ready(function() {
-  $('#attend-event').hide();
-  $('#create-event').hide();
+$(document).ready(function () {
+  $("#attend-event").hide();
+  $("#create-event").hide();
   attendEvent();
   nextButton();
 });
