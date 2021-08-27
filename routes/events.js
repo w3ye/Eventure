@@ -21,7 +21,7 @@ module.exports = (db) => {
     user
       .newUser(userQueryObj)
       .then((result) => {
-        req.session['user_id'] = result.id;
+        req.session["user_id"] = result.id;
         return result.id;
       })
       .then((id) => {
@@ -95,10 +95,24 @@ module.exports = (db) => {
       ($1, $2, $3)
       RETURNING *;
     `;
-    arr.forEach(i => {
-      db.query(query, [req.session['event_id'], req.session['user_id'], i]);
+    const userVoteQuery = `
+      INSERT INTO user_votes (user_id, time_slot_id)
+      VALUES($1, $2)
+      RETURNING *;
+    `;
+    arr.forEach((i) => {
+      db.query(query, [req.session["event_id"], req.session["user_id"], i])
+        .then((result) => {
+          return result.rows[0];
+        })
+        .then((result) => {
+          db.query(userVoteQuery,[req.session['user_id'], result.id]);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      // db.query(userVoteQuery, [req.session['user_id']], i);
     });
-
   });
 
   router.get("/polls", (req, res) => {
