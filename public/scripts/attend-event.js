@@ -70,19 +70,69 @@ const attendEvent = function() {
   return $eventContainer.html($attendee);
 };
 
-// const nextButton = function() {
-//   $("#next-button").click((event) => {
-//     event.preventDefault();
-//     $("#overlay").css("opacity", "0");
-//     const serialize = $("#guest-details").serialize();
-//     $.post('/user/create', serialize).done((result) => {
-//       console.log(result);
-//     });
-//   });
-// };
+const addVoteslot = function (dayStr, index) {
+  const $voteContainer = $("#generate-voteslot");
+  const $newVoteslot = `
+  <div class="voteslots">
+    <h3>${dayStr}</h3>
+    <div class="vote-checkbox">
+      <small>Select:</small>
+      <input type="checkbox" id="day${index}" name="day${index}" value="${dayStr}">
+    </div>
+  </div>
+  `;
+  return $voteContainer.append($newVoteslot);
+};
+
+const submitPoll = function () {
+  $("#submit-poll").on("click", function (event) {
+    event.preventDefault();
+    let votedDays = [];
+    $("#generate-voteslot")
+      .find("input")
+      .each(function (input) {
+        const formattedDate = new Date($(this).val());
+        const dateISO = formattedDate.toISOString();
+        if (this.checked) {
+          votedDays.push(dateISO);
+        }
+      });
+    console.log("You are available on: ", votedDays);
+  });
+};
+
+const nextButton = function () {
+  $("#next-button").click((event) => {
+    event.preventDefault();
+    $("#attend-event").fadeOut(400);
+    setTimeout(() => {
+      $(".form-popup").fadeIn();
+      $("#polling-event").fadeIn(500);
+    }, 300);
+    const serialize = $("#guest-details").serialize();
+    $.post('/user/create', serialize).done((result) => {
+      console.log('/user/create: ', result);
+    });
+    $.get("/polls")
+      .then((dayArray) => {
+        dayArray.forEach((day, order) => {
+          const dayDate = new Date(Date.parse(day.day))
+            .toString()
+            .split(" ")
+            .splice(0, 4)
+            .join(" ");
+          addVoteslot(dayDate, order);
+        });
+      })
+      .then(() => {
+        submitPoll();
+      });
+  });
+};
 
 $(document).ready(function() {
   $('#attend-event').hide();
   $('#create-event').hide();
   attendEvent();
+  nextButton();
 });
