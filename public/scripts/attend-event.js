@@ -19,6 +19,7 @@ const linkForSubmit = function (link) {
 const linkForSubmitPoll = function (link) {
   $("#submit-poll").click((event) => {
     window.location = `/result/${link}`;
+    console.log('working')
   });
 };
 
@@ -125,7 +126,7 @@ const nextButton = function () {
     }, 300);
     const serialize = $("#guest-details").serialize();
     $.post("/user/create", serialize).done((result) => {
-      console.log("/user/create: ", result);
+      console.log(`/user/create: `, result);
     });
     $.get("/polls")
       .then((dayArray) => {

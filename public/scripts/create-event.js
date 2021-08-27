@@ -97,6 +97,12 @@ const generateLinks = function (link) {
   <a href="/result/${link}">Result</a>
   `;
   $resultButton.append($resultLink);
+
+  const $voteButton = $("#vote-button");
+  const $attendLink = `
+  <a href="/event/${link}">Vote</a>
+  `
+  $voteButton.append($attendLink);
 };
 
 const confirmButton = function () {
@@ -117,6 +123,7 @@ const confirmButton = function () {
         $("#link").val(link);
         $("#share-row").empty();
         $("#result-button").empty();
+        $("#vote-button").empty();
         generateLinks(link);
       });
     });
