@@ -6,13 +6,13 @@ VALUES
 ('Clovis', 'Jordanna', 'clovisj@gmail.com'),
 ('Macy', 'Teddy', 'mt@gmail.com');
 
-INSERT INTO events (owner_id, start_date, end_date, close_submission, title, detail)
+INSERT INTO events (owner_id, start_date, end_date, close_submission, title, detail, link)
 VALUES
-(1, '2021-05-11', '2021-06-01', '2021-05-30 11:00:00', 'product meeting', 'meeting with my team about some project'),
-(2, '2021-01-10', '2021-01-20', '2021-01-18 13:00:00', 'movie night', 'friday @ 8:00pm'),
-(2, '2021-09-01', '2021-09-11', '2021-09-05 11:00:00', 'fancy dinner', 'at a expensive restaurant'),
-(4, '2021-05-11', '2021-06-01', '2021-05-30 09:00:00', 'super secret party', 'not that secret'),
-(1, '2021-06-11', '2021-06-28', '2021-06-13 11:00:00', 'music feestival', 'through zoom because... COVID');
+(1, '2021-05-11', '2021-06-01', '2021-05-30 11:00:00', 'product meeting', 'meeting with my team about some project', 'abcde'),
+(2, '2021-01-10', '2021-01-20', '2021-01-18 13:00:00', 'movie night', 'friday @ 8:00pm', '1234'),
+(2, '2021-09-01', '2021-09-11', '2021-09-05 11:00:00', 'fancy dinner', 'at a expensive restaurant', 'ab'),
+(4, '2021-05-11', '2021-06-01', '2021-05-30 09:00:00', 'super secret party', 'not that secret', null),
+(1, '2021-06-11', '2021-06-28', '2021-06-13 11:00:00', 'music feestival', 'through zoom because... COVID', null);
 
 INSERT INTO time_slots (event_id, a_day, start_time, end_time)
 VALUES
