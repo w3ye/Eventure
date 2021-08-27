@@ -82,8 +82,8 @@ const enterTitle = function () {
 //   });
 // };
 
-const generateLinks = function(link) {
-  const $shareRow = $("#share-row")
+const generateLinks = function (link) {
+  const $shareRow = $("#share-row");
   const $shareLinks = `
     <a title="Mail" href="mailto:?subject=Eventure Invite&body=Hey! Check out my event here: ${link}"><i class="icon fas fa-at"></i></a>
     <a target="_blank" title="Facebook" href="https://www.facebook.com/sharer/sharer.php?u=${link}" class="fb-xfbml-parse-ignore"><i class="icon fab fa-facebook"></i></a>
@@ -95,9 +95,9 @@ const generateLinks = function(link) {
   const $resultButton = $("#result-button");
   const $resultLink = `
   <a href="/result/${link}">Result</a>
-  `
+  `;
   $resultButton.append($resultLink);
-}
+};
 
 const confirmButton = function () {
   $("#confirm-button").click((event) => {
@@ -111,12 +111,12 @@ const confirmButton = function () {
 
     $.post("/create", serialize).done((result) => {
       $("#share-event").fadeIn();
-      console.log('inside /create', result);
+      console.log("inside /create", result);
       $.get("/links").then((link) => {
         console.log(link);
         $("#link").val(link);
-        $('#share-row').empty()
-        $('#result-button').empty()
+        $("#share-row").empty();
+        $("#result-button").empty();
         generateLinks(link);
         $("#submit-poll").click((event) => {
           event.preventDefault;

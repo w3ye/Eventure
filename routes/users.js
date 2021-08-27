@@ -5,10 +5,10 @@
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
 
-const express = require('express');
-const router  = express.Router();
-const USER = require('../lib/user-queries');
-const { splitName } = require('../helper');
+const express = require("express");
+const router = express.Router();
+const USER = require("../lib/user-queries");
+const { splitName } = require("../helper");
 
 module.exports = (db) => {
   const user = new USER(db);
@@ -20,11 +20,11 @@ module.exports = (db) => {
       email: req.body.email,
     };
 
-    user.newUser(userQueryObj)
-    .then((result) => {
+    user.newUser(userQueryObj).then((result) => {
+      req.session['user_id'] = result.id;
+      console.log(result);
       return { success: true };
     });
-
   });
   return router;
 };
