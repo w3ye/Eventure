@@ -71,20 +71,16 @@ const addVoteslot = function(dayStr, index) {
   return $voteContainer.append($newVoteslot);
 };
 
-const checkVote = function() {
-  $("#days-container :checkbox").change(function(event) {
-    if (this.checked) {
-      console.log($(this).val())
-    } else {
-      console.log('unchecked ', $(this).val())
-    }
-  })
-};
-
 const submitPoll = function() {
   $("#submit-button").on('click', function(event) {
     event.preventDefault();
-    console.log($(this).parent().find('div'));
+    let votedDays = [];
+    $('#generate-voteslot').find('input').each(function(input) {
+      if (this.checked) {
+        votedDays.push($(this).val());
+      }
+    });
+    console.log('You are available on: ', votedDays);
   })
 };
 
@@ -104,7 +100,6 @@ const resultButton = function() {
         })
       })
       .then(() => {
-        checkVote();
         submitPoll();
       });
   });
