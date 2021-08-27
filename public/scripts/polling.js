@@ -23,47 +23,9 @@ const pollingConfirmation = function() {
   return $pollContainer.html($pollConfirm);
 };
 
-
-// const addVoteslot = function(dayStr) {
-//   const $voteContainer = $("#generate-voteslot");
-
-//   const $newVoteslot = `
-//   <div class="voteslots">
-//     <h3>${dayStr}</h3>
-//     <div class="vote-checkbox">
-//       <small>Select:</small>
-//       <input type="checkbox" id="day1" name="day1" value="thisDay">
-//     </div>
-//   </div>
-//   `
-// };
-
-//USE THIS TO ADD NEW DAYS TO VOTE ON
-/*
-const addMeetingTime = function() {
-  const $timeslotContainer = $('#generate-timeslot');
-
-  const $newMeetingTime = `
-  <div class="new-meeting-time">
-    <div class="start-row">
-      <label for="start">Start Time:</label>
-      <input type="text" class="start" name="start" />
-    </div>
-    <div class="end-row">
-      <label for="end">End Time:</label>
-      <input type="text" class="end" name="end" />
-    </div>
-  </div>
-  `;
-  return $timeslotContainer.append($newMeetingTime);
-};
-
-*/
-
 $(document).ready(function() {
   $("#share-event").hide();
   $(".form-popup").show();
   pollingConfirmation();
   $("#polling-event").show();
-  // resultButton();
 });
