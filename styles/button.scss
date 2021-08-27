@@ -32,7 +32,7 @@ button {
   font-size: 1em;
 }
 
-#close-button {
+#close-button, .close-button {
   background-color: $bottom-bg;
   color: $accent-color;
   border: none;
@@ -92,7 +92,7 @@ button {
   }
 }
 
-#result-button {
+#result-button, #vote-button {
   color: $accent-color;
   cursor: pointer;
   background-color: $top-bg;

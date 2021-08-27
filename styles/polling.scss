@@ -19,16 +19,16 @@ $bottom-bg: #5f275a;
   border-radius: 20px;
 }
 
-.modal-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .modal-body {
   padding: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.voting-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .form-popup {

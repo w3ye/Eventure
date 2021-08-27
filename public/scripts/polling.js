@@ -5,7 +5,10 @@ const pollingConfirmation = function() {
     <form id="days-container">
       <div class="modal-body">
         <div class="voting-days">
-         <p id="date">Please Select Your Available Days:</p>
+          <div class="voting-header">
+            <p id="date">Please Select Your Available Days:</p>
+            <button type="button" onclick="closeForm()" id="close-button">&times;</button>
+          </div>
           <div id="generate-voteslot">
           </div>
           <button type="submit" id="submit-poll">Submit Availability</button>
@@ -18,8 +21,10 @@ const pollingConfirmation = function() {
 };
 
 $(document).ready(function() {
-  $("#share-event").hide();
   $(".form-popup").show();
   pollingConfirmation();
-  $("#polling-event").show();
+  $("#close-button").click(() => {
+    $("#polling-event").hide();
+    $("#share-event").show();
+  });
 });

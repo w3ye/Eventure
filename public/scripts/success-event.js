@@ -21,7 +21,8 @@ const eventConfirmation = function () {
         </div>
         <div class="last-step">
           <button type="submit" id="modify-button">Modify</button>
-          <button id="result-button"></button>
+          <button id="vote-button">Vote</button>
+          <button id="result-button">Result</button>
         </div>
       </div>
     </div>
@@ -85,11 +86,12 @@ const submitPoll = function () {
 };
 
 const resultButton = function () {
-  $("#result-button").click((event) => {
+  $("#vote-button").click((event) => {
     event.preventDefault();
     $("#share-event").hide();
     $(".form-popup").show();
     $(".form-popup").fadeIn();
+    $("#overlay").fadeIn();
     $("#polling-event").show();
     $.get("/polls")
       .then((dayArray) => {
@@ -115,7 +117,4 @@ $(document).ready(function () {
   modifyButton();
   resultButton();
   $("#polling-event").show();
-  $.get("link").then((link) => {
-    $("#link").val(link);
-  });
 });
