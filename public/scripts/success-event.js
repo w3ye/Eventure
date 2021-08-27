@@ -6,7 +6,7 @@ const randomLink = "";
  * Twitter - https://twitter.com/intent/tweet?text=Join%20My%20Eventure!&url=https%3A%2F%2Fwww.amazon.ca&related=
  */
 
-const eventConfirmation = function() {
+const eventConfirmation = function () {
   const $shareContainer = $("#share-event");
   const $confirm = `
     <div class="share-catchphrase">
@@ -36,7 +36,7 @@ const eventConfirmation = function() {
 };
 
 // WHEN MODAL IS ONLY ACTIVATED
-const submitButton = function() {
+const submitButton = function () {
   $("#submit-button").click((event) => {
     event.preventDefault();
     $("#overlay").css("opacity", "0");
@@ -48,7 +48,7 @@ const submitButton = function() {
   });
 };
 
-const modifyButton = function() {
+const modifyButton = function () {
   $("#modify-button").click((event) => {
     event.preventDefault();
     $("#share-event").hide();
@@ -56,7 +56,7 @@ const modifyButton = function() {
   });
 };
 
-const addVoteslot = function(dayStr, index) {
+const addVoteslot = function (dayStr, index) {
   const $voteContainer = $("#generate-voteslot");
 
   const $newVoteslot = `
@@ -71,20 +71,22 @@ const addVoteslot = function(dayStr, index) {
   return $voteContainer.append($newVoteslot);
 };
 
-const submitPoll = function() {
-  $("#submit-button").on('click', function(event) {
+const submitPoll = function () {
+  $("#submit-button").on("click", function (event) {
     event.preventDefault();
     let votedDays = [];
-    $('#generate-voteslot').find('input').each(function(input) {
-      if (this.checked) {
-        votedDays.push($(this).val());
-      }
-    });
-    console.log('You are available on: ', votedDays);
-  })
+    $("#generate-voteslot")
+      .find("input")
+      .each(function (input) {
+        if (this.checked) {
+          votedDays.push($(this).val());
+        }
+      });
+    console.log("You are available on: ", votedDays);
+  });
 };
 
-const resultButton = function() {
+const resultButton = function () {
   $("#result-button").click((event) => {
     event.preventDefault();
     $("#share-event").hide();
@@ -93,11 +95,15 @@ const resultButton = function() {
     $(".form-popup").fadeIn();
     $("#polling-event").show();
     $.get("/polls")
-      .then(dayArray => {
+      .then((dayArray) => {
         dayArray.forEach((day, order) => {
-          const dayDate = (new Date(Date.parse(day.day)).toString().split(' ').splice(0, 4).join(' '));
-          addVoteslot(dayDate, order)
-        })
+          const dayDate = new Date(Date.parse(day.day))
+            .toString()
+            .split(" ")
+            .splice(0, 4)
+            .join(" ");
+          addVoteslot(dayDate, order);
+        });
       })
       .then(() => {
         submitPoll();
@@ -105,7 +111,7 @@ const resultButton = function() {
   });
 };
 
-$(document).ready(function() {
+$(document).ready(function () {
   $("#share-event").hide();
   submitButton();
   eventConfirmation();
