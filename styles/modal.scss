@@ -79,6 +79,10 @@
   align-self: flex-start;
 }
 
+#add-timeslots {
+  display: none;
+}
+
 #generate-timeslot {
   display: flex;
   flex-direction: column;

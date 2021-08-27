@@ -56,12 +56,68 @@ const modifyButton = function () {
   });
 };
 
+const addVoteslot = function (dayStr, index) {
+  const $voteContainer = $("#generate-voteslot");
+
+  const $newVoteslot = `
+  <div class="voteslots">
+    <h3>${dayStr}</h3>
+    <div class="vote-checkbox">
+      <small>Select:</small>
+      <input type="checkbox" id="day${index}" name="day${index}" value="${dayStr}">
+    </div>
+  </div>
+  `;
+  return $voteContainer.append($newVoteslot);
+};
+
+const submitPoll = function () {
+  $("#submit-button").on("click", function (event) {
+    event.preventDefault();
+    let votedDays = [];
+    $("#generate-voteslot")
+      .find("input")
+      .each(function (input) {
+        if (this.checked) {
+          votedDays.push($(this).val());
+        }
+      });
+    console.log("You are available on: ", votedDays);
+  });
+};
+
+const resultButton = function () {
+  $("#result-button").click((event) => {
+    event.preventDefault();
+    $("#share-event").hide();
+    // $("#polling-event").fadeIn();
+    $(".form-popup").show();
+    $(".form-popup").fadeIn();
+    $("#polling-event").show();
+    $.get("/polls")
+      .then((dayArray) => {
+        dayArray.forEach((day, order) => {
+          const dayDate = new Date(Date.parse(day.day))
+            .toString()
+            .split(" ")
+            .splice(0, 4)
+            .join(" ");
+          addVoteslot(dayDate, order);
+        });
+      })
+      .then(() => {
+        submitPoll();
+      });
+  });
+};
 
 $(document).ready(function () {
   $("#share-event").hide();
   submitButton();
   eventConfirmation();
   modifyButton();
+  resultButton();
+  $("#polling-event").show();
   $.get("link").then((link) => {
     console.log(link);
     $("#link").val(link);

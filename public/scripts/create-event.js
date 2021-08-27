@@ -91,7 +91,7 @@ const confirmButton = function () {
     $("input").prop("required", true);
     let serialize = $("#new-event").serialize();
     serialize += `&link=${randomString}`;
-    
+
     $.post("/create", serialize).done((result) => {
       $("#share-event").fadeIn();
       console.log('inside /create', result);
