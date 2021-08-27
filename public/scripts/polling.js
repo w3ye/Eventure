@@ -21,7 +21,7 @@ const pollingConfirmation = function() {
 };
 
 $(document).ready(function() {
-  $(".form-popup").show();
+  $(".form-popup").fadeIn();
   pollingConfirmation();
   $("#close-button").click((event) => {
     event.preventDefault;

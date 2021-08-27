@@ -137,3 +137,10 @@ input.owner {
   font-size: 1em;
   color: $top-bg;
 }
+
+/* For devices with screen smaller than 425px */
+@media only screen and (max-width: 768px) {
+  .master-box {
+    font-size: 0.5em;
+  }
+}

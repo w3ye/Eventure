@@ -40,3 +40,10 @@ main {
   width: 700px;
   z-index: 10;
 }
+
+/* For devices with screen smaller than 425px */
+@media only screen and (max-width: 425px) {
+  body {
+    height: 120vh;
+  }
+}

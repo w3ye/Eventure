@@ -57,5 +57,5 @@ $(document).ready(function () {
   // submitButton();
   eventConfirmation();
   modifyButton();
-  $("#polling-event").show();
+  $("#polling-event").fadeIn();
 });

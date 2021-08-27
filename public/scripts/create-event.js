@@ -129,7 +129,7 @@ const confirmButton = function () {
 
 $(document).ready(function () {
   $("#create-event").hide();
-  // $("#overlay").css("opacity", "1");
+  $("#overlay").css("opacity", "1");
   $("#overlay").hide();
   eventCreation();
   $(".master-body").hide();

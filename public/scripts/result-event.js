@@ -33,24 +33,25 @@ const eventResult = function() {
 };
 
 // WHEN MODAL IS ONLY ACTIVATED
-// const submitButton = function() {
-//   $("#submit-button").click((event) => {
-//     event.preventDefault();
-//     $('#overlay').css('opacity', '0');
-//     $('#timeslot').hide();
-//     $('#master-box').hide();
-//     $('.master-catchphrase').hide();
-//     // $('#share-event').show();
-//     $('#result-event').show();
-//     const serialize = $("#time-container").serialize();
-//     console.log(serialize)
-//   });
-// };
+const submitButton = function() {
+  $("#submit-button").click((event) => {
+    event.preventDefault();
+    $('#overlay').css('opacity', '0');
+    $('#timeslot').hide();
+    $('#master-box').hide();
+    $('.master-catchphrase').hide();
+    // $('#share-event').show();
+    $('#result-event').show();
+    const serialize = $("#time-container").serialize();
+    console.log(serialize)
+  });
+};
 
 const editButton = function() {
   $("#edit-button").click((event) => {
     event.preventDefault();
     console.log("EDIT!")
+    $('#overlay').fadeIn();
     $('#polling-event').show();
     $('#polling-event').fadeIn();
     $('.form-popup').show();
@@ -62,4 +63,5 @@ $(document).ready(function() {
   $('#result-event').hide();
   eventResult();
   editButton();
+  submitButton();
 });
