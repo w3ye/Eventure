@@ -8,6 +8,7 @@ const { Events } = require("pg");
 module.exports = (db) => {
   const event = new EVENT(db);
   const user = new USER(db);
+
   router.post("/create", (req, res) => {
     const name = splitName(req.body.name);
     const userQueryObj = {
@@ -45,15 +46,20 @@ module.exports = (db) => {
       });
   });
 
+  router.get("/api/events", (req, res) => {
+    event.getEvents().then((data) => {
+      res.json(data);
+    });
+  });
+
   router.get("/links", (req, res) => {
     const eventId = req.session["event_id"];
-    const event = new EVENT(db);
 
     if (eventId) {
       event
         .findLink(eventId)
         .then((result) => {
-          console.log('inside get links', result);
+          console.log("inside get", result);
           // return result.link;
           res.send(result.link);
         })
@@ -74,11 +80,18 @@ module.exports = (db) => {
             console.log(daysObject);
             res.send(daysObject);
           })
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
+        router.get("/event/:link_val", (req, res) => {
+          event
+            .findEventByLink(req.params.link_val)
+            .then((result) => {
+              console.log(result);
+              res.json(result);
+              return result;
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        });
 
-  return router;
-};
+        return router;
+      });
